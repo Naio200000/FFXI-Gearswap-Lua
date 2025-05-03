@@ -264,12 +264,11 @@ function get_sets()
 		ammo		= "Black Tathlum",
 	}
 
-    sets.weapons.Sky = {
-        main        = "Skystrider",
-        sub         = "Pole Grip",
-        ammo        = "Black Tathlum",
-        left_ear    = "Supremacy Earring",
-	}
+    sets.weapons.Gung = {
+        main        = "Gungnir",
+        sub			= "Pole Grip",
+        ammo		= "Black Tathlum",
+    }
 
     sets.weapons.angon = {
 		ammo 		= "Angon",
@@ -449,4 +448,4 @@ end
 
  
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
-send_command('wait 1; input /cm u; wait 2; gs equip weapons.valk; wait 1; input /lockstyleset 7; wait 1; gs equip idle; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u; wait 2; gs equip weapons.Gung; wait 1; input /lockstyleset 7; wait 1; gs equip idle; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
