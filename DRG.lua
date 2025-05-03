@@ -1,4 +1,27 @@
+--[[
 
+-- About --
+
+    This lua file is for the Dragoon job. It is designed to be used with the GearSwap addon for Windower 4.
+    It includes sets for idle, melee, and WS gear, as well as functions for precasting, midcasting, and aftercasting spells.
+    As well as variables for changing weapons and melee modes and WS modifiers.
+    It also includes a function for checking the weather and day of the week to determine whether to use an obi or not.
+
+-- Comands --
+
+    wpn - Change weapons. Example: wpnValk or wpnSky
+    mel - Change melee mode. Example: melTP or melACC or melEVA
+    ethereal - Toggle ethereal earring on/off in melee set.
+
+-- Version --
+
+    v0 - Base sets and functions.
+
+
+-- Credits --
+
+    This lua is based on Enedin's DRG lua https://enedin.be/gs/Enedin_DRG_v2.13.lua, which was based on the original by Wren https://supernovaffxi.fandom.com/wiki/Wren%27s_Gearswaps .
+]]--
 
 ----------
 -- Sets --
@@ -6,7 +29,12 @@
 
 function get_sets()
 
+    -- Load the necessary files
+    -- Modes.lua this help on the use of cyclin/trigger/etc variables
     include('Modes.lua')
+
+    -- Idle sets
+    -- Has EVA and Damage reduction and absorbtion
 
     sets.idle = {
 
@@ -24,7 +52,11 @@ function get_sets()
         back        = "Boxer's Mantle",
     }
 
+    -- melee sets
     sets.melee = {}
+
+    -- TP sets
+    -- Priority: Haste > Att > Acc
 
     sets.melee.tp = {
 
@@ -42,6 +74,9 @@ function get_sets()
         back        = "Cerb. Mantle +1",
     }
 
+    -- Acc sets
+    -- Priority: Acc > Haste > Att
+
     sets.melee.acc = {
 
         head        = "Optical Hat",
@@ -58,7 +93,13 @@ function get_sets()
         back        = "Cuchulain's Mantle",
     }
 
+    -- EVA sets
+    -- Priority: EVA and Damage reduction
+
 	sets.melee.eva = sets.idle
+
+    -- WS sets
+    -- Priority: STR
 
     sets.ws = {
 
@@ -76,6 +117,8 @@ function get_sets()
         back        = "Cerb. Mantle +1",
     }
 
+    -- Jump sets
+    -- Priority: Jump > Att > STR
     sets.jump = {
 
         head        = "Hecatomb Cap +1",
@@ -92,12 +135,17 @@ function get_sets()
         back        = "Cerb. Mantle +1",
     }
 
+    -- Enhancing sets
+    -- Priority: Enhancing
+
     sets.enhancing = {
     
         back		= "Merciful Cape",
         left_ear	= "Augment. Earring",
     }
 
+    -- Stoneskin set
+    -- Priority: MND > Enhancing
     sets.enhancing.stoneskin = {
 
         head        = "Maat's Cap",
@@ -114,6 +162,27 @@ function get_sets()
         back        = "Merciful Cape",
     }
 
+    -- Cure potency sets
+    -- Priority: Cure potency > MND > Enhancing
+
+        sets.healing = {
+
+        head		= "Maat's Cap",
+        body		= "Blood Scale Mail",
+        hands		= "River Gauntlets",
+        legs		= "Homam Cosciales",
+        feet		= "Karasutengu",
+        neck		= "Gnole Torque",
+        waist		= "Ninurta's Sash",
+        left_ear	= "Roundel Earring",
+        right_ear	= "Celestial Earring",
+        left_ring	= "Celestial Ring",
+        right_ring	= "Celestial Ring",
+        back		= "Merciful Cape",
+    }
+    -- HP sets
+    -- Priority: HP+
+    -- This is use to increas the treshold for breath to trigger
     sets.hp = {
 
         body        = "Blood Scale Mail",
@@ -129,12 +198,19 @@ function get_sets()
         back        = "Behem. Mantle +1",
     }
 
+    -- Breath sets
+    -- Priority: Breath
+    -- This is use to increas the treshold for breath to trigger
+
     sets.breath = set_combine(sets.hp,{
 		head        = "Drachen Armet",
 	})
 
+    -- Breath potency sets
+    -- Priority: Breath potency > Wyrm HP+
+    -- The HP healer by healing breath is half of the wyrm HP, so we use wyrm HP+ gear
 
-    sets.breathpotency = { -- Wym. Armet +1 and Wyvern HP+ here
+    sets.breathpotency = {
         head		= "Wym. Armet +1",
         neck		= "Chanoix's Gorget",
         legs        = "Drachen Brais",
@@ -143,9 +219,15 @@ function get_sets()
         left_ear	= "Dragoon's Earring",
     }
 
+    -- Call Wyvern set
 	sets.callwyvern = {body	= "Wym. Mail +1"}
 
+    -- Angon set
+
     sets.angon = {left_ear	= "Dragoon's Earring"}
+
+    -- Fast cast sets
+    -- Priority: Fast cast > Haste
 
     sets.fastcasthaste = {
         head        = "Walahra Turban",
@@ -158,6 +240,9 @@ function get_sets()
         back        = "Warlock's Mantle",
     }
 
+    -- Resting sets
+    -- Priority: hMP+ > hHP+
+
     sets.rest = { -- hMP
         body		= "Wyvern Mail",
         neck		= "Gnole Torque",
@@ -165,7 +250,11 @@ function get_sets()
         right_ring  = "Celestial Ring",
     }
 
+    -- Obi sets
+
     sets.matching_dayweather = {waist = "Hachirin-no-Obi"}
+
+    --Weapons sets
 
     sets.weapons = {}
 
@@ -186,10 +275,17 @@ function get_sets()
 		ammo 		= "Angon",
 	}
 
-	footwork = false
-	currentWeapons = 'Valk'
-	meleeMode = M{'tp','acc','eva'}
 
+    -- Variables
+
+    -- This is used to check if the ethereal earring is used in the melee set
+	ethereal = false
+
+    -- This is used to check what weapons are currently equipped
+    currentWeapons = 'Valk'
+
+    -- This is used to check what melee mode is currently set
+    meleeMode = M{'tp','acc','eva'}
 end
 
 ---------------
@@ -212,6 +308,7 @@ function choose_set()
     end
 end
 
+---- This function decides which melee set to use based on the current melee mode and if the ethereal earring is used or not
 function equip_engaged()
 	equip(sets.melee[meleeMode.value])
     if ethereal and (player.sub_job == 'RDM' or player.sub_job == 'WHM' or player.sub_job == 'BLU') then equip({left_ear="Ethereal Earring"}) end
@@ -226,7 +323,6 @@ function obi_check(spell)
     local weak_to_element = {Dark       = "Light",Light  = "Dark",Ice      = "Fire",Wind    = "Ice",Earth      = "Wind",Lightning   = "Earth",Water    = "Lightning",Fire    = "Water",}
     local weakEle = weak_to_element[spell.element]
 	
-	-- Iridescence trait on Chatoyant/Claustrum makes single weather stronger than day of the week, so we don't want to equip obi if day gives bonus but weather gives penalty
     if world.weather_element == spell.element or (world.day_element == spell.element and world.weather_element ~= weakEle) then
         return true
     else
@@ -268,6 +364,7 @@ function precast(spell)
 	end
 end
 
+-- During casting/using ability
 function midcast(spell)
 
     -- Equip breath gear on magic
@@ -292,18 +389,23 @@ function midcast(spell)
     end
 end
 
+-- During pet's casting/using ability
 function pet_midcast(spell)
     equip(sets.breathpotency)
 end
 
+-- After casting/using ability
 function aftercast(spell)
-    if spell.name == 'Stone' or spell.name == 'Cure' or spell.name == 'Regen' then 
+    if spell.name == 'Stone' or 
+        spell.name == 'Cure' or 
+        spell.name == 'Regen' then 
     elseif spell.name == "Angon" then 
         equip(sets.weapons[currentWeapons])
         choose_set()
     else choose_set() end
 end
 
+-- Afeter pet's casting/using ability
 function pet_aftercast(spell)
     if spell.name:contains('Breath') then
         choose_set()
