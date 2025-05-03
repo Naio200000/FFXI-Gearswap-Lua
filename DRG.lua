@@ -16,7 +16,7 @@
 -- Version --
 
     v0 - Base sets and functions.
-
+    v1 - Add Gugnir and healing sets.
 
 -- Credits --
 
