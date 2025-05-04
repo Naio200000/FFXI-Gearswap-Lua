@@ -2,7 +2,7 @@
 
 -- About --
 
-    This lua file is for the Samurai job. It is designed to be used with the GearSwap addon for Windower 4.
+    This lua file is for the Monk job. It is designed to be used with the GearSwap addon for Windower 4.
     It includes sets for idle, melee, and WS gear, as well as functions for precasting, midcasting, and aftercasting spells.
     As well as variables for changing weapons and melee modes and WS modifiers.
 	It also includes a function for buff changes, specifically for the Third Eye ability.
@@ -11,15 +11,11 @@
 
     wpn - Change weapons. Example: wpnValk or wpnSky
     mel - Change melee mode. Example: melTP or melACC or melEVA
-	wsk - Change WS mode. Example: wskSTR or wskDEX or wskBAL
-	thirdeye - Enable/disable Third Eye. Example: thirdeye on or thirdeye off
+	footwork - Enable/disable Third Eye. Example: thirdeye on or thirdeye off
 	
 -- Version --
 
     v0 - Base sets and functions.
-	v1 - Add Third Eye and Meditate sets.
-	v2 - Add Jump sets and functions.
-	v3 - Add Range sets and functions.
 
 -- Credits --
 
@@ -44,19 +40,19 @@ function get_sets()
 
 	sets.idle = {
 
-		ammo="Bibiki Seashell",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Seiryu's Kote",
-		legs="Hachiryu Haidate",
-		feet="Askar Gambieras",
-		neck="Evasion Torque",
-		waist="Scouter's Rope",
-		left_ear="Triton Earring",
-		right_ear="Novia Earring",
-		left_ring="Shadow Ring",
-		right_ring="Wivre Ring +1",
-		back="Boxer's Mantle",
+        ammo="Bibiki Seashell",
+        head="Optical Hat",
+        body="Antares Harness",
+        hands="Seiryu's Kote",
+        legs="Raven Hose",
+        feet="Setanta's Led.",
+        neck="Guarding Torque",
+        waist="Scouter's Rope",
+        left_ear="Triton Earring",
+        right_ear="Novia Earring",
+        left_ring="Shadow Ring",
+        right_ring="Wivre Ring +1",
+        back="Boxer's Mantle",
 	}
 
     -- melee sets
@@ -67,19 +63,19 @@ function get_sets()
 
 	sets.melee.tp = {
 
-		ammo="White Tathlum",
-		head="Ace's Helm",
-		body="Hachiryu Haramaki",
-		hands="Dusk Gloves +1",
-		legs="Byakko's Haidate",
-		feet="Fuma Sune-Ate",
-		neck="Ancient Torque",
-		waist="Speed Belt",
-		left_ear="Ethereal Earring",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+        ammo="White Tathlum",
+        head="Walahra Turban",
+        body="Hachiryu Haramaki",
+        hands="Hachiryu Kote",
+        legs="Byakko's Haidate",
+        feet="Setanta's Led.",
+        neck="Faith Torque",
+        waist="Black Belt",
+        left_ear="Ethereal Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Rajas Ring",
+        back="Cerb. Mantle +1",
 	}
 
 	-- Acc sets
@@ -87,19 +83,19 @@ function get_sets()
 	
 	sets.melee.acc = {
 
-		ammo="Black Tathlum",
-		head="Ace's Helm",
-		body="Hachiryu Haramaki",
-		hands="Hachiryu Kote",
-		legs="Byakko's Haidate",
-		feet="Enkidu's Leggings",
-		neck="Ancient Torque",
-		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Toreador's Ring",
-		back="Cuchulain's Mantle",
+        ammo="Black Tathlum",
+        head="Optical Hat",
+        body="Hachiryu Haramaki",
+        hands="Hachiryu Kote",
+        legs="Byakko's Haidate",
+        feet="Setanta's Led.",
+        neck="Ancient Torque",
+        waist="Black Belt",
+        left_ear="Adroit Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Toreador's Ring",
+        back="Cuchulain's Mantle",
 	}
 
 	-- EVA sets
@@ -116,59 +112,39 @@ function get_sets()
 
 	sets.ws.str = {
 
-		ammo="Black Tathlum",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Alkyoneus's Brc.",
-		legs="Hachiryu Haidate",
-		feet="Creek M Clomps",
-		neck="Fotia Gorget",
-		waist="Warwolf Belt",
-		left_ear="Harmonius Earring",
-		right_ear="Brutal Earring",
-		left_ring="Harmonius Ring",
-		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+        ammo="Black Tathlum",
+        head="Gnadbhod's Helm",
+        body="Kirin's Osode",
+        hands="Alkyoneus's Brc.",
+        legs="Hachiryu Haidate",
+        feet="Setanta's Led.",
+        neck="Fotia Gorget",
+        waist="Black Belt",
+        left_ear="Harmonius Earring",
+        right_ear="Brutal Earring",
+        left_ring="Harmonius Ring",
+        right_ring="Rajas Ring",
+        back="Cerb. Mantle +1",
 	}
 
 	-- WS.DEX sets
-	-- Priority: DEX > Att > Acc
+	-- Priority: Acc > DEX > Att
 
-	sets.ws.dex = {
+	sets.ws.acc = {
 
-		ammo="Black Tathlum",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Hachiryu Kote",
-		legs="Byakko's Haidate",
-		feet="Enkidu's Leggings",
-		neck="Fotia Gorget",
-		waist="Cuchulain's Belt",
-		left_ear="Adroit Earring",
-		right_ear="Brutal Earring",
-		left_ring="Thunder Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
-	}
-
-	-- WS.BAL sets
-	-- Priority: DEX + STR > Att > Acc
-
-	sets.ws.bal = {
-
-		ammo="Black Tathlum",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Alkyoneus's Brc.",
-		legs="Byakko's Haidate",
-		feet="Creek M Clomps",
-		neck="Fotia Gorget",
-		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Harmonius Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
+        ammo="Black Tathlum",
+        head="Optical Hat",
+        body="Hachiryu Haramaki",
+        hands="Hachiryu Kote",
+        legs="Byakko's Haidate",
+        feet="Setanta's Led.",
+        neck="Fotia Gorget",
+        waist="Black Belt",
+        left_ear="Adroit Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Toreador's Ring",
+        back="Cuchulain's Mantle",
 	}
 
 	-- fastcast sets
@@ -176,12 +152,11 @@ function get_sets()
 
 	sets.fastcast = {
 
-		head="Walahra Turban",
-		hands="Dusk Gloves +1",
-		legs="Byakko's Haidate",
-		feet="Dusk Ledelsens +1",
-		waist="Speed Belt",
-		right_ear="Loquac. Earring",
+        head="Acubens Helm",
+        legs="Byakko's Haidate",
+        feet="Setanta's Led.",,
+        waist="Black Belt",
+        right_ear="Loquac. Earring",,
 	}
 
 	-- Resting sets
