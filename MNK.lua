@@ -11,12 +11,12 @@
 
     wpn - Change weapons. Example: wpnValk or wpnSky
     mel - Change melee mode. Example: melTP or melACC or melEVA
-	footwork - Enable/disable Third Eye. Example: thirdeye on or thirdeye off
 	
 -- Version --
 
     v0 - Base sets and functions.
 	v1 - Added movement speed and EVA sets.
+	v2 - Added footwork sets and functions.
 
 -- Credits --
 
@@ -210,25 +210,33 @@ function get_sets()
 		hands="Temple Gloves",
 	}
 
+	-- Footwork sets
+	-- Equip Wulong Shoes +1
+
+	sets.skills.footwork = {
+
+		feet="Wulong Shoes +1",
+	}
+
 	-- Weapons sets
 
 	sets.weapons = {}
 
-	-- Hagun sets
+	-- Spharai sets
 
 	sets.weapons.spharai = {
 
 		main		= "Spharai",
 	}
 
-	-- Nanatsusaya sets
+	-- Shenlong sets
 
 	sets.weapons.shenlong = {
 
 		main="Shlng. Baghnakhs",
 	}
 
-	-- Set for any weapon
+	-- Cross-Counters sets
 
 	sets.weapons.cross = {
 
@@ -259,11 +267,10 @@ end
 -- This function is called when players changes status (engaged/resting/idle)
 -- It will check if thirdeye is active or not and equip the correct gear
 function status_change(new,old)
-	if thirdeye then 
-		windower.add_to_chat(122,'Fighting with Saotome Haidate') 
-	else
-		choose_set()
+	if footwork then 
+		windower.add_to_chat(122,'Fighting with Wulong Shoes +1') 
 	end
+	choose_set()
 end
 
 -- Main function to choose the correct set based on the current status
@@ -279,10 +286,6 @@ end
  -- This function is called when the player is engaged in combat
 function equip_engaged()
 	equip(sets.melee[meleeMode.value])
-	if player.sub_job == 'RNG' then
-		equip(sets.weapons.range)
-		disable('range','ammo')
-	end
 end	
  
 -- This function is called when the player is idle
@@ -290,13 +293,13 @@ function equip_idle()
 	equip(sets.idle)
 end	
 
--- This function is used to enable legs when thirdeye is not active
+-- This function is used to enable legs when footwork is not active
 function buff_change(name,gain)
-	if name == 'Third Eye' then
+	if name == 'Footwork' then
 		if gain == false then
-			thirdeye = false 
-			enable('legs')
-			windower.add_to_chat(122, 'Third Eye wore, removing Saotome Haidate gear, back to normal.')
+			footwork = false 
+			enable('feet')
+			windower.add_to_chat(122, 'Footwork wore, removing Wulong Shoes +1, back to normal.')
 			choose_set()
 		else 
 			choose_set()
@@ -311,25 +314,19 @@ end
 -- Before casting/using ability
 function precast(spell, spellMap, action)
 
-	if spell.name == 'Third Eye' then
-		equip(sets.skills.thirdeye)
-		disable('legs')
-		thirdeye = true
-	elseif spell.action_type == 'Ranged Attack' then equip(sets.range.tp)
-	elseif spell.name == 'Meditate' then equip(sets.skills.meditate)
-	elseif spell.name:contains('Jump') then equip(sets.skills.jump)
+	if spell.name == 'Footwork' then
+		equip(sets.skills.footwork)
+		disable('feet')
+		footwork = true
+	elseif spell.name == 'Chakra' then equip(sets.skills.chakra)
+	elseif spell.name == 'Focus' then equip(sets.skills.focus)
+	elseif spell.name == 'Boost' then equip(sets.skills.boost)
 	elseif spell.name:contains('Utsusemi') then	equip(sets.melee.eva,sets.fastcast)
-	    -- Weaponskills   sets.ws.str, sets.ws.dex, sets.ws.bal
     elseif spell.type == 'WeaponSkill' then
-		if player.target.distance > 15.90 then
-			add_to_chat(122,'You are too far to WS.')
-			cancel_spell()
+		if spell.name == 'Asuran Fist' then 
+			equip(sets.ws.acc)
 		else
-			if spell.name == 'Sidewinder' then
-				equip(sets.range.ws)
-			else 
-				equip(sets.ws[wsMode.value])
-			end
+			equip(sets.ws.str)
 		end
 	end
 end
@@ -359,16 +356,9 @@ function self_command(command)
 		choose_set()
 		windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
 
-	-- Change WS mode
-	elseif string.sub(command, 1, 3) == "wsk" then
-	
-		local wsk = string.sub(command, 4, -1)
-		wsMode:set(wsk)
-		choose_set()
-		windower.add_to_chat(122,'WeaponSkilling in ' .. wsMode.current)
 	end
 end
 
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
-send_command('wait 1; input /cm u;  wait 1; gs equip idle; wait 1; gs equip weapons.nanatsu; wait 1; input /lockstyleset 11; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;  wait 1; gs equip idle; wait 1; gs equip weapons.spharai; wait 1; input /lockstyleset 6; wait 1; input /echo Gearswap loaded.')
