@@ -42,7 +42,7 @@ function get_sets()
 
     sets.idle = {
 
-        ammo        = "Black Tathlum",
+		ammo        = "Bibiki Seashell",
         head        = "Nocturnus Helm",
         body        = "Nocturnus Mail",
         hands       = "Blood Fng. Gnt.",
