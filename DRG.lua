@@ -40,7 +40,7 @@ function get_sets()
 
     sets.idle = {
 
-        ammo        = "White Tathlum",
+        ammo        = "Black Tathlum",
         head        = "Nocturnus Helm",
         body        = "Nocturnus Mail",
         hands       = "Blood Fng. Gnt.",
@@ -63,7 +63,7 @@ function get_sets()
 
     sets.melee.tp = {
 
-        ammo        = "White Tathlum",
+        ammo        = "Black Tathlum",
         head        = "Ace's Helm",
         body        = "Nocturnus Mail",
         hands       = "Dusk Gloves +1",
@@ -83,7 +83,7 @@ function get_sets()
 
     sets.melee.acc = {
 
-        ammo        = "White Tathlum",
+        ammo        = "Black Tathlum",
         head        = "Optical Hat",
         body        = "Homam Corazza",
         hands       = "Homam Manopolas",
@@ -112,7 +112,7 @@ function get_sets()
 
     sets.ws.tp = {
 
-        ammo        = "White Tathlum",
+        ammo        = "Black Tathlum",
         head        = "Nocturnus Helm",
         body        = "Nocturnus Mail",
         hands       = "Hct. Mittens +1",
@@ -132,7 +132,7 @@ function get_sets()
 
     sets.ws.acc = {
 
-        ammo        = "White Tathlum",
+        ammo        = "Black Tathlum",
         head        = "Hecatomb Cap +1",
         body        = "Hct. Harness +1",
         hands       = "Hct. Mittens +1",
@@ -154,7 +154,7 @@ function get_sets()
     -- Priority: Jump > Att > STR
     sets.jump = {
 
-        ammo        = "White Tathlum",
+        ammo        = "Black Tathlum",
         head        = "Hecatomb Cap +1",
         body        = "Nocturnus Mail",
         hands       = "Hct. Mittens +1",
