@@ -17,6 +17,7 @@
 
     v0 - Base sets and functions.
     v1 - Add Gugnir and healing sets.
+    v2 - Add Jump and High Jump sets with precast functions.
 
 -- Credits --
 
@@ -124,7 +125,7 @@ function get_sets()
         head="Hecatomb Cap +1",
         body="Nocturnus Mail",
         hands="Hct. Mittens +1",
-        legs="Wym. Brais +1",
+        legs        = "Conte Cosciales",
         feet="Drachen Greaves",
         neck="Ancient Torque",
         waist="Warwolf Belt",
@@ -134,6 +135,11 @@ function get_sets()
         right_ring="Rajas Ring",
         back="Cerb. Mantle +1",
     }
+
+    sets.highjump = set_combine(sets.jump,{
+        legs        = "Wym. Brais +1",
+    })
+
 
     -- Enhancing sets
     -- Priority: Enhancing
@@ -360,7 +366,8 @@ function precast(spell)
 		-- Cancel sneak when using Spectral Jig
 		if spell.name == "Spectral Jig" then send_command("cancel sneak")
 		elseif spell.type == 'WeaponSkill' then equip(sets.ws)
-		elseif spell.name:contains('Jump') then equip(sets.jump)
+        elseif spell.name == 'Jump' then equip(sets.jump)
+        elseif spell.name == 'High Jump' then equip(sets.highjump)
 		elseif spell.name == 'Angon' then equip(sets.angon,sets.weapons.angon)		
 		elseif spell.name == 'Call Wyvern' then equip(sets.callwyvern)
 		elseif spell.name:contains('Utsusemi') then equip(sets.eva,sets.fastcasthaste)
