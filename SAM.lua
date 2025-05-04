@@ -17,7 +17,7 @@
 -- Version --
 
     v0 - Base sets and functions.
-
+	v1 - Add Third Eye and Meditate sets.
 
 -- Credits --
 
@@ -199,6 +199,13 @@ function get_sets()
 		hands="Saotome Kote",
 	}
 
+	-- Third Eye sets
+	--Equip Saotome Haidate
+
+	sets.skills.thirdeye = {
+		legs="Saotome Haidate",
+	}
+
 	-- Weapons sets
 
 	sets.weapons = {}
@@ -207,17 +214,21 @@ function get_sets()
 
 	sets.weapons.hagun = {
 		main		= "Hagun",
+		sub			= "Pole Grip",
 	}
 
 	-- Nanatsusaya sets
 
 	sets.weapons.nanatsu = {
 		main		= "Nanatsusaya",
+		sub			= "Pole Grip",
 	}
 
 	-- Set for any weapon
 
-	sets.weapons.any = {}
+	sets.weapons.any = {
+		sub			= "Pole Grip",
+	}
 
 	---------------
 	-- Variables --
@@ -295,7 +306,7 @@ end
 function precast(spell, spellMap, action)
 
 	if spell.name == 'Third Eye' then
-		equip({legs="Saotome Haidate",})
+		equip(sets.skills.thirdeye)
 		disable('legs')
 		thirdeye = true
 	
