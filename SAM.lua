@@ -182,6 +182,10 @@ function get_sets()
 		right_ear="Loquac. Earring",
 	}
 
+	-- Resting sets
+
+	sets.rest = {}
+
 	-- Skill sets
 
 	sets.skills = {}
@@ -230,7 +234,7 @@ function get_sets()
 	meleeMode = M{'tp','acc','eva'}
 
 	-- This is used to check what WS mode is currently set
-	
+
 	wsMode = M{'str','dex','bal'}
 
 end
@@ -239,6 +243,8 @@ end
 -- Functions --
 ---------------
 
+-- This function is called when players changes status (engaged/resting/idle)
+-- It will check if thirdeye is active or not and equip the correct gear
 function status_change(new,old)
 	if thirdeye then 
 		windower.add_to_chat(122,'Fighting with Saotome Haidate') 
@@ -247,6 +253,7 @@ function status_change(new,old)
 	end
 end
 
+-- Main function to choose the correct set based on the current status
 function choose_set()
     if player.status == "Engaged" then
         equip_engaged()
@@ -256,17 +263,18 @@ function choose_set()
         equip_idle()
     end
 end
- 
+ -- This function is called when the player is engaged in combat
 function equip_engaged()
 	equip(sets.melee[meleeMode.value])
 end	
-
+ 
+-- This function is called when the player is idle
 function equip_idle()
 	equip(sets.idle)
 end	
 
+-- This function is used to enable legs when thirdeye is not active
 function buff_change(name,gain)
-
 	if name == 'Third Eye' then
 		if gain == false then
 			thirdeye = false 
@@ -278,10 +286,12 @@ function buff_change(name,gain)
 		end
 	end
 end
+
 -----------------------
 -- Pre/mid/aftercast --
 -----------------------
 
+-- Before casting/using ability
 function precast(spell, spellMap, action)
 
 	if spell.name == 'Third Eye' then
@@ -295,15 +305,20 @@ function precast(spell, spellMap, action)
 	elseif spell.name:contains('Utsusemi') then
 		equip(sets.melee.eva,sets.fastcast)
 
-	    -- Weaponskills   sets.ws.de
+	    -- Weaponskills   sets.ws.str, sets.ws.dex, sets.ws.bal
     elseif spell.type == 'WeaponSkill' then
 		equip(sets.ws[wsMode.value])
 	end
 end
 
+-- After casting/using ability
 function aftercast(spell)
 	choose_set()
 end
+
+---------------------
+-- Player commands --
+--------------------- 
 
 function self_command(command)
 
