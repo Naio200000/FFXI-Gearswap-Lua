@@ -38,18 +38,18 @@ function get_sets()
 
     sets.idle = {
 
-        head        = "Optical Hat",
-        body        = "Hydra Mail +1",
-        hands       = "Akinji Bazubands",
-        legs        = "Blood Cuisses",
-        feet        = "Askar Gambieras",
-        neck        = "Evasion Torque",
-        waist       = "Warwolf Belt",
-        left_ear    = "Triton Earring",
-        right_ear   = "Novia Earring",
-		left_ring   = "Shadow Ring",
-        right_ring  = "Wivre Ring +1",
-        back        = "Boxer's Mantle",
+        head="Nocturnus Helm",
+        body="Nocturnus Mail",
+        hands="Blood Fng. Gnt.",
+        legs="Blood Cuisses",
+        feet="Askar Gambieras",
+        neck="Evasion Torque",
+        waist="Warwolf Belt",
+        left_ear="Ethereal Earring",
+        right_ear="Novia Earring",
+        left_ring="Shadow Ring",
+        right_ring="Wivre Ring +1",
+        back="Boxer's Mantle",
     }
 
     -- melee sets
@@ -60,18 +60,18 @@ function get_sets()
 
     sets.melee.tp = {
 
-        head        = "Ace's Helm",
-        body        = "Askar Korazin",
-        hands       = "Dusk Gloves +1",
-        legs        = "Homam Cosciales",
-        feet        = "Homam Gambieras",
-        neck        = "Love Torque",
-        waist       = "Speed Belt",
-        left_ear    = "Pixie Earring",
-        right_ear   = "Brutal Earring",
-		left_ring   = "Mars's Ring",
-        right_ring  = "Rajas Ring",
-        back        = "Cerb. Mantle +1",
+        head="Ace's Helm",
+        body="Nocturnus Mail",
+        hands="Dusk Gloves +1",
+        legs="Homam Cosciales",
+        feet="Homam Gambieras",
+        neck="Love Torque",
+        waist="Speed Belt",
+        left_ear="Ethereal Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Rajas Ring",
+        back="Cerb. Mantle +1",
     }
 
     -- Acc sets
@@ -79,18 +79,18 @@ function get_sets()
 
     sets.melee.acc = {
 
-        head        = "Optical Hat",
-        body        = "Homam Corazza",
-        hands       = "Homam Manopolas",
-        legs        = "Homam Cosciales",
-        feet        = "Homam Gambieras",
-        neck        = "Ancient Torque",
-        waist       = "Speed Belt",
-        left_ear    = "Pixie Earring",
-        right_ear   = "Brutal Earring",
-        left_ring   = "Mars's Ring",
-        right_ring  = "Toreador's Ring",
-        back        = "Cuchulain's Mantle",
+        head="Optical Hat",
+        body="Homam Corazza",
+        hands="Homam Manopolas",
+        legs="Homam Cosciales",
+        feet="Homam Gambieras",
+        neck="Ancient Torque",
+        waist="Speed Belt",
+        left_ear="Pixie Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Toreador's Ring",
+        back="Cuchulain's Mantle",
     }
 
     -- EVA sets
@@ -103,36 +103,36 @@ function get_sets()
 
     sets.ws = {
 
-        head        = "Hecatomb Cap +1",
-        body        = "Hct. Harness +1",
-        hands       = "Hct. Mittens +1",
-        legs        = "Hct. Subligar +1",
-        feet        = "Hct. Leggings +1",
-        neck        = "Fotia Gorget",
-        waist       = "Warwolf Belt",
-        left_ear    = "Tmph. Earring +1",
-        right_ear   = "Brutal Earring",
-        left_ring   = "Harmonius Ring",
-        right_ring  = "Rajas Ring",
-        back        = "Cerb. Mantle +1",
+        head="Hecatomb Cap +1",
+        body="Nocturnus Mail",
+        hands="Hct. Mittens +1",
+        legs="Hct. Subligar +1",
+        feet="Hct. Leggings +1",
+        neck="Fotia Gorget",
+        waist="Warwolf Belt",
+        left_ear="Harmonius Earring",
+        right_ear="Brutal Earring",
+        left_ring="Harmonius Ring",
+        right_ring="Rajas Ring",
+        back="Cerb. Mantle +1",
     }
 
     -- Jump sets
     -- Priority: Jump > Att > STR
     sets.jump = {
 
-        head        = "Hecatomb Cap +1",
-        body        = "Hct. Harness +1",
-        hands       = "Hct. Mittens +1",
-        legs        = "Wym. Brais +1",
-        feet        = "Drachen Greaves",
-        neck        = "Ancient Torque",
-        waist       = "Warwolf Belt",
-        left_ear    = "Tmph. Earring +1",
-        right_ear   = "Brutal Earring",
-        left_ring   = "Toreador's Ring",
-        right_ring  = "Rajas Ring",
-        back        = "Cerb. Mantle +1",
+        head="Hecatomb Cap +1",
+        body="Nocturnus Mail",
+        hands="Hct. Mittens +1",
+        legs="Wym. Brais +1",
+        feet="Drachen Greaves",
+        neck="Ancient Torque",
+        waist="Warwolf Belt",
+        left_ear="Pixie Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Rajas Ring",
+        back="Cerb. Mantle +1",
     }
 
     -- Enhancing sets
@@ -140,26 +140,27 @@ function get_sets()
 
     sets.enhancing = {
     
-        back		= "Merciful Cape",
-        left_ear	= "Augment. Earring",
+        neck="Enhancing Torque",
+        left_ear="Augment. Earring",
+        back="Merciful Cape",
     }
 
     -- Stoneskin set
     -- Priority: MND > Enhancing
     sets.enhancing.stoneskin = {
 
-        head        = "Maat's Cap",
-        body        = "Blood Scale Mail",
-        hands       = "Homam Manopolas",
-        legs        = "Homam Cosciales",
-        feet        = "Homam Gambieras",
-        neck        = "Faith Torque",
-        waist       = "Steppe Rope",
-        left_ear    = "Celestial Earring",
-        right_ear   = "Loquac. Earring",
-        left_ring   = "Karka Ring",
-        right_ring  = "Celestial Ring",
-        back        = "Merciful Cape",
+        head="Maat's Cap",
+        body="Blood Scale Mail",
+        hands="Marine F Gloves",
+        legs="Homam Cosciales",
+        feet="River Gaiters",
+        neck="Gnole Torque",
+        waist="Steppe Rope",
+        left_ear="Celestial Earring",
+        right_ear="Celestial Earring",
+        left_ring="Karka Ring",
+        right_ring="Celestial Ring",
+        back="Merciful Cape",
     }
 
     -- Cure potency sets
@@ -167,35 +168,37 @@ function get_sets()
 
         sets.healing = {
 
-        head		= "Maat's Cap",
-        body		= "Blood Scale Mail",
-        hands		= "River Gauntlets",
-        legs		= "Homam Cosciales",
-        feet		= "Karasutengu",
-        neck		= "Gnole Torque",
-        waist		= "Ninurta's Sash",
-        left_ear	= "Roundel Earring",
-        right_ear	= "Celestial Earring",
-        left_ring	= "Celestial Ring",
-        right_ring	= "Celestial Ring",
-        back		= "Merciful Cape",
+            head="Maat's Cap",
+            body="Blood Scale Mail",
+            hands="Marine F Gloves",
+            legs="Homam Cosciales",
+            feet="River Gaiters",
+            neck="Gnole Torque",
+            waist="Steppe Rope",
+            left_ear="Roundel Earring",
+            right_ear="Celestial Earring",
+            left_ring="Karka Ring",
+            right_ring="Celestial Ring",
+            back="Merciful Cape",
     }
     -- HP sets
     -- Priority: HP+
     -- This is use to increas the treshold for breath to trigger
     sets.hp = {
 
-        body        = "Blood Scale Mail",
-        hands       = "Creek M Mitts",
-        legs        = "Homam Cosciales",
-        feet        = "Homam Gambieras",
-        neck        = "Promise Badge",
-        waist       = "Steppe Belt",
-        left_ear    = "Harmonius Earring",
-        right_ear   = "Harmonius Earring",
-        left_ring   = "Bloodbead Ring",
-        right_ring  = "Bomb Queen Ring",
-        back        = "Behem. Mantle +1",
+        ammo="White Tathlum",
+        head="Walahra Turban",
+        body="Blood Scale Mail",
+        hands="Creek M Mitts",
+        legs="Blood Cuisses",
+        feet="Creek M Clomps",
+        neck="Tempered Chain",
+        waist="Steppe Belt",
+        left_ear="Harmonius Earring",
+        right_ear="Harmonius Earring",
+        left_ring="Bomb Queen Ring",
+        right_ring="Bloodbead Ring",
+        back="Gigant Mantle",
     }
 
     -- Breath sets
@@ -211,12 +214,13 @@ function get_sets()
     -- The HP healer by healing breath is half of the wyrm HP, so we use wyrm HP+ gear
 
     sets.breathpotency = {
-        head		= "Wym. Armet +1",
-        neck		= "Chanoix's Gorget",
-        legs        = "Drachen Brais",
-        feet		= "Homam Gambieras",
-        body		= "Wyvern Mail",
-        left_ear	= "Dragoon's Earring",
+        head="Wym. Armet +1",
+        body="Wyvern Mail",
+        hands="Ostreger Mitts",
+        legs="Drachen Brais",
+        feet="Homam Gambieras",
+        neck="Chanoix's Gorget",
+        left_ear="Dragoon's Earring",
     }
 
     -- Call Wyvern set
@@ -230,14 +234,15 @@ function get_sets()
     -- Priority: Fast cast > Haste
 
     sets.fastcasthaste = {
-        head        = "Walahra Turban",
-        body        = "Wym. Mail +1",
-        hands       = "Dusk Gloves +1",
-        legs        = "Homam Cosciales",
-        feet        = "Homam Gambieras",
-        waist       = "Speed Belt",
-        right_ear   = "Loquac. Earring",
-        back        = "Warlock's Mantle",
+        head="Walahra Turban",
+        body="Wym. Mail +1",
+        hands="Dusk Gloves +1",
+        legs="Homam Cosciales",
+        feet="Homam Gambieras",
+        waist="Speed Belt",
+        left_ear="Loquac. Earring",
+        right_ear="Novia Earring",
+        back="Warlock's Mantle",
     }
 
     -- Resting sets
