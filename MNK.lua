@@ -16,6 +16,7 @@
 -- Version --
 
     v0 - Base sets and functions.
+	v1 - Added movement speed and EVA sets.
 
 -- Credits --
 
@@ -163,15 +164,18 @@ function get_sets()
 	}
 
 	-- Resting sets
+	-- Priority: hHP+
+	sets.rest = {
 
-	sets.rest = {}
+		back="Melee Cape",
+	}
 
 	-- Skill sets
 
 	sets.skills = {}
 
-	-- Meditate sets
-	-- Equip Meditate gear
+	-- Chackra sets
+	-- Equip Chackra gear and VIT+ gear
 
 	sets.skills.chakra = {
 
@@ -190,76 +194,20 @@ function get_sets()
 		back="Melee Cape",
 	}
 
-	-- Third Eye sets
-	--Equip Saotome Haidate
+	-- Focus sets
+	--Equip Temple Crown
 
 	sets.skills.focus = {
+
 		head="Temple Crown",
 	}
 	
+	-- Dodge sets
+	-- Equip Temple Gloves
+
 	sets.skills.boost = {
+
 		hands="Temple Gloves",
-	}
-	-- Jump sets
-	-- Priority: Store TP > Acc > Att
-
-	sets.skills.jump = {
-
-		ammo="White Tathlum",
-		head="Ace's Helm",
-		body="Hachiryu Haramaki",
-		hands="Hachiryu Kote",
-		legs="Hachiryu Haidate",
-		feet="Enkidu's Leggings",
-		neck="Chivalrous Chain",
-		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
-	}
-
-	-- Range sets
-
-	sets.range = {}
-
-	-- Range TP sets
-	-- Priority: Racc > Ratt > Sharpshoot
-
-	sets.range.tp  = {
-
-		head="Zha'Go's Barbut",
-		body="Kyudogi +1",
-		hands="Seiryu's Kote",
-		legs="Oily Trousers",
-		feet="Enkidu's Leggings",
-		neck="Hope Torque",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Behemoth Ring +1",
-		back="Amemet Mantle +1",
-	}
-
-	-- Range WS sets
-	-- Priority: STR > Ratt > AGI
-
-	sets.range.ws = {
-
-		head="Zha'Go's Barbut",
-		body="Kyudogi +1",
-		hands="Seiryu's Kote",
-		legs="Oily Trousers",
-		feet="Enkidu's Leggings",
-		neck="Fotia Gorget",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Rajas Ring",
-		back="Amemet Mantle +1",
 	}
 
 	-- Weapons sets
@@ -268,48 +216,39 @@ function get_sets()
 
 	-- Hagun sets
 
-	sets.weapons.hagun = {
-		main		= "Hagun",
-		sub			= "Pole Grip",
+	sets.weapons.spharai = {
+
+		main		= "Spharai",
 	}
 
 	-- Nanatsusaya sets
 
-	sets.weapons.nanatsu = {
-		main		= "Nanatsusaya",
-		sub			= "Pole Grip",
+	sets.weapons.shenlong = {
+
+		main="Shlng. Baghnakhs",
 	}
 
 	-- Set for any weapon
 
-	sets.weapons.any = {
-		sub			= "Pole Grip",
+	sets.weapons.cross = {
+
+		main="Cross-Counters",
 	}
 
-	-- Set for range weapons
-	sets.weapons.range = {
-
-		range		= "Shigeto Bow +1",
-		ammo		= "Kabura Arrow",
-	}
 
 	---------------
 	-- Variables --
 	---------------
 
-	-- This is used to if thirdeye is active or not
+	-- This is used to if footwork is active or not
 
-	thirdeye = false
+	footwork = false
 	
     -- This is used to check what weapons are currently equipped
-	currentWeapons = 'nanatsu'
+	currentWeapons = 'spharai'
 
     -- This is used to check what melee mode is currently set
 	meleeMode = M{'tp','acc','eva'}
-
-	-- This is used to check what WS mode is currently set
-
-	wsMode = M{'str','dex','bal'}
 
 end
 
