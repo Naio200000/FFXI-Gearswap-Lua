@@ -304,11 +304,15 @@ function get_sets()
 
     sets.weapons = {}
 
+    -- Valkyrie's Fork set
+
     sets.weapons.Valk = {
         main        = "Valkyrie's Fork",
 		sub			= "Pole Grip",
 		ammo		= "Black Tathlum",
 	}
+
+    -- Gungnir set
 
     sets.weapons.Gung = {
         main        = "Gungnir",
@@ -316,12 +320,15 @@ function get_sets()
         ammo		= "Black Tathlum",
     }
 
+    -- Angon set
+
     sets.weapons.angon = {
 		ammo 		= "Angon",
 	}
 
-
-    -- Variables
+	---------------
+	-- Variables --
+	---------------
 
     -- This is used to check if the ethereal earring is used in the melee set
 	ethereal = true
