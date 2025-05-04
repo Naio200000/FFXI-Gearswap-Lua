@@ -322,10 +322,10 @@ function get_sets()
     -- Variables
 
     -- This is used to check if the ethereal earring is used in the melee set
-	ethereal = false
+	ethereal = true
 
     -- This is used to check what weapons are currently equipped
-    currentWeapons = 'Valk'
+    currentWeapons = 'Gung'
 
     -- This is used to check what melee mode is currently set
     meleeMode = M{'tp','acc','eva'}
