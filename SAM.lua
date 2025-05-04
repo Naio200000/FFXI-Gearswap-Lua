@@ -1,4 +1,31 @@
+--[[
 
+-- About --
+
+    This lua file is for the Samurai job. It is designed to be used with the GearSwap addon for Windower 4.
+    It includes sets for idle, melee, and WS gear, as well as functions for precasting, midcasting, and aftercasting spells.
+    As well as variables for changing weapons and melee modes and WS modifiers.
+	It also includes a function for buff changes, specifically for the Third Eye ability.
+
+-- Comands --
+
+    wpn - Change weapons. Example: wpnValk or wpnSky
+    mel - Change melee mode. Example: melTP or melACC or melEVA
+	wsk - Change WS mode. Example: wskSTR or wskDEX or wskBAL
+	thirdeye - Enable/disable Third Eye. Example: thirdeye on or thirdeye off
+	
+-- Version --
+
+    v0 - Base sets and functions.
+
+
+-- Credits --
+
+	Thanks to Wren and Enedin for their example lua files.
+    https://enedin.be 
+	https://supernovaffxi.fandom.com/wiki/Wren%27s_Gearswaps .
+
+]]--
 
 ----------
 -- Sets --
@@ -6,16 +33,22 @@
 
 function get_sets()
 
-	include('Modes.lua')
+    -- Load the necessary files
+    -- Modes.lua this help on the use of cycling/trigger/etc variables
+    include('Modes.lua')
+
+    -- Idle sets
+    -- Has EVA and Damage reduction and absorbtion
 
 	sets.idle = {
+
 		ammo="Bibiki Seashell",
-		head="Optical Hat",
+		head="Nocturnus Helm",
 		body="Nocturnus Mail",
 		hands="Seiryu's Kote",
-		legs="Akinji Salvars",
+		legs="Hachiryu Haidate",
 		feet="Askar Gambieras",
-		neck="Guarding Torque",
+		neck="Evasion Torque",
 		waist="Scouter's Rope",
 		left_ear="Triton Earring",
 		right_ear="Novia Earring",
@@ -24,10 +57,15 @@ function get_sets()
 		back="Boxer's Mantle",
 	}
 
-	sets.melee = {}
+    -- melee sets
+    sets.melee = {}
+
+    -- TP sets
+    -- Priority: Haste > Att > Acc
 
 	sets.melee.tp = {
-		ammo="Black Tathlum",
+
+		ammo="White Tathlum",
 		head="Ace's Helm",
 		body="Hachiryu Haramaki",
 		hands="Dusk Gloves +1",
@@ -42,14 +80,19 @@ function get_sets()
 		back="Cerb. Mantle +1",
 	}
 
+	-- Acc sets
+	-- Priority: Acc > Haste > Att
+	
 	sets.melee.acc = {
+
+		ammo="Black Tathlum",
 		head="Ace's Helm",
 		body="Hachiryu Haramaki",
 		hands="Hachiryu Kote",
 		legs="Byakko's Haidate",
 		feet="Enkidu's Leggings",
 		neck="Ancient Torque",
-		waist="Speed Belt",
+		waist="Cuchulain's Belt",
 		left_ear="Pixie Earring",
 		right_ear="Brutal Earring",
 		left_ring="Mars's Ring",
@@ -57,52 +100,62 @@ function get_sets()
 		back="Cuchulain's Mantle",
 	}
 
+	-- EVA sets
+    -- Priority: EVA and Damage reduction
+
 	sets.melee.eva = sets.idle
 
-	sets.skills = {}
+    -- WS sets
 
-	sets.skills.meditate = {
-		head="Myochin Kabuto",
-		hands="Saotome Kote",
-	}
+    sets.ws = {}
 
-	sets.ws = {}
+    -- WS.STR sets
+    -- Priority: STR > Att > Acc
 
 	sets.ws.str = {
+
 		ammo="Black Tathlum",
-		head="Maat's Cap",
+		head="Nocturnus Helm",
 		body="Nocturnus Mail",
 		hands="Alkyoneus's Brc.",
 		legs="Hachiryu Haidate",
 		feet="Creek M Clomps",
 		neck="Fotia Gorget",
 		waist="Warwolf Belt",
-		left_ear="Adroit Earring",
+		left_ear="Harmonius Earring",
 		right_ear="Brutal Earring",
 		left_ring="Harmonius Ring",
 		right_ring="Rajas Ring",
 		back="Cerb. Mantle +1",
 	}
 
+	-- WS.DEX sets
+	-- Priority: DEX > Att > Acc
+
 	sets.ws.dex = {
+
 		ammo="Black Tathlum",
-		head="Maat's Cap",
+		head="Nocturnus Helm",
 		body="Nocturnus Mail",
 		hands="Hachiryu Kote",
 		legs="Byakko's Haidate",
 		feet="Enkidu's Leggings",
 		neck="Fotia Gorget",
 		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
+		left_ear="Adroit Earring",
 		right_ear="Brutal Earring",
 		left_ring="Thunder Ring",
 		right_ring="Rajas Ring",
 		back="Cuchulain's Mantle",
 	}
 
+	-- WS.BAL sets
+	-- Priority: DEX + STR > Att > Acc
+
 	sets.ws.bal = {
+
 		ammo="Black Tathlum",
-		head="Maat's Cap",
+		head="Nocturnus Helm",
 		body="Nocturnus Mail",
 		hands="Alkyoneus's Brc.",
 		legs="Byakko's Haidate",
@@ -113,33 +166,71 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Harmonius Ring",
 		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+		back="Cuchulain's Mantle",
 	}
 
+	-- fastcast sets
+	-- Priority: Fastcast > Haste > Acc
+
 	sets.fastcast = {
+
 		head="Walahra Turban",
 		hands="Dusk Gloves +1",
 		legs="Byakko's Haidate",
 		feet="Dusk Ledelsens +1",
 		waist="Speed Belt",
-		right_ring="Rajas Ring",
+		right_ear="Loquac. Earring",
 	}
 
+	-- Skill sets
+
+	sets.skills = {}
+
+	-- Meditate sets
+	-- Equip Meditate gear
+
+	sets.skills.meditate = {
+
+		head="Myochin Kabuto",
+		hands="Saotome Kote",
+	}
+
+	-- Weapons sets
+
 	sets.weapons = {}
+
+	-- Hagun sets
 
 	sets.weapons.hagun = {
 		main		= "Hagun",
 	}
 
+	-- Nanatsusaya sets
+
 	sets.weapons.nanatsu = {
 		main		= "Nanatsusaya",
 	}
 
+	-- Set for any weapon
+
 	sets.weapons.any = {}
 
+	---------------
+	-- Variables --
+	---------------
+
+	-- This is used to if thirdeye is active or not
+
 	thirdeye = false
+	
+    -- This is used to check what weapons are currently equipped
 	currentWeapons = 'nanatsu'
+
+    -- This is used to check what melee mode is currently set
 	meleeMode = M{'tp','acc','eva'}
+
+	-- This is used to check what WS mode is currently set
+	
 	wsMode = M{'str','dex','bal'}
 
 end
