@@ -18,6 +18,7 @@
     v0 - Base sets and functions.
     v1 - Add Gugnir and healing sets.
     v2 - Add Jump and High Jump sets with precast functions.
+    v3 - Add STR and ACC sets for WS.
 
 -- Credits --
 
@@ -100,9 +101,13 @@ function get_sets()
 	sets.melee.eva = sets.idle
 
     -- WS sets
-    -- Priority: STR
 
-    sets.ws = {
+    sets.ws = {}
+
+    -- WS.TP sets
+    -- Priority: STR > Att > Acc
+
+    sets.ws.tp = {
 
         head="Hecatomb Cap +1",
         body="Nocturnus Mail",
@@ -117,6 +122,28 @@ function get_sets()
         right_ring="Rajas Ring",
         back="Cerb. Mantle +1",
     }
+
+    -- WS.ACC sets
+    -- Priority: STR > Acc > DEX
+
+    sets.ws.acc = {
+
+        head        = "Hecatomb Cap +1",
+        body        = "Hct. Harness +1",
+        hands       = "Hct. Mittens +1",
+        legs        = "Oily Trousers",
+        feet        = "Hct. Leggings +1",
+        neck        = "Fotia Gorget",
+        waist       = "Cuchulain's Belt",
+        left_ear    = "Pixie Earring",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Mars's Ring",
+        right_ring  = "Toreador's Ring",
+        back        = "Cuchulain's Mantle",
+    }
+
+    -- you can use sets.ws.tp or sets.ws.acc for the eva set. your choise
+    sets.ws.eva = sets.ws.tp
 
     -- Jump sets
     -- Priority: Jump > Att > STR
@@ -365,7 +392,7 @@ function precast(spell)
 	else
 		-- Cancel sneak when using Spectral Jig
 		if spell.name == "Spectral Jig" then send_command("cancel sneak")
-		elseif spell.type == 'WeaponSkill' then equip(sets.ws)
+        elseif spell.type == 'WeaponSkill' then equip(sets.ws[meleeMode.value])
         elseif spell.name == 'Jump' then equip(sets.jump)
         elseif spell.name == 'High Jump' then equip(sets.highjump)
 		elseif spell.name == 'Angon' then equip(sets.angon,sets.weapons.angon)		
