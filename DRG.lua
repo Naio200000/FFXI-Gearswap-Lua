@@ -344,7 +344,7 @@ end
 -- Functions --
 ---------------
 
-
+-- This function is called when the player changes status (engaged/resting/idle)
 function status_change(new,old)
     choose_set()
 end
@@ -372,10 +372,19 @@ end
 
 -- Decide whether to use obi or not
 function obi_check(spell)
-    local weak_to_element = {Dark       = "Light",Light  = "Dark",Ice      = "Fire",Wind    = "Ice",Earth      = "Wind",Lightning   = "Earth",Water    = "Lightning",Fire    = "Water",}
+    local weak_to_element = {   Dark        = "Light",
+                                Light       = "Dark",
+                                Ice         = "Fire",
+                                Wind        = "Ice",
+                                Earth       = "Wind",
+                                Lightning   = "Earth",
+                                Water       = "Lightning",
+                                Fire        = "Water",}
     local weakEle = weak_to_element[spell.element]
 	
-    if world.weather_element == spell.element or (world.day_element == spell.element and world.weather_element ~= weakEle) then
+    if  world.weather_element == spell.element or 
+           (world.day_element == spell.element and 
+            world.weather_element ~= weakEle) then
         return true
     else
         return false
