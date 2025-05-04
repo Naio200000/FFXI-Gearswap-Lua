@@ -72,7 +72,7 @@ function get_sets()
 		body="Hachiryu Haramaki",
 		hands="Dusk Gloves +1",
 		legs="Byakko's Haidate",
-		feet="Fuma Sune-Ate",
+		feet="Dusk Ledelsens +1",
 		neck="Ancient Torque",
 		waist="Speed Belt",
 		left_ear="Ethereal Earring",
