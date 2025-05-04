@@ -431,10 +431,10 @@ function self_command(command)
 	-- Change WS mode
 	elseif string.sub(command, 1, 3) == "wsk" then
 	
-		local mel = string.sub(command, 4, -1)
-		meleeMode:set(mel)
+		local wsk = string.sub(command, 4, -1)
+		wsMode:set(wsk)
 		choose_set()
-		windower.add_to_chat(122,'WeaponSkilling in ' .. meleeMode.current)
+		windower.add_to_chat(122,'WeaponSkilling in ' .. wsMode.current)
 	end
 end
 
