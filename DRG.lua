@@ -19,6 +19,7 @@
     v1 - Add Gugnir and healing sets.
     v2 - Add Jump and High Jump sets with precast functions.
     v3 - Add STR and ACC sets for WS.
+    v4 - Add BLU spells ignores.
 
 -- Credits --
 
@@ -440,10 +441,16 @@ end
 
 -- After casting/using ability
 function aftercast(spell)
-    if spell.name == 'Stone' or 
+    if  spell.name == 'Stone' or 
         spell.name == 'Cure' or 
-        spell.name == 'Regen' then 
+        spell.name == 'Regen' or
+        spell.name == 'Cocoon' or
+        spell.name == 'Foot Kick' or
+        spell.name == 'Head Butt' or
+        spell.name == 'Power Attack' then 
+        -- Ignores this spells for the pet's aftercast function.
     elseif spell.name == "Angon" then 
+        -- Angon is a ranged attack, so we need to equip the angon set
         equip(sets.weapons[currentWeapons])
         choose_set()
     else choose_set() end
