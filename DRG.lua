@@ -24,6 +24,7 @@
 -- Credits --
 
     This lua is based on Enedin's DRG lua https://enedin.be/gs/Enedin_DRG_v2.13.lua, which was based on the original by Wren https://supernovaffxi.fandom.com/wiki/Wren%27s_Gearswaps .
+
 ]]--
 
 ----------
