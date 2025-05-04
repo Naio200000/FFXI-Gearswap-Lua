@@ -363,9 +363,14 @@ end
 ---- This function decides which melee set to use based on the current melee mode and if the ethereal earring is used or not
 function equip_engaged()
 	equip(sets.melee[meleeMode.value])
-    if ethereal and (player.sub_job == 'RDM' or player.sub_job == 'WHM' or player.sub_job == 'BLU') then equip({left_ear        = "Ethereal Earring"}) end
+    if ethereal and (   player.sub_job == 'RDM' or 
+                        player.sub_job == 'WHM' or 
+                        player.sub_job == 'BLU') then 
+        equip({left_ear        = "Ethereal Earring"}) 
+    end
 end	 
 
+-- This function decides which idle set to use based on the current status
 function equip_idle()
 	equip(sets.idle)
 end	
