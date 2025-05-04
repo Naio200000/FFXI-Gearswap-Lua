@@ -18,6 +18,7 @@
 
     v0 - Base sets and functions.
 	v1 - Add Third Eye and Meditate sets.
+	v2 - Add Jump sets and functions.
 
 -- Credits --
 
@@ -206,6 +207,26 @@ function get_sets()
 		legs="Saotome Haidate",
 	}
 
+	-- Jump sets
+	-- Priority: Store TP > Acc > Att
+
+	sets.skills.jump = {
+
+		ammo="White Tathlum",
+		head="Ace's Helm",
+		body="Hachiryu Haramaki",
+		hands="Hachiryu Kote",
+		legs="Hachiryu Haidate",
+		feet="Enkidu's Leggings",
+		neck="Chivalrous Chain",
+		waist="Cuchulain's Belt",
+		left_ear="Pixie Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Rajas Ring",
+		back="Cuchulain's Mantle",
+	}
+
 	-- Weapons sets
 
 	sets.weapons = {}
@@ -309,16 +330,11 @@ function precast(spell, spellMap, action)
 		equip(sets.skills.thirdeye)
 		disable('legs')
 		thirdeye = true
-	
-	elseif spell.name == 'Meditate' then
-		equip(sets.skills.meditate)
-
-	elseif spell.name:contains('Utsusemi') then
-		equip(sets.melee.eva,sets.fastcast)
-
+	elseif spell.name == 'Meditate' then equip(sets.skills.meditate)
+	elseif spell.name:contains('Jump') then equip(sets.skills.jump)
+	elseif spell.name:contains('Utsusemi') then	equip(sets.melee.eva,sets.fastcast)
 	    -- Weaponskills   sets.ws.str, sets.ws.dex, sets.ws.bal
-    elseif spell.type == 'WeaponSkill' then
-		equip(sets.ws[wsMode.value])
+    elseif spell.type == 'WeaponSkill' then equip(sets.ws[wsMode.value])
 	end
 end
 
