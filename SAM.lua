@@ -19,6 +19,7 @@
     v0 - Base sets and functions.
 	v1 - Add Third Eye and Meditate sets.
 	v2 - Add Jump sets and functions.
+	v3 - Add Range sets and functions.
 
 -- Credits --
 
@@ -71,7 +72,7 @@ function get_sets()
 		body="Hachiryu Haramaki",
 		hands="Dusk Gloves +1",
 		legs="Byakko's Haidate",
-		feet="Dusk Ledelsens +1",
+		feet="Fuma Sune-Ate",
 		neck="Ancient Torque",
 		waist="Speed Belt",
 		left_ear="Ethereal Earring",
@@ -227,6 +228,48 @@ function get_sets()
 		back="Cuchulain's Mantle",
 	}
 
+	-- Range sets
+
+	sets.range = {}
+
+	-- Range TP sets
+	-- Priority: Racc > Ratt > Sharpshoot
+
+	sets.range.tp  = {
+
+		head="Zha'Go's Barbut",
+		body="Kyudogi +1",
+		hands="Seiryu's Kote",
+		legs="Oily Trousers",
+		feet="Enkidu's Leggings",
+		neck="Hope Torque",
+		waist="Warwolf Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Behemoth Ring +1",
+		right_ring="Behemoth Ring +1",
+		back="Amemet Mantle +1",
+	}
+
+	-- Range WS sets
+	-- Priority: STR > Ratt > AGI
+
+	sets.range.ws = {
+
+		head="Zha'Go's Barbut",
+		body="Kyudogi +1",
+		hands="Seiryu's Kote",
+		legs="Oily Trousers",
+		feet="Enkidu's Leggings",
+		neck="Fotia Gorget",
+		waist="Warwolf Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Behemoth Ring +1",
+		right_ring="Rajas Ring",
+		back="Amemet Mantle +1",
+	}
+
 	-- Weapons sets
 
 	sets.weapons = {}
@@ -249,6 +292,13 @@ function get_sets()
 
 	sets.weapons.any = {
 		sub			= "Pole Grip",
+	}
+
+	-- Set for range weapons
+	sets.weapons.range = {
+
+		range		= "Shigeto Bow +1",
+		ammo		= "Kabura Arrow",
 	}
 
 	---------------
@@ -298,6 +348,10 @@ end
  -- This function is called when the player is engaged in combat
 function equip_engaged()
 	equip(sets.melee[meleeMode.value])
+	if player.sub_job == 'RNG' then
+		equip(sets.weapons.range)
+		disable('range','ammo')
+	end
 end	
  
 -- This function is called when the player is idle
@@ -330,11 +384,22 @@ function precast(spell, spellMap, action)
 		equip(sets.skills.thirdeye)
 		disable('legs')
 		thirdeye = true
+	elseif spell.action_type == 'Ranged Attack' then equip(sets.range.tp)
 	elseif spell.name == 'Meditate' then equip(sets.skills.meditate)
 	elseif spell.name:contains('Jump') then equip(sets.skills.jump)
 	elseif spell.name:contains('Utsusemi') then	equip(sets.melee.eva,sets.fastcast)
 	    -- Weaponskills   sets.ws.str, sets.ws.dex, sets.ws.bal
-    elseif spell.type == 'WeaponSkill' then equip(sets.ws[wsMode.value])
+    elseif spell.type == 'WeaponSkill' then
+		if player.target.distance > 15.90 then
+			add_to_chat(122,'You are too far to WS.')
+			cancel_spell()
+		else
+			if spell.name == 'Sidewinder' then
+				equip(sets.range.ws)
+			else 
+				equip(sets.ws[wsMode.value])
+			end
+		end
 	end
 end
 
