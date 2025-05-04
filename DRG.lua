@@ -476,8 +476,8 @@ function self_command(command)
         if wpn == "Valk" then enable('left_ear') end
         equip(sets.weapons[wpn])
         if wpn == "Sky" then disable('left_ear') end
-        currentWeapons = wpn -- remember what your current weapons are
-
+        currentWeapons = wpn 
+        
 	-- Change melee mode	
 	elseif string.sub(command, 1, 3) == "mel" then
 	
@@ -490,10 +490,10 @@ function self_command(command)
 	elseif command == 'ethereal' then
 		if ethereal == false then
 			ethereal = true
-			windower.add_to_chat(122,'Using Ethereal Earring in melee set.')
+			windower.add_to_chat(122,'Using Ethereal in melee set.')
 		else
 			ethereal = false
-			windower.add_to_chat(122,'Using earring from melee set.')
+			windower.add_to_chat(122,'Not using Ethereal in melee set.')
 		end
 		choose_set()
     end
