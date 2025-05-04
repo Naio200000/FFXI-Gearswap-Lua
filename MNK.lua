@@ -45,7 +45,7 @@ function get_sets()
         body="Antares Harness",
         hands="Seiryu's Kote",
         legs="Raven Hose",
-        feet="Setanta's Led.",
+		feet="Herald's Gaiters",
         neck="Guarding Torque",
         waist="Scouter's Rope",
         left_ear="Triton Earring",
@@ -66,7 +66,7 @@ function get_sets()
         ammo="White Tathlum",
         head="Walahra Turban",
         body="Hachiryu Haramaki",
-        hands="Hachiryu Kote",
+		hands="Mel. Gloves +1",
         legs="Byakko's Haidate",
         feet="Setanta's Led.",
         neck="Faith Torque",
@@ -101,7 +101,10 @@ function get_sets()
 	-- EVA sets
     -- Priority: EVA and Damage reduction
 
-	sets.melee.eva = sets.idle
+	sets.melee.eva = set_combine(sets.idle,{
+
+        	feet="Setanta's Led.",
+		})
 
     -- WS sets
 
@@ -154,9 +157,9 @@ function get_sets()
 
         head="Acubens Helm",
         legs="Byakko's Haidate",
-        feet="Setanta's Led.",,
+        feet="Setanta's Led.",
         waist="Black Belt",
-        right_ear="Loquac. Earring",,
+        right_ear="Loquac. Earring",
 	}
 
 	-- Resting sets
@@ -170,19 +173,33 @@ function get_sets()
 	-- Meditate sets
 	-- Equip Meditate gear
 
-	sets.skills.meditate = {
+	sets.skills.chakra = {
 
-		head="Myochin Kabuto",
-		hands="Saotome Kote",
+		ammo="Bibiki Seashell",
+		head="Genbu's Kabuto",
+		body="Temple Cyclas",
+		hands="Mel. Gloves +1",
+		legs="Kensei Sitabaki",
+		feet="Creek M Clomps",
+		neck="Fortitude Torque",
+		waist="Warwolf Belt",
+		left_ear="Robust Earring +1",
+		right_ear="Robust Earring +1",
+		left_ring="Soil Ring",
+		right_ring="Soil Ring",
+		back="Melee Cape",
 	}
 
 	-- Third Eye sets
 	--Equip Saotome Haidate
 
-	sets.skills.thirdeye = {
-		legs="Saotome Haidate",
+	sets.skills.focus = {
+		head="Temple Crown",
 	}
-
+	
+	sets.skills.boost = {
+		hands="Temple Gloves",
+	}
 	-- Jump sets
 	-- Priority: Store TP > Acc > Att
 
