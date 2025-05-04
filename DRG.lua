@@ -34,7 +34,7 @@
 function get_sets()
 
     -- Load the necessary files
-    -- Modes.lua this help on the use of cyclin/trigger/etc variables
+    -- Modes.lua this help on the use of cycling/trigger/etc variables
     include('Modes.lua')
 
     -- Idle sets
