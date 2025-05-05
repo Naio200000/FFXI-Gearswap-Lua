@@ -332,6 +332,10 @@ function status_change(new,old)
 		windower.add_to_chat(122,'Fighting with Saotome Haidate') 
 	else
 		choose_set()
+		if player.sub_job == 'RNG' then
+			equip(sets.weapons.range)
+			disable('range','ammo')
+		end
 	end
 end
 
@@ -348,10 +352,6 @@ end
  -- This function is called when the player is engaged in combat
 function equip_engaged()
 	equip(sets.melee[meleeMode.value])
-	if player.sub_job == 'RNG' then
-		equip(sets.weapons.range)
-		disable('range','ammo')
-	end
 end	
  
 -- This function is called when the player is idle
