@@ -49,6 +49,59 @@ function get_sets()
 
     sets.melee.eva = {}
 
-    
+    sets.ws.str = {}
+
+    sets.ws.dex = {}
+
+    sets.ws.mab = {}
+
+    sets.skills = {}
+
+    sets.skills.sa = {}
+
+    sets.skills.ta = {}
+
+    sets.skills.steal = {}
+
+    sets.skills.flee = {}
+
+    sets.fastcast = {}
+
+    sets.resting = {}
+
+    sets.th = {}
+
+    sets.range = {}
+
+    sets.range.wpn = {}
+
+    sets.range.wpn.xbow = {}
+
+    sets.range.wpn.bow = {}
+
+    sets.range.wpn.darts = {}
+
+    sets.weapons = {}
+
+    sets.weapons.dgdg = {}
+
+    sets.weapons.dgkc = {}
+
+    sets.weapons.dgws = {}
+
+    	---------------
+	-- Variables --
+	---------------
+
+	-- Don't change this:
+	sa_gear = false 
+	ta_gear = false 	
+	th = false	
+
+	currentWeapons = 'dgkc'											
+
+	meleeMode = M{'tp','acc','eva'}
+	rangedMode = M{'xbow','bow','darts'}
 
 end
+
