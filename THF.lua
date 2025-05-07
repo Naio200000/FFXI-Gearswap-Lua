@@ -234,7 +234,7 @@ function get_sets()
         sub="Kraken Club",
     }
 
-    sets.weapons.dgws = {
+    sets.weapons.dgsw = {
 
         main="Mandau",
         sub="Ridill",
@@ -262,12 +262,13 @@ function get_sets()
     
 	sa_gear = false 
 	ta_gear = false 	
-	th = false	
 
-	currentWeapons = 'dgkc'											
+	currentWeapons = 'dgkc'	
+    currentRange = 'xbow'										
 
 	meleeMode = M{'tp','acc','eva'}
 	rangedMode = M{'xbow','bow','darts'}
+    thMode = M{'no','thsh','no','dgth'}
 
 end
 
@@ -375,3 +376,61 @@ function aftercast(spell)
 		choose_set()
 	end
 end
+
+
+---------------------
+-- Player commands --
+--------------------- 
+
+function self_command(command)
+
+	-- Change weapons
+	if string.sub(command, 1, 3) == "wpn" then
+
+        local wpn = string.sub(command, 4, -1)
+        equip(sets.weapons[wpn])
+        currentWeapons = wpn -- remember what your current weapons are
+
+
+	-- Change melee mode	
+	elseif string.sub(command, 1, 3) == "mel" then
+	
+		local mel = string.sub(command, 4, -1)
+		meleeMode:set(mel)
+		choose_set()
+		windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+		
+	-- Cycle ranged mode	
+	elseif string.sub(command, 1, 3) == 'rng' then
+
+        local rng = string.sub(command, 4, -1)
+        equip(sets.range.wpn[rng])
+        currentRange = rng -- remember what your current range is
+		windower.add_to_chat(122,'Ranged mode: ' .. rangedMode.current)
+		
+	-- Treasure Hunter	
+	elseif command == 'th' then
+        thMode:cycle()
+        if thMode.current == 'no' then
+            windower.add_to_chat(122,'Treasure Hunter 4: OFF')
+            enable('sub','hands')
+            choose_set()
+            equip(sets.weapons[currentWeapons])
+        elseif thMode.current == 'thsh' then
+            windower.add_to_chat(122,'Treasure Hunter 4: ON')
+            equip(sets.weapons.thsh)
+            disable('sub','hands')
+        elseif thMode.current == 'dgth' then
+            windower.add_to_chat(122,'Treasure Hunter 4: ON')
+            equip(sets.weapons.dgth)
+            disable('sub','hands')
+        end
+	end
+end
+ 
+---------------
+-- Init code --
+--------------- 
+
+enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')  
+send_command('wait 1; input /cm u; wait 1; gs equip idle; wait 1; gs equip weapons.dgth; wait 1; gs equip range.wpn.xbow; wait 1; input /lockstyleset 9; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
