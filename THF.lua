@@ -313,6 +313,21 @@ function equip_idle()
 	equip(sets.idle)
 end	
 
+function buff_change(name,gain)
+
+	-- if SA or TA wore (or were used), remove their gearlock and return to normal
+	if name == 'Sneak Attack' or name == 'Trick Attack' then
+		if gain == false then
+			if name == 'Sneak Attack' then sa_gear = false end
+			if name == 'Trick Attack' then ta_gear = false end
+			windower.add_to_chat(122, 'SA/TA wore, removing SA/TA gear, back to normal.')
+			
+			-- emulate an aftercast
+			choose_set()
+		end
+	end
+end
+
 -----------------------
 -- Pre/mid/aftercast --
 -----------------------
@@ -347,7 +362,7 @@ function precast(spell, spellMap, action)
 		equip(sets.skills.sa)
 		sa_gear = true
 	elseif spell.name == 'Trick Attack' then
-		equip(sets.ta)
+		equip(sets.skills.ta)
 		ta_gear = true
 		
 	-- Weaponskills
