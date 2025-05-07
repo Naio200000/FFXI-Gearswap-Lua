@@ -126,7 +126,7 @@ function get_sets()
         waist="Black Belt",
         left_ear="Harmonius Earring",
         right_ear="Brutal Earring",
-        left_ring="Harmonius Ring",
+        left_ring="Mars's Ring",
         right_ring="Rajas Ring",
         back="Cerb. Mantle +1",
 	}
