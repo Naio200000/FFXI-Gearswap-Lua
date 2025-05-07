@@ -190,19 +190,35 @@ function get_sets()
         hands="Asn. Armlets +1",
     }
 
-    sets.rangewpn = {}
+    sets.range = {
 
-    sets.rangewpn.xbow = {
+        head="Optical Hat",
+        body="Akinji Peti",
+        hands="Akinji Bazubands",
+        legs="Akinji Salvars",
+        feet="Enkidu's Leggings",
+        neck="Peacock Charm",
+        waist="R.K. Belt +2",
+        left_ear="Altdorf's Earring",
+        right_ear="Wilhelm's Earring",
+        left_ring="Behemoth Ring +1",
+        right_ring="Behemoth Ring +1",
+        back="Amemet Mantle +1",
+    }
+
+    sets.range.wpn = {}
+
+    sets.range.wpn.xbow = {
 
         range="Ziska's Crossbow",
     }
 
-    sets.rangewpn.bow = {
+    sets.range.wpn.bow = {
 
         range="Failnaught",
     }
 
-    sets.rangewpn.darts = {}
+    sets.range.wpn.darts = {}
 
     sets.weapons = {}
 
@@ -309,57 +325,53 @@ function precast(spell, spellMap, action)
 
 	-- DNC stuff
 	if spell.type:contains('Step') then
-		equip(sets.steps)
-	elseif spell.type:contains('Waltz') then
-		equip(sets.waltz)
+		equip(sets.melee.acc)
 	elseif spell.name == 'Spectral Jig' then
 		send_command('cancel sneak')
 		
 	-- Steal/Flee
-	elseif spell.name == 'Steal' then equip(sets.steal)
-	elseif spell.name == 'Flee' then equip(sets.flee)
+	elseif spell.name == 'Steal' then equip(sets.skills.steal)
+	elseif spell.name == 'Flee' then equip(sets.skills.flee)
 		
 	-- Ranged attack
 	elseif spell.action_type == 'Ranged Attack' then
-		equip(sets.racc) 
+		equip(sets.range) 
 		
 	-- SA/TA
 	elseif spell.name == 'Sneak Attack' then
-		equip(sets.sa)
+		equip(sets.skills.sa)
 		sa_gear = true
 	elseif spell.name == 'Trick Attack' then
-		if buffactive['Sneak Attack'] then
-			equip(sets.sata)
-		else
-			equip(sets.ta)
-		end
+		equip(sets.ta)
 		ta_gear = true
 		
 	-- Weaponskills
 	elseif spell.type == 'WeaponSkill' then
 	
-		-- set wsMode to either easy, medium or hard based on meleeMode
-		local wsMode = meleeMode.current
-		if not (wsMode == 'easy' or wsMode == 'medium') then wsMode = 'hard' end
-	
-		if spell.name == 'Dancing Edge' then
-			equip((sets.ws[wsMode]).de)
-		elseif spell.name == 'Shark Bite' then
-			equip((sets.ws[wsMode]).sb)
-		elseif spell.name == 'Evisceration' then
-			equip((sets.ws[wsMode]).ev)
-		elseif spell.name == 'Mercy Stroke' then
-			equip((sets.ws[wsMode]).ms)
-		elseif spell.name == 'Cyclone' then
-			equip(sets.ws_cyclone)
-		elseif spell.name == 'Mandalic Stab' then
-			equip(sets.ws.easy.ms)
-		else -- catchall, just STR all the way
-			equip(sets.ws.easy.ms)	
+		if spell.name == 'Cyclone' then
+			equip(sets.ws.mab)
+		elseif spell.name == 'Shark Bite' or spell.name == 'Mercy Stroke' or spell.name == 'Mandalic Stab' then
+			equip(sets.ws.str)
+		else
+            equip(sets.ws.dex)
 		end
 		
 	-- Utsusemi
 	elseif spell.name:contains('Utsusemi') then
-		equip(sets.melee.eva,sets.precastfastcast)
+		equip(sets.melee.eva,sets.fastcast)
 	end	
+end
+
+-- After casting or using an ability
+function aftercast(spell)
+
+	if spell.action_type == 'Ranged Attack' then equip(sets.ranged) end
+
+	-- SA/TA gearlock
+	if sa_gear or ta_gear then
+		if sa_gear and not spell.name == "Sneak Attack" then windower.add_to_chat(122,'Sneak Attack gear on.') end
+		if ta_gear and not spell.name == "Trick Attack" then windower.add_to_chat(122,'Trick Attack gear on.') end
+	else
+		choose_set()
+	end
 end
