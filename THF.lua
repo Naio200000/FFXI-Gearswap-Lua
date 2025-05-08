@@ -132,7 +132,9 @@ function get_sets()
         back="Cuchulain's Mantle",
     }
 
-    sets.ws.mab = {}
+    sets.ws.mab = {
+        --TODO
+    }
 
     sets.skills = {}
 
@@ -168,7 +170,9 @@ function get_sets()
         back="Fowler's Mantle +1",
     }
 
-    sets.skills.steal = {}
+    sets.skills.steal = {
+        --TODO
+    }
 
     sets.skills.flee = {
 
@@ -186,7 +190,9 @@ function get_sets()
         right_ear="Loquac. Earring",
     }
 
-    sets.resting = {}
+    sets.resting = {
+        --TODO
+    }
 
     sets.th = {
 
@@ -222,7 +228,9 @@ function get_sets()
         range="Failnaught",
     }
 
-    sets.range.wpn.darts = {}
+    sets.range.wpn.darts = {
+        --TODO
+    }
 
     sets.weapons = {}
 

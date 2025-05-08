@@ -218,6 +218,10 @@ function get_sets()
 		feet="Wulong Shoes +1",
 	}
 
+	sets.skills.chiblast = {
+		--TODO
+	}
+
 	-- Weapons sets
 
 	sets.weapons = {}

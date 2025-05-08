@@ -103,7 +103,9 @@ function get_sets()
     -- EVA sets
     -- Priority: EVA and Damage reduction
 
-	sets.melee.eva = sets.idle
+	sets.melee.eva = set_combine(sets.idle, {
+        --TODO add legs
+    }) 
 
     -- WS sets
 

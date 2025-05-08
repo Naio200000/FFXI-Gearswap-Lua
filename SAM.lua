@@ -186,7 +186,9 @@ function get_sets()
 
 	-- Resting sets
 
-	sets.rest = {}
+	sets.rest = {
+		--TODO
+	}
 
 	-- Skill sets
 
