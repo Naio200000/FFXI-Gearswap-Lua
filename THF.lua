@@ -265,12 +265,10 @@ function get_sets()
         sub="Thief's Knife",
         hands="Asn. Armlets +1",
     }
-
-    	---------------
+  	
+    ---------------
 	-- Variables --
 	---------------
-
-	-- Don't change this:
     
 	sa_gear = false 
 	ta_gear = false 	
