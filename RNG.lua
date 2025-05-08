@@ -92,7 +92,6 @@ function get_sets()
     currentRange = 'gun'										
 
 	meleeMode = M{'tp','acc','eva'}
-	rangedMode = M{'gun','bow'}
 
 end
 
@@ -187,9 +186,17 @@ function self_command(command)
 	-- Change weapons
 	if string.sub(command, 1, 3) == "wpn" then
 		local wpn = string.sub(command, 4, -1)
-		equip(sets.weapons.unequip) -- unequip first
-		gearswap.equip_sets:schedule(1, 'equip_command', nil, sets.weapons[wpn]) -- equip a fraction later
-		
+        currentWeapons = wpn
+		equip(sets.weapons[wpn])
+        windower.add_to_chat(122,'Current Range ' .. wpn)
+	
+    -- Change ranged weapons
+	elseif string.sub(command, 1, 3) == "rng" then	
+		local ran = string.sub(command, 4, -1)
+        currentRange = ran
+		equip(sets.weapons[ran])
+        windower.add_to_chat(122,'Current Range ' .. ran)
+
 	-- Change melee mode
 	elseif string.sub(command, 1, 3) == "mel" then	
 		local mel = string.sub(command, 4, -1)
@@ -197,38 +204,6 @@ function self_command(command)
 		choose_set()
 		windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
 		
-	-- Change ranged mode
-	elseif string.sub(command, 1, 3) == "ran" then	
-		local ran = string.sub(command, 4, -1)
-		rangedMode:set(ran)
-		windower.add_to_chat(122,'Shooting in ' .. rangedMode.current)
-		
-	-- Defending Ring
-	elseif command == 'dring' then
-		if dring == false then
-			dring = true
-			windower.add_to_chat(122,'Using Defending Ring in melee set.')
-		else
-			dring = false
-			windower.add_to_chat(122,'Using ring from melee set.')
-		end
-		choose_set()
-		
-	-- Trigger regen
-	elseif command == 'triggerRegen' then
-		if world.time <= 1080 and world.time >= 360 then
-			equip(sets.idle,{head="Blood Mask",neck="Orochi Nodowa +1",hands="Feronia's Bangles",waist="Lycopodium Sash"})
-		else
-			equip(sets.idle,{head="Blood Mask",neck="Orochi Nodowa +1"})
-		end
-		windower.add_to_chat(200,'Triggering Regen set!')
-		
-	-- Clipping plane (requires Config plugin)		
-	elseif command == "clippingPlane" then
-		clippingPlane:cycle()
-		send_command('input //config ClippingPlane ' .. clippingPlane.value)
-		windower.add_to_chat(122,"ClippingPlane: " .. clippingPlane.current)
-	end
 end
 
 ---------------
@@ -236,4 +211,4 @@ end
 --------------- 
  
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
-send_command('wait 1; input /cm u; wait 2; gs equip weapons.vulcans; wait 1; gs equip weapons.gun; wait 1; gs equip idle; wait 1; input /macro book 10; wait 1; input !myth; wait 1; input /lockstyleset 43; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u; wait 1; gs equip idle; wait 1; gs equip weapons.staff; wait 1; gs equip weapons.gun; wait 1; input !myth; wait 1; input /lockstyleset 10; wait 1; input /echo Gearswap loaded.')
