@@ -61,27 +61,52 @@ function get_sets()
 
     sets.skills = {}
 
-    sets.skills.sharp = {}
+    sets.skills.sharp = {
+		legs="Hunter's Braccae"
+	}
 
-    setes.skills.barrage = {}
+    setes.skills.barrage = {
+		hands="Htr. Bracers +1"
+	}
 
-    sets.skills.scavage = {}
+    sets.skills.scavage = {
+		feet="Hunter's Socks"
+	}
 
     sets.skills.camo = {}
 
-    sets.fastcast = {}
+    sets.fastcast = {
+		head		="Walahra Turban",
+		hands		="Dusk Gloves +1",
+		legs		="Byakko's Haidate",
+		feet		="Dusk Ledelsens +1",
+		waist		="Ninurta's Sash",
+		left_ear	="Loquac. Earring",
+	}
 
     sets.weapons = {}
 
-    sets.weapons.gun = {}
+    sets.weapons.gun = {
+		ranged		= "Annihilator",
+		ammo		= "Silver Bullet",
+	}
 
     sets.weapons.bow = {}
 
-    sets.weapons.axes = {}
+    sets.weapons.axes = {
+		main		= "Kriegsbeil",
+		sub			= "Fransisca",
+	}
 
-    sets.weapons.staff = {}
+    sets.weapons.staff = {
+		main		= "Vulcan's Staff",
+		sub			= "Brave Grip",
+	}
 
-    sets.weapons.kcrd = {}
+    sets.weapons.rdkc = {
+		main		= "Ridill",
+		sub			= "Kraken Club",
+	}
 
 
     ---------------
@@ -144,7 +169,7 @@ function precast(spell, spellMap, action)
 			add_to_chat(122,'You are too far to WS.')
 			cancel_spell()
 		else
-			if spell.name == 'Coronach' or spell.name == 'Heavy Shot' or spell.name == 'Slug Shot' then
+			if spell.name == 'Coronach' or spell.name == 'Heavy Shot' then
 				equip(sets.ws.agi)
 			elseif spell.name == 'Slug Shot' then
 				equip(sets.ws.racc)
