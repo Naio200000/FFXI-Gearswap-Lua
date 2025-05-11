@@ -37,73 +37,199 @@ function get_sets()
 
 	-- Idle sets
 
-    sets.idle = {}
+    sets.idle = {
+
+		head="Optical Hat",
+		body="Kirin's Osode",
+		hands="Seiryu's Kote",
+		legs="Blood Cuisses",
+		feet="Setanta's Led.",
+		neck="Evasion Torque",
+		waist="Scouter's Rope",
+		left_ear="Triton Earring",
+		right_ear="Novia Earring",
+		left_ring="Shadow Ring",
+		right_ring="Wivre Ring +1",
+		back="Boxer's Mantle",
+	}
 
     sets.melee = {} 
 
-    sets.melee.tp = {}
+    sets.melee.tp = {		
+		
+		head="Walahra Turban",
+		body="Hachiryu Haramaki",
+		hands="Dusk Gloves +1",
+		legs="Byakko's Haidate",
+    	feet="Enkidu's Leggings",
+		neck="Temp. Torque",
+		waist="Speed Belt",
+		left_ear="Ethereal Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Rajas Ring",
+		back="Cerb. Mantle +1",}
 
-    sets.melee.acc = {}
+    sets.melee.acc = {	
 
-    sets.melee.eva = {}
+		head="Optical Hat",
+		body="Hachiryu Haramaki",
+		hands="Hachiryu Kote",
+		legs="Byakko's Haidate",
+		feet="Setanta's Led.",
+		neck="Ancient Torque",
+		waist="Cuchulain's Belt",
+		left_ear="Pixie Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Toreador's Ring",
+		back="Cuchulain's Mantle",}
+
+    sets.melee.eva = {
+
+		set_combine(sets.idle, {
+
+			legs="Oily Trousers",
+		})
+	}
 
     sets.ranged = {}
 
-    sets.ranged.tp = {}
+    sets.ranged.tp = {
+
+		head="Zha'Go's Barbut",
+		body="Kyudogi +1",
+		legs="Scout's Braccae",
+		feet="Sct. Socks +1",
+		neck="Faith Torque",
+		waist="Scout's Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Behemoth Ring +1",
+		right_ring="Behemoth Ring +1",
+	}
+
+	sets.ranged.tp.gun = set_combine(sets.ranged.tp, {
+		
+    	hands="Seiryu's Kote",
+	    back="Fowler's Mantle +1",
+	})
+
+	sets.ranged.tp.bow = set_combine(sets.ranged.tp, {
+
+	    hands="Blood Fng. Gnt.",
+		back="Amemet Mantle +1",	
+	})
 
     sets.ws = {}
 
-    sets.ws.str = {}
+    sets.ws.str = {  
 
-    sets.ws.agi = {}
+		head="Gnadbhod's Helm",
+		body="Kirin's Osode",
+		hands="Creek M Mitts",
+		legs="Hachiryu Haidate",
+		feet="Setanta's Led.",
+		neck="Fotia Gorget",
+		waist="Scout's Belt",
+		left_ear="Harmonius Earring",
+		right_ear="Harmonius Earring",
+		left_ring="Harmonius Ring",
+		right_ring="Rajas Ring",
+		back="Amemet Mantle +1",	
+	}
 
-    sets.ws.racc = {}
+    sets.ws.agi = {
+		    
+		head="Maat's Cap",
+		body="Kirin's Osode",
+		hands="Seiryu's Kote",
+		legs="Oily Trousers",
+		feet="Enkidu's Leggings",
+		neck="Fotia Gorget",
+		waist="Scout's Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Breeze Ring",
+		right_ring="Breeze Ring",
+		back="Fowler's Mantle +1",
+	}
+
+    sets.ws.racc = {
+	    head="Zha'Go's Barbut",
+		body="Kyudogi +1",
+		hands="Seiryu's Kote",
+		legs="Oily Trousers",
+		feet="Enkidu's Leggings",
+		neck="Fotia Gorget",
+		waist="Scout's Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Breeze Ring",
+		right_ring="Behemoth Ring +1",
+		back="Fowler's Mantle +1",
+	}
 
     sets.skills = {}
 
     sets.skills.sharp = {
+
 		legs="Hunter's Braccae"
 	}
 
     setes.skills.barrage = {
+
 		hands="Htr. Bracers +1"
 	}
 
     sets.skills.scavage = {
+
 		feet="Hunter's Socks"
 	}
 
-    sets.skills.camo = {}
+    sets.skills.camo = {
+
+		body="Hunter's Jerkin"
+	}
 
     sets.fastcast = {
-		head		="Walahra Turban",
-		hands		="Dusk Gloves +1",
-		legs		="Byakko's Haidate",
-		feet		="Dusk Ledelsens +1",
-		waist		="Ninurta's Sash",
-		left_ear	="Loquac. Earring",
+
+   		head		= "Acubens Helm",
+		hands		= "Dusk Gloves +1",
+		legs		= "Byakko's Haidate",
+		feet		= "Dusk Ledelsens +1",
+		waist		= "Ninurta's Sash",
+		left_ear	= "Loquac. Earring",
 	}
 
     sets.weapons = {}
 
     sets.weapons.gun = {
+
 		ranged		= "Annihilator",
 		ammo		= "Silver Bullet",
 	}
 
-    sets.weapons.bow = {}
+    sets.weapons.bow = {
+
+		range="Eurytos' Bow",
+    	ammo="Kabura Arrow",
+	}
 
     sets.weapons.axes = {
+
 		main		= "Kriegsbeil",
 		sub			= "Fransisca",
 	}
 
     sets.weapons.staff = {
+
 		main		= "Vulcan's Staff",
 		sub			= "Brave Grip",
 	}
 
     sets.weapons.rdkc = {
+
 		main		= "Ridill",
 		sub			= "Kraken Club",
 	}
@@ -113,10 +239,11 @@ function get_sets()
 	-- Variables --
 	---------------
 
-    currentWeapons = 'staff'	
-    currentRange = 'gun'										
-
+    currentWeapons = 'staff'
+    currentRange = 'gun'
+	
 	meleeMode = M{'tp','acc','eva'}
+	gunMode = true
 
 end
 
@@ -160,7 +287,11 @@ function precast(spell, spellMap, action)
 		
 	-- Ranged Attack / Barrage
 	elseif spell.action_type == 'Ranged Attack' then
-		equip(sets.ranged[rangedMode.current])
+		if gunMode then
+			equip(sets.ranged.tp.gun)
+		else
+			equip(sets.ranged.tp.bow)
+		end
 		if buffactive['Barrage'] then equip(sets.skills.barrage) end
 
 	-- Weaponskills
@@ -216,8 +347,13 @@ function self_command(command)
         windower.add_to_chat(122,'Current Range ' .. wpn)
 	
     -- Change ranged weapons
-	elseif string.sub(command, 1, 3) == "rng" then	
+	elseif string.sub(command, 1, 3) == "rng" then
 		local ran = string.sub(command, 4, -1)
+		if ran == 'gun' then
+			gunMode = true
+		elseif ran == 'bow' then
+			gunMode = false
+		end
         currentRange = ran
 		equip(sets.weapons[ran])
         windower.add_to_chat(122,'Current Range ' .. ran)
