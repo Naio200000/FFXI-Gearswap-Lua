@@ -200,7 +200,7 @@ function get_sets()
 		hands		= "Dusk Gloves +1",
 		legs		= "Byakko's Haidate",
 		feet		= "Dusk Ledelsens +1",
-		waist		= "Ninurta's Sash",
+		waist		= "Speed Belt",
 		left_ear	= "Loquac. Earring",
 	}
 
