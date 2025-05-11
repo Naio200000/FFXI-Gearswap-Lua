@@ -85,13 +85,10 @@ function get_sets()
 		right_ring="Toreador's Ring",
 		back="Cuchulain's Mantle",}
 
-    sets.melee.eva = {
-
-		set_combine(sets.idle, {
+    sets.melee.eva = set_combine(sets.idle, {
 
 			legs="Oily Trousers",
 		})
-	}
 
     sets.ranged = {}
 
