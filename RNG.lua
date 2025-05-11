@@ -16,6 +16,9 @@
 -- Version --
 
     v0 - Base sets and functions.
+	v1 - Add Gun and Bow tp sets.
+	v2 - Add Barrage triggers
+	v3 - Add Shadowbind sets and Functions.
 
 -- Credits --
 
