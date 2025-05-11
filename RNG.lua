@@ -189,6 +189,8 @@ function get_sets()
 		body="Hunter's Jerkin"
 	}
 
+	sets.skills.shadowbind = set_combine(sets.ranged.tp, sets.skills.shadowbind)
+
     sets.fastcast = {
 
    		head		= "Acubens Helm",
@@ -321,7 +323,7 @@ function precast(spell, spellMap, action)
 			add_to_chat(122,'You are too far to Shadowbind.')
 			cancel_spell()
 		else
-			equip({hands="Htr. Bracers +1"})
+			equip(sets.skills.shadowbind)
 		end
 	
 	-- Utsusemi
