@@ -228,6 +228,7 @@ function self_command(command)
 		meleeMode:set(mel)
 		choose_set()
 		windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+	end
 		
 end
 
