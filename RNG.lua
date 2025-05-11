@@ -177,7 +177,7 @@ function get_sets()
 		legs="Hunter's Braccae"
 	}
 
-    setes.skills.barrage = {
+    sets.skills.barrage = {
 
 		hands="Htr. Bracers +1"
 	}
@@ -222,10 +222,16 @@ function get_sets()
 		sub			= "Fransisca",
 	}
 
-    sets.weapons.staff = {
+    sets.weapons.vulcan = {
 
-		main		= "Vulcan's Staff",
-		sub			= "Brave Grip",
+		main="Vulcan's Staff",
+		sub="Claymore Grip",
+	}
+
+	sets.weapons.jupiter = {
+
+		main="Jupiter's Staff",
+    	sub="Brave Grip",
 	}
 
     sets.weapons.rdkc = {
