@@ -170,29 +170,16 @@ function equip_heal(spell)
 	-- Cures
 	if spell.name:contains('Cure')
 	or spell.name:contains('Cura') then
-		equip(sets.healing_magic)
+		equip(sets.magic.healing)
 		
 		-- Matching day
 		if obi_check(spell) then
-			if spell.element == world.day_element then
-				addedmagicinfo = "on matching day"
-				equip(sets.matching_dayweather) -- obi
-				
-				-- Matching day and weather
-				if spell.element == world.weather_element then
-					addedmagicinfo = "on matching day and weather"
-				end
-				
-			-- Matching weather
-			elseif spell.element == world.weather_element then
-				addedmagicinfo = "in matching weather"
-				equip(sets.matching_dayweather) -- obi
-			end
+			equip(sets.matching_dayweather) -- obi
 		end
 		
 	-- Other spells
 	else
-		equip(sets.fastcasthaste)
+		equip(sets.fastcast)
 	end
 end
 
@@ -200,24 +187,23 @@ function equip_enfeebling(spell)
 
 	-- INT-based enfeebles
     if spell.name:contains('Poison')
-	or spell.name:contains('Dia')
 	or spell.name:contains('Sleep')
 	or spell.name:contains('Blind')
 	or spell.name == 'Dispel' 
 	or spell.name == 'Bind'
 	or spell.name == 'Gravity' then
-		equip(sets.enfeebling_magic.int)
+		equip(sets.magic.enfeebling.int)
 		
 	-- MND-based enfeebles
 	else
-		equip(sets.enfeebling_magic.mnd)
+		equip(sets.magic.enfeebling.mnd)
 	end
 	
 	-- Dark grip for Sleep, Dispel and Blind
 	if spell.name:contains('Sleep')
 	or spell.name:contains('Blind')
 	or spell.name == 'Dispel' then
-		equip(sets.darkgrip)
+		equip({sub="Dark Grip"})
 	end
 	
 end
