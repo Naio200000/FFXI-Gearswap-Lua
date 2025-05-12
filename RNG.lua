@@ -296,9 +296,9 @@ function precast(spell, spellMap, action)
 	-- Ranged Attack / Barrage
 	elseif spell.action_type == 'Ranged Attack' then
 		if gunMode then
-			equip(sets.ranged.tp.gun)
+			equip(set_combine(sets.ranged.tp.gun, {ammo="Silver Bullet"}))
 		else
-			equip(sets.ranged.tp.bow)
+			equip(set_combine(sets.ranged.tp.bow, {ammo="Kabura Arrow"}))
 		end
 		if buffactive['Barrage'] then equip(sets.skills.barrage) end
 
