@@ -195,7 +195,7 @@ function get_sets()
 		body="Hunter's Jerkin"
 	}
 
-	sets.skills.shadowbind = set_combine(sets.ranged.tp, sets.skills.shadowbind)
+	sets.skills.shadowbind = set_combine(sets.ranged.tp, sets.skills.barrage)
 
     sets.fastcast = {
 
