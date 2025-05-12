@@ -333,54 +333,17 @@ end
 -- During casting magic
 function midcast(spell)
  
-	mpcost = tostring(spell.mp_cost)
-	addedmagicinfo = ""
-	showmagicinfo = display_mp_cost
-	magicinfocolor = 0
- 
 	if spell.skill == 'Healing Magic' then
         equip_heal(spell)
-		magicinfocolor = 8
     elseif spell.skill == 'Enfeebling Magic' then
         equip_enfeebling(spell)
-		magicinfocolor = 7
     elseif spell.skill == 'Enhancing Magic' then
         equip_enhancing(spell)
-		magicinfocolor = 50
     elseif spell.skill == 'Elemental Magic' then
 		equip_nuke(spell)
-		magicinfocolor = 3
     elseif spell.skill == 'Dark Magic' then
         equip_dark(spell)
-		magicinfocolor = 207
-    else
-		showmagicinfo = false
 	end
-	
-	if showmagicinfo then
-	
-		-- align text
-		if string.len(mpcost) == 1 then
-			mpcost = ' *** ' .. mpcost
-		elseif string.len(mpcost) == 2 then
-			mpcost = ' ** ' .. mpcost
-		elseif string.len(mpcost) == 3 then
-			mpcost = ' * ' .. mpcost
-		end
-		
-		-- display text
-		if addedmagicinfo == "" then
-			windower.add_to_chat(magicinfocolor,mpcost .. " MP \t" .. spell.name)
-		else
-			windower.add_to_chat(magicinfocolor,mpcost .. " MP \t" .. spell.name .. ": " .. addedmagicinfo)
-		end
-	end
-	
-	-- Magic chats (here so you only say this when you can actually cast the spell)
-	-- WARNING: Use player.target.name if you use <t>. I have these on <stnpc> macros, so I use player.subtarget.name
-	if spell.name == 'Stun' then send_command('input /p Stunning <t>! <wstar> Stun down for 34s!') end
-	if spell.name == 'Sleep' or spell.name == 'Sleep II' then send_command('input /p Sleeping ' .. player.subtarget.name .. '! <wstar> Disengage!') end 
-	if spell.name == 'Bind' then send_command('input /p Binding ' .. player.subtarget.name .. '! <wstar> Disengage!') end 
 end
  
 -- After casting or using an ability
