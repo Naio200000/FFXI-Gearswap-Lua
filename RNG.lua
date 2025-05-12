@@ -33,6 +33,8 @@
 -- Sets --
 ----------
 
+-- TODO: add function and sets comments
+
 function get_sets()
 
 	-- Including this gives an easy way of defining cyclic/trigger/etc variables, makes handling self_commands easier.
