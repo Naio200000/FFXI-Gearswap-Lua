@@ -350,3 +350,82 @@ end
 function aftercast(spell)
     choose_set()
 end
+
+ 
+function self_command(command)
+
+	-- Change melee mode
+	if command == "meleeMode" then
+		meleeMode:cycle() -- go to next
+		
+		local temp = meleeMode.value
+		if temp == 'club' or temp == 'staffacc' or temp == 'staffhaste'then
+			enable('main','sub','range','ammo')
+			if temp == 'club' then
+				equip(sets.weapons.club)
+			elseif temp == 'staffacc' or temp == 'staffhaste' then
+				equip(sets.weapons.staff)
+			end
+			disable('main','sub','range','ammo')
+			windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+			
+		elseif temp == 'mage' then -- mage mode
+			enable('main','sub','range','ammo')
+			windower.add_to_chat(122,'Mage mode')
+		end
+		choose_set()
+
+	-- Potency/skill nukes
+    elseif command == "nukeDmg" then
+		if nukeDmg == false then
+			nukeDmg = true
+			windower.add_to_chat(122,'Nuking in potency')
+		else
+			nukeDmg = false
+			windower.add_to_chat(122,'Nuking in skill')
+		end
+		
+	-- Induce yellow HP
+	elseif command == "toyellowHP" then
+		if buffactive['Weakness'] then
+			add_to_chat(167,'You cannot use the yellow HP macro while weakened.')
+		else
+			equip_yellow()
+		end
+	
+	-- Toggle MP info
+	elseif command == "dispmp" then
+		if display_mp_cost then
+			display_mp_cost = false
+			windower.add_to_chat(122,'Stop showing magic MP cost.')
+		else
+			display_mp_cost = true
+			windower.add_to_chat(122,'Show magic MP cost.')
+		end	
+	
+	-- Toggle Terra's/Claustrum in idle
+	elseif command == "use_terras" then
+		if use_terras then
+			use_terras = false
+			windower.add_to_chat(122,'Using Claustrum in idle.')
+		else
+			use_terras = true
+			windower.add_to_chat(122,'Using Terra\'s Staff in idle')
+		end	
+		choose_set()
+			
+	-- Clipping plane (requires Config plugin)
+	elseif command == "clippingPlane" then
+		clippingPlane:cycle()
+		send_command('input //config ClippingPlane ' .. clippingPlane.value)
+		windower.add_to_chat(122,"ClippingPlane: " .. clippingPlane.current)
+	end
+		
+end
+
+---------------
+-- Init code --
+---------------
+
+enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1;input /macro book 2;wait 2; input !myth; wait 1; input /echo Gearswap loaded.')
