@@ -9,14 +9,17 @@
 
 -- Comands --
 
-    wpn - Change weapons. Example: wpnValk or wpnSky
-    mel - Change melee mode. Example: melTP or melACC or melEVA
-    TH  - Toggles TH mode on and off. Example: TH on or TH off
-    RNG - Changes betweem range options. Example: Xbow or Archery or Darts
+    mel - Change melee mode. Example: melnuke or melmelee
+    use_terras - Toggle between using Terra's Staff and Claustrum in idle.
+    toyellowHP - Equip yellow HP set for a split second, then go back to idle set to trigger yellow HP.
 	
 -- Version --
 
     v0 - Base sets and functions.
+    v1 - Added functions to all magic types.
+    v2 - Added yellow HP function.
+    v3 - Added nuke and melee toggle.
+    v4 - Added Initialization of naked HP/MP for latents.
 
 -- Credits --
 
@@ -29,6 +32,8 @@
 ----------
 -- Sets --
 ----------
+
+--TODO: add comments to all sets
 
 function get_sets()
 
