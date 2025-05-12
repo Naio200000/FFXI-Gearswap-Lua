@@ -235,23 +235,11 @@ function equip_nuke(spell)
 	or spell.name == 'Rasp'
 	or spell.name == 'Shock'
 	or spell.name == 'Drown' then
-		equip(sets.elemental_magic.debuffs)
+		equip(sets.magic.elemental.debuffs)
 		
 	-- Nukes
 	else
 	
-		-- informative variables
-		local skill, obi, ugg, sorc
-	
-		-- if nuke, potency or skill?
-		if nukeDmg then 
-			equip(sets.elemental_magic)
-			skill = "potency"
-		else
-			equip(sets.elemental_magic.skill)
-			skill = "skill"
-		end
-		
 		-- check obi/tonban for matching day/weather
 		if obi_check(spell) then
 			if spell.element == world.day_element then
@@ -259,28 +247,19 @@ function equip_nuke(spell)
 				if not (world.weather_element == world.day_element and world.weather_intensity == 2) then
 					equip(sets.matching_day)
 				end
-				if spell.element == world.weather_element then obi = ", day, weather" else obi = ", day" end
 			elseif spell.element == world.weather_element then
-				obi = ", weather"
 				equip(sets.matching_dayweather)
-			else obi = "" end
-		else obi = "" end
+         end
 		
 		-- check MP for ugg. pendant
 		if player.mp < math.floor(nakedMP * 0.5) + math.floor(spell.mp_cost * 0.75) then
 			equip({neck="Uggalepih Pendant"})
-			ugg = ", ugg"
-		else ugg = "" end
+         end
 		
 		-- sorc. ring
 		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
 			equip({ring2 = "Sorcerer's Ring"})
-			sorc = ", sorc"
-		else sorc = "" end
-		
-		-- informative text
-		addedmagicinfo = skill .. obi .. ugg .. sorc
-		
+        end	
 	end
 end
 
@@ -288,20 +267,20 @@ function equip_dark(spell)
 
 	-- Stun
 	if spell.name == 'Stun' then
-		equip(sets.dark_magic.stun)
+		equip(sets.magic.dark.stun)
 		
 	-- Other spells
 	else
-		equip(sets.dark_magic)
+		equip(sets.magic.dark)
 		
 		-- Obi/legs/ring for Drain/Aspir
 		if spell.name == 'Aspir' or spell.name == 'Drain' then
 		
-			-- Diabolos's Ring
-			if spell.element == world.day_element then
-				addedmagicinfo = "on matching day"
-				equip({right_ring="Diabolos's Ring"}) -- ring
-			end
+			-- -- Diabolos's Ring
+			-- if spell.element == world.day_element then
+			-- 	addedmagicinfo = "on matching day"
+			-- 	equip({right_ring="Diabolos's Ring"}) -- ring
+			-- end
 		
 			-- Matching day
 			if obi_check(spell) then
