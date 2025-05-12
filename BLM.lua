@@ -212,17 +212,17 @@ function equip_enhancing(spell)
 
 	-- Stoneskin
 	if spell.name == 'Stoneskin' then
-		equip(sets.enhancing_magic.stoneskin)
+		equip(sets.magic.enhancing.stoneskin)
 	
 	-- Barspells/enspells/phalanx
 	elseif spell.name:contains('Bar')
 	or spell.name:startswith('En')
 	or spell.name:contains('Phalanx') then
-		equip(sets.enhancing_magic)
+		equip(sets.magic.enhancing)
 		
 	-- Other spells
 	else
-		equip(sets.fastcasthaste)
+		equip(sets.fastcast)
 	end
 end
 
