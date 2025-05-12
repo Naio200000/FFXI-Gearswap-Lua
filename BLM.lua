@@ -142,6 +142,10 @@ function equip_rest()
 	equip(sets.resting)
 end
 
+function equip_ws(name)
+    equip(sets.ws)
+end
+
 -- Equip yellow HP set for a split second, then go back to idle set to trigger yellow
 function equip_yellow()
     equip(sets.yellowHP)
