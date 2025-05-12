@@ -274,37 +274,16 @@ function equip_dark(spell)
 		equip(sets.magic.dark)
 		
 		-- Obi/legs/ring for Drain/Aspir
-		if spell.name == 'Aspir' or spell.name == 'Drain' then
-		
-			-- -- Diabolos's Ring
-			-- if spell.element == world.day_element then
-			-- 	addedmagicinfo = "on matching day"
-			-- 	equip({right_ring="Diabolos's Ring"}) -- ring
-			-- end
-		
+		if spell.name == 'Aspir' or spell.name == 'Drain' then	
 			-- Matching day
 			if obi_check(spell) then
 				if spell.element == world.day_element then
-					-- do not equip relic pants if it's double weather and matching day, as that exceeds the +40% day/weather bonus cap even without them
-					addedmagicinfo = "on matching day"
-					equip(sets.matching_day) -- legs and obi
-					equip({right_ring="Diabolos's Ring"}) -- ring
-					
-					-- Matching day and weather
-					if spell.element == world.weather_element then
-						addedmagicinfo = "on matching day and weather"
-					end
-					
+                    -- do not equip relic pants if it's double weather and matching day, as that exceeds the +40% day/weather bonus cap even without them
+                    equip(sets.matching_day) -- legs and obi		
 				-- Matching weather
 				elseif spell.element == world.weather_element then
-					addedmagicinfo = "in matching weather"
 					equip(sets.matching_dayweather) -- obi
 				end
-			end
-			
-			-- Diabolos's Pole in weather
-			if spell.element == world.weather_element then
-				equip({main="Diabolos's Pole"})
 			end
 		end
 	end
