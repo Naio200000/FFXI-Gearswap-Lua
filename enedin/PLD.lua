@@ -783,4 +783,4 @@ end
 ---------------
   
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip kiting;wait 2;wait 2;input /lockstyle on;wait1;gs equip idle; wait 1;gs equip weapons.swsh; wait 1; input /macro book 8; 
+send_command('wait 1; input /cm u;wait 1;gs equip kiting;wait 2;wait 2;input /lockstyle on;wait1;gs equip idle; wait 1;gs equip weapons.swsh; wait 1; input /macro book 8;')
