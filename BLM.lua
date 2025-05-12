@@ -142,7 +142,7 @@ function equip_rest()
 	equip(sets.resting)
 end
 
-function equip_ws(name)
+function equip_ws()
     equip(sets.ws)
 end
 
@@ -296,8 +296,6 @@ end
 -- Before casting/using ability
 function precast(spell)
 
-	--send_command("input //send Eneding /" .. spell.name .. " <tid>")
-
 	-- Magic
 	if spell.action_type == 'Magic' then
 	
@@ -309,7 +307,7 @@ function precast(spell)
 		else
 
 			-- Fast cast for all spells	
-			equip(sets.precastfastcast)	
+			equip(sets.fastcast)	
 		
 			-- Cancel status effects for spells that don't overwrite themselves
 			if spell.name == "Sneak" then send_command("cancel sneak") end
@@ -324,18 +322,11 @@ function precast(spell)
 		
 	-- Abilities	
 	else
-		-- Cancel sneak when using Spectral Jig
-		if spell.name == "Spectral Jig" then
-			send_command("cancel sneak")
 
 		-- Weaponskills
 		elseif spell.type == 'WeaponSkill' then
-			equip_ws(spell.name)
+			equip_ws()
 		
-		-- Ranged attack
-		elseif spell.action_type == 'Ranged Attack' then
-			equip(sets.throwing) 
-		end
 	end
 end
 
