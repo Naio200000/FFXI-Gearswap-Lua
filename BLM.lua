@@ -84,7 +84,7 @@ function get_sets()
 
 	sets.matching_dayweather = {waist = "Hachirin-no-Obi"}
 
-    seets.resting = {}
+    sets.resting = {}
 
     sets.weapons = {}
 
