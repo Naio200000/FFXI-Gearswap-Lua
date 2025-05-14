@@ -44,27 +44,150 @@ function get_sets()
     -- Idle sets
     -- Has EVA and Damage reduction and absorbtion
 
-    sets.idle = {}
+    sets.idle = {
+		    
+		head="Optical Hat",
+		body="Dalmatica +1",
+		hands="Hydra Gloves",
+		legs="Hydra Brais",
+		feet="Herald's Gaiters",
+		neck="Evasion Torque",
+		waist="Sorcerer's Belt",
+		left_ear="Ethereal Earring",
+		right_ear="Novia Earring",
+		left_ring="Shadow Ring",
+		right_ring="Wivre Ring +1",
+		back="Umbra Cape",
+	}
 
-    sets.melee = {}
+    sets.melee = {
 
-    sets.ws = {}
+		head="Walahra Turban",
+		body="Goliard Saio",
+		hands="Hydra Gloves",
+		legs="Hydra Brais",
+		feet="Nashira Crackows",
+		neck="Ancient Torque",
+		waist="Headlong Belt",
+		left_ear="Ethereal Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Rajas Ring",
+		back="Umbra Cape",
+	}
+
+    sets.ws = {
+
+		head="Optical Hat",
+		body="Hydra Doublet",
+		hands="Hydra Gloves",
+		legs="Hydra Brais",
+		feet="Hydra Gaiters",
+		neck="Ancient Torque",
+		waist="Headlong Belt",
+		left_ear="Ethereal Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Toreador's Ring",
+		back="Umbra Cape",
+	}
 
     sets.magic = {}
 
-    sets.magic.elemental = {}
+    sets.magic.elemental = {
 
-    sets.magic.elemental.debuff = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Wise Strap",
+		head="Src. Petasos +1",
+		body="Genie Weskit",
+		hands="Zenith Mitts +1",
+		legs="Valkyrie's Trews",
+		feet="Shrewd Pumps",
+		neck="Lmg. Medallion +1",
+		waist="Witch Sash",
+		left_ear="Moldavite Earring",
+		right_ear="Novio Earring",
+		left_ring="Omega Ring",
+		right_ring="Galdr Ring",
+		back="Ixion Cape",
+	}
 
-    sets.magic.enfeebling = {}
+    sets.magic.elemental.debuff = {
 
-    sets.magic.enfeebling.int = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+    	sub="Bugard Strap +1",
+		head="Maat's Cap",
+		body="Mahatma Hpl.",
+		hands="Valkyrie's Cuffs",
+		legs="Mahatma Slops",
+		feet="Goliard Clogs",
+		neck="Lmg. Medallion +1",
+		waist="Witch Sash",
+		left_ear="Omn. Earring +1",
+		right_ear="Novio Earring",
+		left_ring="Omega Ring",
+		right_ring="Galdr Ring",
+		back="Ixion Cape",
+	}
 
-    sets.magic.enfeebling.mnd = {}
+    sets.magic.enfeebling = {
 
-    sets.magic.dark = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Genie Tiara",
+		body="Wizard's Coat",
+		legs="Genie Lappas",
+		feet="Avocat Pigaches",
+		neck="Enfeebling Torque",
+		waist="Witch Sash",
+		left_ear="Helenus's Earring",
+		right_ear="Cass. Earring",
+		right_ring="Omega Ring",
+		back="Ixion Cape",
+	}
 
-    sets.magic.dark.stun = {}
+    sets.magic.enfeebling.int = set_combine(sets.magic.enfeebling, {
+
+	    hands="Valkyrie's Cuffs",
+    	left_ring="Galdr Ring",
+	})
+
+    sets.magic.enfeebling.mnd = set_combine(sets.magic.enfeebling, {
+
+		hands="Bricta's Cuffs",
+		left_ring="Karka Ring",
+	})
+
+    sets.magic.dark = {
+
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Dark Grip",
+		range="Aureole",
+		head="Nashira Turban",
+		body="Oracle's Robe",
+		hands="Sorcerer's Gloves",
+		legs="Wizard's Tonban",
+		feet="Genie Huaraches",
+		neck="Dark Torque",
+		waist="Witch Sash",
+		left_ear="Dark Earring",
+		right_ear="Omn. Earring +1",
+		left_ring="Galdr Ring",
+		right_ring="Omega Ring",
+		back="Merciful Cape",
+	}
+
+    sets.magic.dark.stun = {
+
+		sub			= "Vivid Strap +1",
+		head="Walahra Turban",
+		body="Goliard Saio",
+		hands="Nashira Gages",
+		feet="Nashira Crackows",
+		left_ear="Omn. Earring +1",
+		back="Veela Cape",
+	}
 
     sets.magic.healing = {}
 
@@ -256,12 +379,12 @@ function equip_nuke(spell)
 				end
 			elseif spell.element == world.weather_element then
 				equip(sets.matching_dayweather)
-         end
-		
+        	end
+		end
 		-- check MP for ugg. pendant
 		if player.mp < math.floor(nakedMP * 0.5) + math.floor(spell.mp_cost * 0.75) then
 			equip({neck="Uggalepih Pendant"})
-         end
+        end
 		
 		-- sorc. ring
 		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
@@ -329,11 +452,7 @@ function precast(spell)
 		
 	-- Abilities	
 	else
-
-		-- Weaponskills
-		elseif spell.type == 'WeaponSkill' then
-			equip_ws()
-		
+		equip_ws()	
 	end
 end
 
