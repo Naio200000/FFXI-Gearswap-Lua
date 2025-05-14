@@ -45,7 +45,9 @@ function get_sets()
     -- Has EVA and Damage reduction and absorbtion
 
     sets.idle = {
-		    
+		
+		main		= "Claustrum",
+		sub			= "Wise Strap",
 		head="Optical Hat",
 		body="Dalmatica +1",
 		hands="Hydra Gloves",
@@ -98,6 +100,7 @@ function get_sets()
 
 		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
 		sub="Wise Strap",
+		range		= "Aureole",
 		head="Src. Petasos +1",
 		body="Genie Weskit",
 		hands="Zenith Mitts +1",
@@ -116,6 +119,7 @@ function get_sets()
 
 		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
     	sub="Bugard Strap +1",
+		range		= "Aureole",
 		head="Maat's Cap",
 		body="Mahatma Hpl.",
 		hands="Valkyrie's Cuffs",
@@ -247,7 +251,6 @@ function get_sets()
 
     sets.fastcast = {
 
-		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
 		sub="Vivid Strap +1",
 		range="Aureole",
 		head="Walahra Turban",
@@ -279,6 +282,7 @@ function get_sets()
 
     sets.resting = {
 
+		main		= "Claustrum",		
 		head="Goliard Chapeau",
 		body="Oracle's Robe",
 		hands="Hydra Gloves",
