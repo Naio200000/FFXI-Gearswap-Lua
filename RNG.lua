@@ -137,7 +137,7 @@ function get_sets()
 		waist="Scout's Belt",
 		left_ear="Harmonius Earring",
 		right_ear="Harmonius Earring",
-		left_ring="Harmonius Ring",
+		left_ring="Strigoi Ring",
 		right_ring="Rajas Ring",
 		back="Amemet Mantle +1",	
 	}

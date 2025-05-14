@@ -126,7 +126,7 @@ function get_sets()
 		waist="Warwolf Belt",
 		left_ear="Harmonius Earring",
 		right_ear="Brutal Earring",
-		left_ring="Harmonius Ring",
+		left_ring="Strigoi Ring",
 		right_ring="Rajas Ring",
 		back="Cerb. Mantle +1",
 	}
@@ -166,7 +166,7 @@ function get_sets()
 		waist="Cuchulain's Belt",
 		left_ear="Pixie Earring",
 		right_ear="Brutal Earring",
-		left_ring="Harmonius Ring",
+		left_ring="Strigoi Ring",
 		right_ring="Rajas Ring",
 		back="Cuchulain's Mantle",
 	}
