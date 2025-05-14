@@ -189,15 +189,85 @@ function get_sets()
 		back="Veela Cape",
 	}
 
-    sets.magic.healing = {}
+    sets.magic.healing = {
 
-    sets.magic.enhancing = {}
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		body="Ixion Cloak",
+		hands="Bricta's Cuffs",
+		legs="Mahatma Slops",
+		feet="Goliard Clogs",
+		neck="Fylgja Torque +1",
+		waist="Witch Sash",
+		left_ear="Celestial Earring",
+		right_ear="Roundel Earring",
+		left_ring="Karka Ring",
+		right_ring="Celestial Ring",
+		back="Dew Silk Cape +1",
+	}
 
-    sets.magic.enhancing.stoneskin = {}
+    sets.magic.enhancing = {
 
-    sets.fastcast = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Nashira Turban",
+		body="Mahatma Hpl.",
+		hands="Bricta's Cuffs",
+		legs="Mahatma Slops",
+		feet="Genie Huaraches",
+		neck="Enhancing Torque",
+		waist="Sorcerer's Belt",
+		left_ear="Augment. Earring",
+		right_ear="Celestial Earring",
+		left_ring="Karka Ring",
+		right_ring="Celestial Ring",
+		back="Merciful Cape",
+	}
 
-    sets.yellowHP = {}
+    sets.magic.enhancing.stoneskin = {
+
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Maat's Cap",
+		body="Mahatma Hpl.",
+		hands="Bricta's Cuffs",
+		legs="Mahatma Slops",
+		feet="Goliard Clogs",
+		neck="Gnole Torque",
+		waist="Witch Sash",
+		left_ear="Celestial Earring",
+		right_ear="Celestial Earring",
+		left_ring="Karka Ring",
+		right_ring="Celestial Ring",
+		back="Dew Silk Cape +1",
+	}
+
+    sets.fastcast = {
+
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Vivid Strap +1",
+		range="Aureole",
+		head="Walahra Turban",
+		body="Goliard Saio",
+		hands="Nashira Gages",
+		right_ear="Loquac. Earring",
+		back="Veela Cape",
+	}
+
+    sets.yellowHP = {
+
+		sub="Dark Grip",
+		body="Dalmatica +1",
+		hands="Zenith Mitts +1",
+		feet="Zenith Pumps +1",
+		neck="Morgana's Choker",
+		left_ear="Astral Earring",
+		left_ring="Serket Ring",
+		right_ring="Ether Ring",
+	}
 
     sets.matching_day = {
 	
@@ -207,11 +277,27 @@ function get_sets()
 
 	sets.matching_dayweather = {waist = "Hachirin-no-Obi"}
 
-    sets.resting = {}
+    sets.resting = {
+
+		head="Goliard Chapeau",
+		body="Oracle's Robe",
+		hands="Hydra Gloves",
+		legs="Oracle's Braconi",
+		feet="Goliard Clogs",
+		neck="Gnole Torque",
+		waist="Hierarch Belt",
+		left_ring="Celestial Ring",
+		right_ring="Celestial Ring",
+	}
 
     sets.weapons = {}
 
-    sets.weapons.staff = {}
+    sets.weapons.staff = {
+		    
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Pole Grip",
+		range="Aureole",
+	}
 
     ---------------
 	-- Variables --
@@ -230,17 +316,17 @@ end
 
 function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for latents aren't coded properly on LSB. It uses naked HP/MP, no gear, no food, no max HP/MP boost traits, but it does include HP and MP merits. Others will have to figure out these values for themselves for their own character.
     if player.sub_job == 'RDM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 852
+        nakedMP = 938
     elseif player.sub_job == 'WHM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 834
+        nakedMP = 957
     elseif player.sub_job == 'SCH' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 834
+        nakedMP = 938
     else
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 852
+        nakedMP = 879
     end
 end
 
