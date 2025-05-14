@@ -342,6 +342,7 @@ function choose_set()
 		equip_rest()
 	else
         equip_idle()
+	    send_command('wait .1;gs c toyellowHP')
     end
 end
 	
