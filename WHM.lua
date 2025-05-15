@@ -52,10 +52,6 @@ function get_sets()
 
     sets.magic = {}
 
-    sets.magic.elemental = {}
-
-    sets.magic.elemental.debuff = {}
-
     sets.magic.enfeebling = {}
 
     sets.magic.enfeebling.int = {}
@@ -63,8 +59,6 @@ function get_sets()
     sets.magic.enfeebling.mnd = {}
 
     sets.magic.dark = {}
-
-    sets.magic.dark.stun = {}
 
     sets.magic.healing = {}
 
@@ -79,10 +73,7 @@ function get_sets()
     sets.matching_day = {
 	
         waist		= "Hachirin-no-Obi",
-		legs		= "Src. Tonban +1"
 	}
-
-	sets.matching_dayweather = {waist = "Hachirin-no-Obi"}
 
     seets.resting = {}
 
@@ -93,8 +84,6 @@ function get_sets()
     ---------------
 	-- Variables --
 	---------------
-    
-   	use_terras = false
 
     meleeMode = M{'nuke', 'melee'}
 
@@ -109,7 +98,7 @@ function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for l
     if player.sub_job == 'RDM' then
         nakedHP = 0
         nakedMP = 0
-    elseif player.sub_job == 'WHM' then
+    elseif player.sub_job == 'BLM' then
         nakedHP = 0
         nakedMP = 0
     elseif player.sub_job == 'SCH' then
@@ -133,6 +122,7 @@ function choose_set()
 		equip_rest()
 	else
         equip_idle()
+   	    send_command('wait .1;gs c toyellowHP')
     end
 end
 	
@@ -249,23 +239,15 @@ function equip_nuke(spell)
 	
 		-- check obi/tonban for matching day/weather
 		if obi_check(spell) then
-			if spell.element == world.day_element then
-				-- do not equip relic pants if it's double weather and matching day, as that exceeds the +40% day/weather bonus cap even without them
-				if not (world.weather_element == world.day_element and world.weather_intensity == 2) then
-					equip(sets.matching_day)
-				end
-			elseif spell.element == world.weather_element then
-				equip(sets.matching_dayweather)
+			if  spell.element == world.day_element or 
+                spell.element == world.weather_element then
+                equip(sets.matching_day)
+            end
          end
 		
-		-- check MP for ugg. pendant
-		if player.mp < math.floor(nakedMP * 0.5) + math.floor(spell.mp_cost * 0.75) then
-			equip({neck="Uggalepih Pendant"})
-         end
-		
-		-- sorc. ring
+		-- medi. ring
 		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
-			equip({ring2 = "Sorcerer's Ring"})
+			equip({ring2 = "Medicine Ring"})
         end	
 	end
 end
@@ -280,17 +262,14 @@ function equip_dark(spell)
 	else
 		equip(sets.magic.dark)
 		
-		-- Obi/legs/ring for Drain/Aspir
+		-- Obi for Drain/Aspir
 		if spell.name == 'Aspir' or spell.name == 'Drain' then	
 			-- Matching day
 			if obi_check(spell) then
-				if spell.element == world.day_element then
-                    -- do not equip relic pants if it's double weather and matching day, as that exceeds the +40% day/weather bonus cap even without them
-                    equip(sets.matching_day) -- legs and obi		
-				-- Matching weather
-				elseif spell.element == world.weather_element then
-					equip(sets.matching_dayweather) -- obi
-				end
+				if  spell.element == world.day_element or 
+                    spell.element == world.weather_element then
+                    equip(sets.matching_day) 
+                end
 			end
 		end
 	end
@@ -329,11 +308,10 @@ function precast(spell)
 		
 	-- Abilities	
 	else
-
 		-- Weaponskills
-		elseif spell.type == 'WeaponSkill' then
+		if spell.type == 'WeaponSkill' then
 			equip_ws()
-		
+        end
 	end
 end
 
