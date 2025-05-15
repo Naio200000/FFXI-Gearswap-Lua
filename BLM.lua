@@ -12,6 +12,7 @@
     mel - Change melee mode. Example: melnuke or melmelee
     use_terras - Toggle between using Terra's Staff and Claustrum in idle.
     toyellowHP - Equip yellow HP set for a split second, then go back to idle set to trigger yellow HP.
+	gloves - toggle between using the Sorcerer's gloves for magic burst
 	
 -- Version --
 
@@ -44,37 +45,234 @@ function get_sets()
     -- Idle sets
     -- Has EVA and Damage reduction and absorbtion
 
-    sets.idle = {}
+    sets.idle = {
+		
+		main		= "Claustrum",
+		sub			= "Wise Strap",
+		head		= "Optical Hat",
+		body		= "Dalmatica +1",
+		hands		= "Hydra Gloves",
+		legs		= "Hydra Brais",
+		feet		= "Herald's Gaiters",
+		neck		= "Evasion Torque",
+		waist		= "Sorcerer's Belt",
+		left_ear	= "Ethereal Earring",
+		right_ear	= "Novia Earring",
+		left_ring	= "Shadow Ring",
+		right_ring	= "Wivre Ring +1",
+		back		= "Umbra Cape",
+	}
 
-    sets.melee = {}
+    sets.melee = {
 
-    sets.ws = {}
+		head		= "Walahra Turban",
+		body		= "Goliard Saio",
+		hands		= "Hydra Gloves",
+		legs		= "Hydra Brais",
+		feet		= "Nashira Crackows",
+		neck		= "Ancient Torque",
+		waist		= "Headlong Belt",
+		left_ear	= "Ethereal Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Umbra Cape",
+	}
+
+    sets.ws = {
+
+		head		= "Optical Hat",
+		body		= "Hydra Doublet",
+		hands		= "Hydra Gloves",
+		legs		= "Hydra Brais",
+		feet		= "Hydra Gaiters",
+		neck		= "Ancient Torque",
+		waist		= "Headlong Belt",
+		left_ear	= "Ethereal Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Toreador's Ring",
+		back		= "Umbra Cape",
+	}
 
     sets.magic = {}
 
-    sets.magic.elemental = {}
+    sets.magic.elemental = {
 
-    sets.magic.elemental.debuff = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub			= "Wise Strap",
+		range		=  "Aureole",
+		head		= "Src. Petasos +1",
+		body		= "Genie Weskit",
+		hands		= "Zenith Mitts +1",
+		legs		= "Valkyrie's Trews",
+		feet		= "Shrewd Pumps",
+		neck		= "Lmg. Medallion +1",
+		waist		= "Witch Sash",
+		left_ear	= "Moldavite Earring",
+		right_ear	= "Novio Earring",
+		left_ring	= "Omega Ring",
+		right_ring	= "Galdr Ring",
+		back		= "Ixion Cape",
+	}
 
-    sets.magic.enfeebling = {}
+    sets.magic.elemental.debuff = {
 
-    sets.magic.enfeebling.int = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+    	sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Maat's Cap",
+		body		= "Mahatma Hpl.",
+		hands		= "Valkyrie's Cuffs",
+		legs		= "Mahatma Slops",
+		feet		= "Goliard Clogs",
+		neck		= "Lmg. Medallion +1",
+		waist		= "Witch Sash",
+		left_ear	= "Omn. Earring +1",
+		right_ear	= "Novio Earring",
+		left_ring	= "Omega Ring",
+		right_ring	= "Galdr Ring",
+		back		= "Ixion Cape",
+	}
 
-    sets.magic.enfeebling.mnd = {}
+    sets.magic.enfeebling = {
 
-    sets.magic.dark = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Genie Tiara",
+		body		= "Wizard's Coat",
+		legs		= "Genie Lappas",
+		neck		= "Enfeebling Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Helenus's Earring",
+		right_ear	= "Cass. Earring",
+		right_ring	= "Omega Ring",
+		back		= "Ixion Cape",
+	}
 
-    sets.magic.dark.stun = {}
+    sets.magic.enfeebling.int = set_combine(sets.magic.enfeebling, {
 
-    sets.magic.healing = {}
+	    hands		= "Valkyrie's Cuffs",
+    	left_ring	= "Galdr Ring",
+	    feet		= "Valkyrie's Clogs",
+	})
 
-    sets.magic.enhancing = {}
+    sets.magic.enfeebling.mnd = set_combine(sets.magic.enfeebling, {
 
-    sets.magic.enhancing.stoneskin = {}
+		hands		= "Bricta's Cuffs",
+		left_ring	= "Karka Ring",
+		feet		= "Goliard Clogs",
+	})
 
-    sets.fastcast = {}
+    sets.magic.dark = {
 
-    sets.yellowHP = {}
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub			= "Dark Grip",
+		range		= "Aureole",
+		head		= "Nashira Turban",
+		body		= "Oracle's Robe",
+		hands		= "Sorcerer's Gloves",
+		legs		= "Wizard's Tonban",
+		feet		= "Genie Huaraches",
+		neck		= "Dark Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Dark Earring",
+		right_ear	= "Omn. Earring +1",
+		left_ring	= "Galdr Ring",
+		right_ring	= "Omega Ring",
+		back		= "Merciful Cape",
+	}
+
+    sets.magic.dark.stun = {
+
+		sub			= "Vivid Strap +1",
+		head		= "Walahra Turban",
+		body		= "Goliard Saio",
+		hands		= "Nashira Gages",
+		feet		= "Nashira Crackows",
+		left_ear	= "Omn. Earring +1",
+		back		= "Veela Cape",
+	}
+
+    sets.magic.healing = {
+
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		body		= "Ixion Cloak",
+		hands		= "Bricta's Cuffs",
+		legs		= "Mahatma Slops",
+    	feet		= "Valkyrie's Clogs",
+		neck		= "Fylgja Torque +1",
+		waist		= "Witch Sash",
+		left_ear	= "Celestial Earring",
+		right_ear	= "Roundel Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Celestial Ring",
+		back		= "Dew Silk Cape +1",
+	}
+
+    sets.magic.enhancing = {
+
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Nashira Turban",
+		body		= "Mahatma Hpl.",
+		hands		= "Bricta's Cuffs",
+		legs		= "Mahatma Slops",
+		feet		= "Genie Huaraches",
+		neck		= "Enhancing Torque",
+		waist		= "Sorcerer's Belt",
+		left_ear	= "Augment. Earring",
+		right_ear	= "Celestial Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Celestial Ring",
+		back		= "Merciful Cape",
+	}
+
+    sets.magic.enhancing.stoneskin = {
+
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Maat's Cap",
+		body		= "Mahatma Hpl.",
+		hands		= "Bricta's Cuffs",
+		legs		= "Mahatma Slops",
+    	feet		= "Valkyrie's Clogs",
+		neck		= "Gnole Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Celestial Earring",
+		right_ear	= "Celestial Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Celestial Ring",
+		back		= "Dew Silk Cape +1",
+	}
+
+    sets.fastcast = {
+
+		sub			= "Vivid Strap +1",
+		range		= "Aureole",
+		head		= "Walahra Turban",
+		body		= "Goliard Saio",
+		hands		= "Nashira Gages",
+		right_ear	= "Loquac. Earring",
+		back		= "Veela Cape",
+	}
+
+    sets.yellowHP = {
+
+		sub			= "Dark Grip",
+		body		= "Dalmatica +1",
+		hands		= "Zenith Mitts +1",
+		feet		= "Zenith Pumps +1",
+		neck		= "Morgana's Choker",
+		left_ear	= "Astral Earring",
+		left_ring	= "Serket Ring",
+		right_ring	= "Ether Ring",
+	}
 
     sets.matching_day = {
 	
@@ -84,17 +282,35 @@ function get_sets()
 
 	sets.matching_dayweather = {waist = "Hachirin-no-Obi"}
 
-    seets.resting = {}
+    sets.resting = {
+
+		main		= "Claustrum",		
+		head		= "Goliard Chapeau",
+		body		= "Oracle's Robe",
+		hands		= "Hydra Gloves",
+		legs		= "Oracle's Braconi",
+		feet		= "Goliard Clogs",
+		neck		= "Gnole Torque",
+		waist		= "Hierarch Belt",
+		left_ring	= "Celestial Ring",
+		right_ring	= "Celestial Ring",
+	}
 
     sets.weapons = {}
 
-    sets.weapons.staff = {}
+    sets.weapons.staff = {
+		    
+		main		= { name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub			= "Pole Grip",
+		range		= "Aureole",
+	}
 
     ---------------
 	-- Variables --
 	---------------
     
    	use_terras = false
+	gloves = false
 
     meleeMode = M{'nuke', 'melee'}
 
@@ -107,17 +323,17 @@ end
 
 function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for latents aren't coded properly on LSB. It uses naked HP/MP, no gear, no food, no max HP/MP boost traits, but it does include HP and MP merits. Others will have to figure out these values for themselves for their own character.
     if player.sub_job == 'RDM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 852
+        nakedMP = 938
     elseif player.sub_job == 'WHM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 834
+        nakedMP = 957
     elseif player.sub_job == 'SCH' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 834
+        nakedMP = 938
     else
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 852
+        nakedMP = 879
     end
 end
 
@@ -133,6 +349,7 @@ function choose_set()
 		equip_rest()
 	else
         equip_idle()
+	    send_command('wait .1;gs c toyellowHP')
     end
 end
 	
@@ -256,17 +473,21 @@ function equip_nuke(spell)
 				end
 			elseif spell.element == world.weather_element then
 				equip(sets.matching_dayweather)
-         end
-		
+        	end
+		end
 		-- check MP for ugg. pendant
 		if player.mp < math.floor(nakedMP * 0.5) + math.floor(spell.mp_cost * 0.75) then
 			equip({neck="Uggalepih Pendant"})
-         end
+        end
 		
 		-- sorc. ring
 		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
 			equip({ring2 = "Sorcerer's Ring"})
         end	
+
+		if gloves then
+			equip({hands="Sorcerer's Gloves"})
+		end
 	end
 end
 
@@ -329,11 +550,7 @@ function precast(spell)
 		
 	-- Abilities	
 	else
-
-		-- Weaponskills
-		elseif spell.type == 'WeaponSkill' then
-			equip_ws()
-		
+		equip_ws()	
 	end
 end
 
@@ -396,6 +613,14 @@ function self_command(command)
 			windower.add_to_chat(122,'Using Terra\'s Staff in idle')
 		end	
 		choose_set()
+	elseif command == "gloves" then
+		if gloves then
+			gloves = false
+			windower.add_to_chat(122,'Using Sorcerer\'s gloves to nuke.')
+		else
+			gloves = true
+			windower.add_to_chat(122,'Not using Sorcerer\'s gloves to nuke.')
+		end	
 	end
 		
 end
@@ -405,4 +630,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1;input /macro book 4;wait 1; input !myth; wait 1; input /lockstyleset 5; wait 1; input /echo Gearswap loaded.')
