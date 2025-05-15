@@ -549,11 +549,8 @@ function precast(spell)
 		end
 		
 	-- Abilities	
-	else
-		-- Weaponskills
-		if spell.type == 'WeaponSkill' then
+	elseif spell.type == 'WeaponSkill' then --Weaponskills
 			equip_ws()
-        end
 	end
 end
 
