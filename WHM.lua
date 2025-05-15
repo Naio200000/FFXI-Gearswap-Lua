@@ -10,16 +10,11 @@
 -- Comands --
 
     mel - Change melee mode. Example: melnuke or melmelee
-    use_terras - Toggle between using Terra's Staff and Claustrum in idle.
     toyellowHP - Equip yellow HP set for a split second, then go back to idle set to trigger yellow HP.
 	
 -- Version --
 
     v0 - Base sets and functions.
-    v1 - Added functions to all magic types.
-    v2 - Added yellow HP function.
-    v3 - Added nuke and melee toggle.
-    v4 - Added Initialization of naked HP/MP for latents.
 
 -- Credits --
 
@@ -362,17 +357,6 @@ function self_command(command)
 		else
 			equip_yellow()
 		end
-	
-	-- Toggle Terra's/Claustrum in idle
-	elseif command == "use_terras" then
-		if use_terras then
-			use_terras = false
-			windower.add_to_chat(122,'Using Claustrum in idle.')
-		else
-			use_terras = true
-			windower.add_to_chat(122,'Using Terra\'s Staff in idle')
-		end	
-		choose_set()
 	end
 		
 end
