@@ -15,6 +15,11 @@
 -- Version --
 
     v0 - Base sets and functions.
+    v1 - Added functions to all magic types.
+    v2 - Added check obi for matching day and weather.
+    v3 - Added melee mode and weapons.
+    v4 - Added atuo apply yellow HP set.
+    v5 - Added distinction for yellow HP set on melee mode, and remember weapons.
 
 -- Credits --
 
@@ -267,13 +272,29 @@ function get_sets()
 
     sets.weapons = {}
 
-    sets.weapons.clubs = {}
+    sets.weapons.clubs = {
+
+        main="Brise-os +1",
+        sub="Deae Gratia",
+    }
     
-    sets.weapons.clubshield = {}
+    sets.weapons.clubshield = {
+
+        main="Brise-os +1",
+        sub="Avalon Shield",
+    }
+
+    sets.weapons.clubkc = {
+
+        main="Brise-os +1",
+        sub="Kraken Club",
+    }   
 
     ---------------
 	-- Variables --
 	---------------
+
+    currentWeapons = 'none' -- remember what your current weapons are
 
     meleeMode = M{'nuke', 'melee'}
 
@@ -312,7 +333,9 @@ function choose_set()
 		equip_rest()
 	else
         equip_idle()
-   	    send_command('wait .1;gs c toyellowHP')
+        if meleeMode.current == 'nuke' then
+            send_command('wait .1;gs c toyellowHP')
+        end
     end
 end
 	
@@ -503,9 +526,13 @@ function self_command(command)
 		
 		local temp = meleeMode.value
 		if temp == 'melee' then
-			enable('main','sub','range','ammo')
-            equip(sets.weapons.staff)
-            disable('main','sub','range','ammo')
+			enable('main','sub')
+            if currentWeapons == 'none' then
+                equip(sets.weapons.clubshield)
+            else
+                equip(sets.weapons[currentWeapons])
+            end
+            disable('main','sub')
 			windower.add_to_chat(122,'Melee Mode on')
 			
 		elseif temp == 'nuke' then -- mage mode
@@ -521,6 +548,17 @@ function self_command(command)
 		else
 			equip_yellow()
 		end
+
+    -- Change weapons
+    elseif string.sub(command, 1, 3) == "wpn" then
+
+        local wpn = string.sub(command, 4, -1)
+        enable('main','sub')
+        equip(sets.weapons[wpn])
+        disable('main','sub')
+        currentWeapons = wpn -- remember what your current weapons are
+
+
 	end
 		
 end
