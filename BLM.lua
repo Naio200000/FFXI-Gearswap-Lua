@@ -263,15 +263,18 @@ function get_sets()
 	}
 
     sets.yellowHP = {
-
-		sub			= "Dark Grip",
-		body		= "Dalmatica +1",
-		hands		= "Zenith Mitts +1",
-		feet		= "Zenith Pumps +1",
-		neck		= "Morgana's Choker",
-		left_ear	= "Astral Earring",
-		left_ring	= "Serket Ring",
-		right_ring	= "Ether Ring",
+		
+        main="Alkalurops",
+        sub="Dark Grip",
+        ammo="Tiphia Sting",
+        body="Dalmatica +1",
+        hands="Zenith Mitts +1",
+        feet="Zenith Pumps +1",
+        neck="Morgana's Choker",
+        left_ear="Astral Earring",
+        left_ring="Serket Ring",
+        right_ring="Ether Ring",
+        back="Ixion Cape",
 	}
 
     sets.matching_day = {
