@@ -79,7 +79,9 @@ function get_sets()
 
     sets.weapons = {}
 
-    sets.weapons.staff = {}
+    sets.weapons.clubs = {}
+    
+    sets.weapons.clubshield = {}
 
     ---------------
 	-- Variables --
@@ -171,7 +173,7 @@ function equip_heal(spell)
 		
 		-- Matching day
 		if obi_check(spell) then
-			equip(sets.matching_dayweather) -- obi
+			equip(sets.matching_day) -- obi
 		end
 		
 	-- Other spells
@@ -212,9 +214,9 @@ function equip_enhancing(spell)
 		equip(sets.magic.enhancing.stoneskin)
 	
 	-- Barspells/enspells/phalanx
-	elseif spell.name:contains('Bar')
-	or spell.name:startswith('En')
-	or spell.name:contains('Phalanx') then
+	elseif spell.name:contains('Bar') or
+	       spell.name:startswith('En') or
+	       spell.name:contains('Phalanx') then
 		equip(sets.magic.enhancing)
 		
 	-- Other spells
@@ -226,12 +228,12 @@ end
 function equip_nuke(spell)
 
 	-- Elemental debuffs
-	if spell.name == 'Burn'
-	or spell.name == 'Frost'
-	or spell.name == 'Choke'
-	or spell.name == 'Rasp'
-	or spell.name == 'Shock'
-	or spell.name == 'Drown' then
+	if spell.name == 'Burn' or
+	   spell.name == 'Frost' or
+	   spell.name == 'Choke' or
+	   spell.name == 'Rasp' or
+	   spell.name == 'Shock' or
+	   spell.name == 'Drown' then
 		equip(sets.magic.elemental.debuffs)
 		
 	-- Nukes
