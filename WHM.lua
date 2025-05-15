@@ -39,38 +39,231 @@ function get_sets()
     -- Idle sets
     -- Has EVA and Damage reduction and absorbtion
 
-    sets.idle = {}
+    sets.idle = {
 
-    sets.melee = {}
+        main="Terra's Staff",
+        sub="Vivid Strap +1",
+        ammo="Hedgehog Bomb",
+        head="Optical Hat",
+        body="Dalmatica +1",
+        hands="Hydra Gloves",
+        legs="Hydra Brais",
+        feet="Herald's Gaiters",
+        neck="Evasion Torque",
+        waist="Scouter's Rope",
+        left_ear="Triton Earring",
+        right_ear="Novia Earring",
+        left_ring="Shadow Ring",
+        right_ring="Wivre Ring +1",
+        back="Umbra Cape",
+    }
 
-    sets.ws = {}
+    sets.melee = {
+
+        ammo="Tiphia Sting",
+        head="Walahra Turban",
+        body="Hydra Doublet",
+        hands="Blessed Mitts +1",
+        legs="Bls. Trousers +1",
+        feet="Blessed Pumps +1",
+        neck="Ancient Torque",
+        waist="Headlong Belt",
+        left_ear="Ethereal Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Rajas Ring",
+        back="Umbra Cape",
+    }
+
+    sets.ws = {
+
+        ammo="Tiphia Sting",
+        head="Gnadbhod's Helm",
+        body="Hydra Doublet",
+        hands="Creek M Mitts",
+        legs="Hydra Brais",
+        feet="Creek M Clomps",
+        neck="Ancient Torque",
+        waist="Potent Belt",
+        left_ear="Celestial Earring",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Toreador's Ring",
+        back="Dew Silk Cape +1",
+    }
 
     sets.magic = {}
 
-    sets.magic.enfeebling = {}
+    sets.magic.enfeebling = {
 
-    sets.magic.enfeebling.int = {}
+        main="Chatoyant Staff",
+        sub="Bugard Strap +1",
+        ammo="Nazar Bonjuk",
+        head="Elite Beret +1",
+        body="Healer's Bliaut",
+        hands="Cleric's Mitts",
+        legs="Valkyrie's Trews",
+        feet="Goliard Clogs",
+        neck="Enfeebling Torque",
+        waist="Witch Sash",
+        right_ear="Enfeebling Earring",
+        right_ring="Omega Ring",
+        back="Ixion Cape",
+    }
 
-    sets.magic.enfeebling.mnd = {}
+    sets.magic.enfeebling.int = {
 
-    sets.magic.dark = {}
+        left_ear="Omn. Earring +1",
+        left_ring="Galdr Ring",
+    }
 
-    sets.magic.healing = {}
+    sets.magic.enfeebling.mnd = {
 
-    sets.magic.enhancing = {}
+        left_ear="Celestial Earring",
+        left_ring="Karka Ring",
+    }
 
-    sets.magic.enhancing.stoneskin = {}
+    sets.magic.dark = {
 
-    sets.fastcast = {}
+        main="Chatoyant Staff",
+        sub="Bugard Strap +1",
+        ammo="Nazar Bonjuk",
+        body="Ixion Cloak",
+        hands="Valkyrie's Cuffs",
+        legs="Valkyrie's Trews",
+        feet="Goliard Clogs",
+        neck="Dark Torque",
+        waist="Witch Sash",
+        left_ear="Cass. Earring",
+        right_ear="Helenus's Earring",
+        left_ring="Galdr Ring",
+        right_ring="Omega Ring",
+        back="Merciful Cape",
+    }
 
-    sets.yellowHP = {}
+    sets.magic.healing = {
+
+        main="Chatoyant Staff",
+        sub="Bugard Strap +1",
+        ammo="Nazar Bonjuk",
+        head="Goliard Chapeau",
+        body="Aristocrat's Coat",
+        hands="Healer's Mitts",
+        legs="Cleric's Pantaln.",
+        feet="Blessed Pumps +1",
+        neck="Fylgja Torque +1",
+        waist="Witch Sash",
+        left_ear="Celestial Earring",
+        right_ear="Roundel Earring",
+        left_ring="Karka Ring",
+        right_ring="Celestial Ring",
+        back="Dew Silk Cape +1",
+    }
+
+    sets.magic.enhancing = {
+
+        main="Chatoyant Staff",
+        sub="Bugard Strap +1",
+        ammo="Nazar Bonjuk",
+        head="Goliard Chapeau",
+        body="Mahatma Hpl.",
+        hands="Blessed Mitts +1",
+        legs="Cleric's Pantaln.",
+        feet="Cleric's Duckbills",
+        neck="Enhancing Torque",
+        waist="Witch Sash",
+        left_ear="Celestial Earring",
+        right_ear="Augment. Earring",
+        left_ring="Karka Ring",
+        right_ring="Celestial Ring",
+        back="Merciful Cape",
+    }
+
+    sets.magic.enhancing.stoneskin = {
+
+        main="Alkalurops",
+        sub="Bugard Strap +1",
+        ammo="Nazar Bonjuk",
+        head="Goliard Chapeau",
+        body="Mahatma Hpl.",
+        hands="Blessed Mitts +1",
+        legs="Bls. Trousers +1",
+        feet="Cleric's Duckbills",
+        neck="Enhancing Torque",
+        waist="Witch Sash",
+        left_ear="Celestial Earring",
+        right_ear="Celestial Earring",
+        left_ring="Karka Ring",
+        right_ring="Celestial Ring",
+        back="Dew Silk Cape +1",
+    }
+
+    sets.magic.divine = {
+
+        main="Aquilo's Staff",
+        sub="Bugard Strap +1",
+        ammo="Nazar Bonjuk",
+        head="Elite Beret +1",
+        body="Mahatma Hpl.",
+        hands="Bricta's Cuffs",
+        legs="Healer's Pantaln.",
+        feet="Valkyrie's Clogs",
+        neck="Gnole Torque",
+        waist="Witch Sash",
+        left_ear="Celestial Earring",
+        right_ear="Celestial Earring",
+        left_ring="Karka Ring",
+        right_ring="Omega Ring",
+        back="Dew Silk Cape +1",
+    }
+
+    sets.fastcast = {
+
+        sub="Vivid Strap +1",
+        head="Walahra Turban",
+        body="Goliard Saio",
+        hands="Blessed Mitts +1",
+        legs="Bls. Trousers +1",
+        feet="Blessed Pumps +1",
+        waist="Headlong Belt",
+        right_ear="Loquac. Earring",
+        back="Veela Cape",
+    }
+
+    sets.yellowHP = {
+
+        main="Alkalurops",
+        sub="Dark Grip",
+        ammo="Tiphia Sting",
+        body="Dalmatica +1",
+        hands="Zenith Mitts +1",
+        feet="Zenith Pumps +1",
+        neck="Morgana's Choker",
+        left_ear="Astral Earring",
+        left_ring="Serket Ring",
+        right_ring="Ether Ring",
+        back="Ixion Cape",
+    }
 
     sets.matching_day = {
 	
         waist		= "Hachirin-no-Obi",
 	}
 
-    seets.resting = {}
+    sets.resting = {
+
+        main        = "Imperial Wand",
+        sub         = "Legion Scutum",
+        head		= "Goliard Chapeau",
+		body		= "Oracle's Robe",
+		hands		= "Hydra Gloves",
+		legs		= "Oracle's Braconi",
+		feet		= "Goliard Clogs",
+		neck		= "Gnole Torque",
+		waist		= "Hierarch Belt",
+		left_ring	= "Celestial Ring",
+		right_ring	= "Celestial Ring",
+    }
 
     sets.weapons = {}
 
@@ -93,17 +286,17 @@ end
 
 function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for latents aren't coded properly on LSB. It uses naked HP/MP, no gear, no food, no max HP/MP boost traits, but it does include HP and MP merits. Others will have to figure out these values for themselves for their own character.
     if player.sub_job == 'RDM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 913
+        nakedMP = 877
     elseif player.sub_job == 'BLM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 876
+        nakedMP = 915
     elseif player.sub_job == 'SCH' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 895
+        nakedMP = 887
     else
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 913
+        nakedMP = 818
     end
 end
 
@@ -213,7 +406,10 @@ function equip_enhancing(spell)
 	       spell.name:startswith('En') or
 	       spell.name:contains('Phalanx') then
 		equip(sets.magic.enhancing)
-		
+	
+    -- Regen
+    elseif spell.name:contains('Regen') then
+        equip({body="Cleric's Bliaut"})
 	-- Other spells
 	else
 		equip(sets.fastcast)
