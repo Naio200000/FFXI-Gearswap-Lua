@@ -12,6 +12,7 @@
     mel - Change melee mode. Example: melnuke or melmelee
     use_terras - Toggle between using Terra's Staff and Claustrum in idle.
     toyellowHP - Equip yellow HP set for a split second, then go back to idle set to trigger yellow HP.
+	gloves - toggle between using the Sorcerer's gloves for magic burst
 	
 -- Version --
 
@@ -308,6 +309,7 @@ function get_sets()
 	---------------
     
    	use_terras = false
+	gloves = false
 
     meleeMode = M{'nuke', 'melee'}
 
@@ -481,6 +483,10 @@ function equip_nuke(spell)
 		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
 			equip({ring2 = "Sorcerer's Ring"})
         end	
+
+		if gloves then
+			equip({hands="Sorcerer's Gloves"})
+		end
 	end
 end
 
@@ -606,6 +612,14 @@ function self_command(command)
 			windower.add_to_chat(122,'Using Terra\'s Staff in idle')
 		end	
 		choose_set()
+	elseif command == "gloves" then
+		if gloves then
+			gloves = false
+			windower.add_to_chat(122,'Using Sorcerer\'s gloves to nuke.')
+		else
+			gloves = true
+			windower.add_to_chat(122,'Not using Sorcerer\'s gloves to nuke.')
+		end	
 	end
 		
 end
