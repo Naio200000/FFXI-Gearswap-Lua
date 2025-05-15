@@ -630,4 +630,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1;input /macro book 4;wait 1; input !myth; wait 1; input /lockstyleset 6; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1;input /macro book 4;wait 1; input !myth; wait 1; input /lockstyleset 5; wait 1; input /echo Gearswap loaded.')
