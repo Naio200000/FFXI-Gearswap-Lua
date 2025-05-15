@@ -363,6 +363,10 @@ function equip_heal(spell)
 		if obi_check(spell) then
 			equip(sets.matching_day) -- obi
 		end
+        -- Medi ring
+        if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
+			equip({ring2 = "Medicine Ring"})
+        end	
 		
 	-- Other spells
 	else
@@ -416,56 +420,20 @@ function equip_enhancing(spell)
 	end
 end
 
-function equip_nuke(spell)
-
-	-- Elemental debuffs
-	if spell.name == 'Burn' or
-	   spell.name == 'Frost' or
-	   spell.name == 'Choke' or
-	   spell.name == 'Rasp' or
-	   spell.name == 'Shock' or
-	   spell.name == 'Drown' then
-		equip(sets.magic.elemental.debuffs)
-		
-	-- Nukes
-	else
-	
-		-- check obi/tonban for matching day/weather
-		if obi_check(spell) then
-			if  spell.element == world.day_element or 
-                spell.element == world.weather_element then
-                equip(sets.matching_day)
-            end
-         end
-		
-		-- medi. ring
-		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
-			equip({ring2 = "Medicine Ring"})
-        end	
-	end
-end
-
 function equip_dark(spell)
-
-	-- Stun
-	if spell.name == 'Stun' then
-		equip(sets.magic.dark.stun)
-		
-	-- Other spells
-	else
-		equip(sets.magic.dark)
-		
-		-- Obi for Drain/Aspir
-		if spell.name == 'Aspir' or spell.name == 'Drain' then	
-			-- Matching day
-			if obi_check(spell) then
-				if  spell.element == world.day_element or 
-                    spell.element == world.weather_element then
-                    equip(sets.matching_day) 
-                end
-			end
-		end
-	end
+    -- Dark magic
+    equip(sets.magic.dark)
+    
+    -- Obi for Drain/Aspir
+    if spell.name == 'Aspir' or spell.name == 'Drain' then	
+        -- Matching day
+        if obi_check(spell) then
+            if  spell.element == world.day_element or 
+                spell.element == world.weather_element then
+                equip(sets.matching_day) 
+            end
+        end
+    end
 end
 
 -----------------------
@@ -562,4 +530,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;wait 1;gs equip idle; wait 1; input /lockstyleset 4; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
