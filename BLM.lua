@@ -143,7 +143,6 @@ function get_sets()
 		head		= "Genie Tiara",
 		body		= "Wizard's Coat",
 		legs		= "Genie Lappas",
-		feet		= "Avocat Pigaches",
 		neck		= "Enfeebling Torque",
 		waist		= "Witch Sash",
 		left_ear	= "Helenus's Earring",
@@ -156,12 +155,14 @@ function get_sets()
 
 	    hands		= "Valkyrie's Cuffs",
     	left_ring	= "Galdr Ring",
+	    feet		= "Valkyrie's Clogs",
 	})
 
     sets.magic.enfeebling.mnd = set_combine(sets.magic.enfeebling, {
 
 		hands		= "Bricta's Cuffs",
 		left_ring	= "Karka Ring",
+		feet		= "Goliard Clogs",
 	})
 
     sets.magic.dark = {
@@ -202,7 +203,7 @@ function get_sets()
 		body		= "Ixion Cloak",
 		hands		= "Bricta's Cuffs",
 		legs		= "Mahatma Slops",
-		feet		= "Goliard Clogs",
+    	feet		= "Valkyrie's Clogs",
 		neck		= "Fylgja Torque +1",
 		waist		= "Witch Sash",
 		left_ear	= "Celestial Earring",
@@ -240,7 +241,7 @@ function get_sets()
 		body		= "Mahatma Hpl.",
 		hands		= "Bricta's Cuffs",
 		legs		= "Mahatma Slops",
-		feet		= "Goliard Clogs",
+    	feet		= "Valkyrie's Clogs",
 		neck		= "Gnole Torque",
 		waist		= "Witch Sash",
 		left_ear	= "Celestial Earring",
@@ -629,4 +630,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 2;gs equip weapons.staff;wait 1;input /macro book 4;wait 1; input !myth; wait 1; input /lockstyleset 6; wait 1; input /echo Gearswap loaded.')
