@@ -211,12 +211,12 @@ function get_sets()
         head="Elite Beret +1",
         body="Mahatma Hpl.",
         hands="Bricta's Cuffs",
-        legs="Healer's Pantaln.",
-        feet="Valkyrie's Clogs",
+		legs		= "Valkyrie's Trews",
+		feet		= "Shrewd Pumps",
         neck="Gnole Torque",
         waist="Witch Sash",
-        left_ear="Celestial Earring",
-        right_ear="Celestial Earring",
+		left_ear	= "Moldavite Earring",
+		right_ear	= "Novio Earring",
         left_ring="Karka Ring",
         right_ring="Omega Ring",
         back="Dew Silk Cape +1",
@@ -333,9 +333,8 @@ function choose_set()
 		equip_rest()
 	else
         equip_idle()
-        if meleeMode.current == 'nuke' then
-            -- TODO fix this
-            -- send_command('wait .1;gs c toyellowHP')
+        if meleeMode.current == 'nuke' and player.sub_job ~= 'SCH' then
+            send_command('wait .1;gs c toyellowHP')
         end
     end
 end
@@ -350,7 +349,6 @@ function equip_idle()
 end
 
 function equip_rest()
-    --TODO add melee mode
 	equip(sets.resting)
 end
 
@@ -461,6 +459,19 @@ function equip_dark(spell)
     end
 end
 
+function equip_divine(spell)
+	-- Divine magic
+	equip(sets.magic.divine)
+	
+	-- Matching day
+	if obi_check(spell) then
+		if  spell.element == world.day_element or 
+			spell.element == world.weather_element then
+			equip(sets.matching_day) 
+		end
+	end
+end
+
 -----------------------
 -- Pre/mid/aftercast --
 -----------------------
@@ -511,6 +522,8 @@ function midcast(spell)
 		equip_nuke(spell)
     elseif spell.skill == 'Dark Magic' then
         equip_dark(spell)
+	elseif spell.skill == 'Divine Magic' then
+		equip_divine(spell)
 	end
 end
  
