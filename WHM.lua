@@ -350,6 +350,7 @@ function equip_idle()
 end
 
 function equip_rest()
+    --TODO add melee mode
 	equip(sets.resting)
 end
 
