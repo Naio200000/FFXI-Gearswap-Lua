@@ -334,7 +334,8 @@ function choose_set()
 	else
         equip_idle()
         if meleeMode.current == 'nuke' then
-            send_command('wait .1;gs c toyellowHP')
+            -- TODO fix this
+            -- send_command('wait .1;gs c toyellowHP')
         end
     end
 end
