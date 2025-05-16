@@ -32,7 +32,7 @@
 ----------
 -- Sets --
 ----------
-
+--TODO: add divine funtions
 --TODO: add comments to all sets
 
 function get_sets()
