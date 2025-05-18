@@ -467,6 +467,7 @@ function equip_nuke(spell)
 	-- Nukes
 	else
 	
+		equip(sets.magic.elemental)
 		-- check obi/tonban for matching day/weather
 		if obi_check(spell) then
 			if spell.element == world.day_element then
@@ -485,7 +486,7 @@ function equip_nuke(spell)
 		
 		-- sorc. ring
 		if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
-			equip({ring2 = "Sorcerer's Ring"})
+			equip({left_ring = "Sorcerer's Ring"})
         end	
 
 		if gloves then
