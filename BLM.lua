@@ -49,6 +49,7 @@ function get_sets()
 		
 		main		= "Claustrum",
 		sub			= "Wise Strap",
+		range		=  "Aureole",
 		head		= "Optical Hat",
 		body		= "Dalmatica +1",
 		hands		= "Hydra Gloves",
@@ -266,7 +267,6 @@ function get_sets()
 		
         main="Alkalurops",
         sub="Dark Grip",
-        ammo="Tiphia Sting",
         body="Dalmatica +1",
         hands="Zenith Mitts +1",
         feet="Zenith Pumps +1",
