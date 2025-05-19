@@ -157,5 +157,17 @@ function equip_ws(name)
 	else
 		equip(sets.ws.str)
 	end
-
 end 
+
+-- Decide whether to use obi or not
+function obi_check(spell)
+    local weak_to_element = {Dark="Light",Light="Dark",Ice="Fire",Wind="Ice",Earth="Wind",Lightning="Earth",Water="Lightning",Fire="Water",}
+    local weakEle = weak_to_element[spell.element]
+	
+	-- Iridescence trait on Chatoyant/Claustrum makes single weather stronger than day of the week, so we don't want to equip obi if day gives bonus but weather gives penalty
+    if world.weather_element == spell.element or (world.day_element == spell.element and world.weather_element ~= weakEle) then
+        return true
+    else
+        return false
+    end
+end
