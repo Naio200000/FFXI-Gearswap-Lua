@@ -52,6 +52,8 @@ function get_sets()
 
     sets.melee.eva = {}
 
+    sets.melee.ranged = {}
+
     sets.ws = {}
 
     sets.ws.str = {}
@@ -91,6 +93,24 @@ function get_sets()
     sets.icestaff = {}
 
     sets.darkgrip = {}
+
+    sets.weapons = {}
+
+    sets.weapons.staff = {}
+
+    sets.weapons.swdg = {}
+
+    sets.weapons.dgsw = {}
+
+    sets.weapons.swkc = {}
+
+    sets.weapons.dgkc = {}
+
+    sets.weapons.swsh = {}
+
+    sets.weapons.dgsh = {}
+
+    sets.weapons.ranged = {}
 
     fightMode = M{'mage', 'melee'} 							-- fight modes
 	meleeMode = M{'tp','acc','eva'} 					-- melee modes
