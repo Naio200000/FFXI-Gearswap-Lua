@@ -142,3 +142,16 @@ function equip_idle()
 	equip(sets.idle)
 end
  
+function equip_ws(name)
+
+	if name == 'Knights of Round' or 'Death Blossom' then
+		equip(sets.ws.mnd)
+	elseif name == 'Evisceration' then
+		equip(sets.ws.dex)
+	elseif name == 'Sidewinder' then
+		equip(sets.ws.racc)
+	else
+		equip(sets.ws.str)
+	end
+
+end 
