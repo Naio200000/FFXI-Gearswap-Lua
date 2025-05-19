@@ -171,3 +171,23 @@ function obi_check(spell)
         return false
     end
 end
+
+function equip_heal(spell)
+
+	-- Cures
+	if spell.name:contains('Cure')
+	or spell.name:contains('Cura') then
+		equip(sets.magic.healing)
+		
+		-- Matching day
+		if obi_check(spell) then
+			if spell.element == world.day_element or spell.element == world.weather_element then
+				equip(sets.matching_dayweather) -- obi
+			end
+		end
+		
+	-- Other spells
+	else
+		equip(sets.fastcast)
+	end
+end
