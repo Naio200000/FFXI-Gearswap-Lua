@@ -95,3 +95,18 @@ function get_sets()
 
 end
 
+function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for latents aren't coded properly on LSB. It uses naked HP/MP, no gear, no food, no max HP/MP boost traits, but it does include HP and MP merits. Others will have to figure out these values for themselves for their own character.
+    if player.sub_job == 'BLM' then
+        nakedHP = 0
+        nakedMP = 0
+    elseif player.sub_job == 'WHM' then
+        nakedHP = 0
+        nakedMP = 0
+    elseif player.sub_job == 'SCH' then
+        nakedHP = 0
+        nakedMP = 0
+    else
+        nakedHP = 0
+        nakedMP = 0
+    end
+end
