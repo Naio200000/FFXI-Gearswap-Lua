@@ -327,3 +327,22 @@ function precast(spell)
 		end
 	end
 end
+
+function midcast(spell)
+ 
+	if spell.skill == 'Healing Magic' then
+        equip_heal(spell)
+    elseif spell.skill == 'Enfeebling Magic' then
+        equip_enfeebling(spell)
+    elseif spell.skill == 'Enhancing Magic' then
+        equip_enhancing(spell)
+    elseif spell.skill == 'Elemental Magic' then
+		equip_nuke(spell)
+    elseif spell.skill == 'Dark Magic' then
+        equip_dark(spell)
+	elseif spell.skill == 'Divine Magic' then
+		equip_divine(spell)
+    elseif spell.name:contains('Utsusemi') then
+		equip(sets.utsusemi)
+	end
+end
