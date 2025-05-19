@@ -138,3 +138,7 @@ function equip_engaged()
 	end
 end
  
+function equip_idle()
+	equip(sets.idle)
+end
+ 
