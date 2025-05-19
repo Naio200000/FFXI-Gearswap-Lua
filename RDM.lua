@@ -89,7 +89,7 @@ function get_sets()
     sets.darkgrip = {}
 
     fightMode = M{'mage', 'melee'} 							-- fight modes
-	meleeMode = M{'haste','hacc','acc'} 					-- melee modes
+	meleeMode = M{'tp','acc','eva'} 					-- melee modes
 
     initializeNakedHPMP() -- initialize HP and MP values for use in Uggalepih Pendant calculation
 
@@ -110,3 +110,31 @@ function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for l
         nakedMP = 0
     end
 end
+
+function status_change(new,old)
+    choose_set()
+end
+
+-- Main function that decides whether to equip engaged/idle/resting gear
+function choose_set()
+    if player.status == "Engaged" then
+        equip_engaged()
+    elseif player.status == "Resting" then
+		equip_rest()
+	else
+        equip_idle()
+    end
+end
+
+function equip_engaged()
+
+	local temp = fightMode.value
+	if temp == 'melee' then
+		-- equip a melee set when in melee mode
+		equip(sets.melee[meleeMode.value])
+	elseif temp == 'mage' then
+		-- RDM has no staff skill: when in mage mode, disengage or go to melee mode
+		equip_idle()
+	end
+end
+ 
