@@ -21,6 +21,7 @@
     v2 - Added yellow HP function.
     v3 - Added nuke and melee toggle.
     v4 - Added Initialization of naked HP/MP for latents.
+	v5 - Added Glove variable to toggle Sorcerer's gloves for magic burst.
 
 -- Credits --
 
