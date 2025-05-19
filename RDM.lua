@@ -346,3 +346,9 @@ function midcast(spell)
 		equip(sets.utsusemi)
 	end
 end
+
+-- After casting or using an ability
+function aftercast(spell)
+    
+	choose_set()
+end
