@@ -68,6 +68,10 @@ function get_sets()
 
     sets.magic.elemental.debuff = {}
 
+    sets.magic.enfeebles.int = {}
+
+    sets.magic.enfeebles.mnd = {}
+
     sets.magic.enhancing = {}
 
     sets.magic.enhancing.stoneskin = {}
@@ -189,5 +193,30 @@ function equip_heal(spell)
 	-- Other spells
 	else
 		equip(sets.fastcast)
+	end
+end
+
+function equip_enfeebling(spell)
+
+	-- INT-based enfeebles
+    if   spell.name:contains('Poison')    or
+	     spell.name:contains('Dia') or
+	     spell.name:contains('Sleep')   or
+	     spell.name:contains('Blind')   or
+	     spell.name == 'Dispel'     or
+	     spell.name == 'Bind'   or
+	     spell.name == 'Gravity' then
+		equip(sets.magic.enfeebles.int)
+		
+	-- MND-based enfeebles
+	else
+		equip(sets.magic.enfeebling.mnd)
+	end
+	
+	-- Dark grip for Sleep, Dispel and Blind
+	if spell.name:contains('Sleep') or
+	     spell.name:contains('Blind') or
+	     spell.name == 'Dispel' then
+		equip(sets.darkgrip)
 	end
 end
