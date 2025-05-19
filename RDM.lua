@@ -137,6 +137,10 @@ function equip_engaged()
 		equip_idle()
 	end
 end
+
+function equip_rest()
+	equip(sets.resting)
+end
  
 function equip_idle()
 	equip(sets.idle)
