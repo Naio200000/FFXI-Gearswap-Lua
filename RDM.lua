@@ -278,5 +278,52 @@ function equip_dark(spell)
 end
 
 function equip_divine(spell)
-	equip(sets.fastcasthaste)
+	equip(sets.fastcast)
+end
+
+function precast(spell)
+	
+	-- Magic
+	if spell.action_type == 'Magic' then
+	
+		-- Cancel magic when it is not up yet
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		if spell_recasts[spell.recast_id] > 60 then  -- some margin to account for server lag
+			add_to_chat(167,spell.english .. ' is still on cooldown!')
+			cancel_spell()
+		else
+
+			-- Fast cast for all spells	
+            equip(sets.fastcast)
+		
+			-- Cancel status effects for spells that don't overwrite themselves
+			if spell.name == "Sneak" then send_command("cancel sneak") end
+			if spell.name == "Stoneskin" then send_command("wait 3;cancel stoneskin") end
+			if spell.name == "Reraise" then send_command("cancel reraise") end
+			if spell.name == "Blink" then send_command("wait 3;cancel blink") end
+			if spell.name == "Aquaveil" then send_command("wait 3;cancel aquaveil") end
+			if spell.name == "Ice Spikes" then send_command("cancel ice spikes") end
+			if spell.name == "Shock Spikes" then send_command("cancel shock spikes") end
+			if spell.name == "Phalanx" then send_command("cancel phalanx") end
+		end
+	
+	-- Abilities	
+	else
+		-- Cancel sneak when using Spectral Jig
+		if spell.name == "Spectral Jig" then
+			send_command("cancel sneak")
+
+		-- Weaponskills	
+		elseif spell.type == 'WeaponSkill' then
+			equip_ws(spell.name)
+			
+		-- Dancer steps
+		elseif spell.type:contains('Step') then
+			equip(sets.melee.acc)
+			
+		-- Ranged attack
+		elseif spell.action_type == 'Ranged Attack' then
+			equip(sets.ranged) 
+		end
+	end
 end
