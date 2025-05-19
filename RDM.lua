@@ -392,3 +392,52 @@ function aftercast(spell)
 	choose_set()
 end
 
+---------------------
+-- Player commands --
+--------------------- 
+
+function self_command(command)
+
+	-- Toggle mage/melee
+	if command == "fightMode" then
+		fightMode:cycle() -- go to next
+		
+		local temp = fightMode.value
+		if temp == 'melee' then 
+			enable('main','sub','range','ammo')
+			equip(sets.weapons[currentWeapons])	-- when going to melee, equip the last known weapons
+			disable('main','sub','range','ammo')
+			windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+			
+		elseif temp == 'mage' then
+			enable('main','sub','range','ammo')
+			windower.add_to_chat(122,'Mage mode')
+		end	
+		choose_set()
+	
+	-- Change melee mode	
+	elseif command == "meleeMode" then
+		meleeMode:cycle() -- go to next
+		choose_set()
+		windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+		
+	-- Change weapons
+	elseif string.sub(command, 1, 3) == "wpn" then
+		local wpn = string.sub(command, 4, -1)	
+		currentWeapons = wpn -- remember what your current weapons are
+		
+		-- equip weapons if you're in melee mode
+		if fightMode.value == 'melee' then
+			enable('main','sub','range','ammo')
+			equip(sets.weapons[wpn])	
+			disable('main','sub','range','ammo')
+		end
+	end
+end
+
+---------------
+-- Init code --
+---------------
+
+enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1;input /macro book 1;wait 2;input /lockstyleset 4; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
