@@ -99,6 +99,10 @@ function get_sets()
 
 end
 
+---------------
+-- Functions --
+---------------
+
 function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for latents aren't coded properly on LSB. It uses naked HP/MP, no gear, no food, no max HP/MP boost traits, but it does include HP and MP merits. Others will have to figure out these values for themselves for their own character.
     if player.sub_job == 'BLM' then
         nakedHP = 0
@@ -115,6 +119,7 @@ function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for l
     end
 end
 
+-- Sets up everytime the player changes status
 function status_change(new,old)
     choose_set()
 end
@@ -130,6 +135,7 @@ function choose_set()
     end
 end
 
+-- Equips engaged gear
 function equip_engaged()
 
 	local temp = fightMode.value
@@ -142,14 +148,17 @@ function equip_engaged()
 	end
 end
 
+-- Equips resting gear
 function equip_rest()
 	equip(sets.resting)
 end
  
+-- Equips idle gear
 function equip_idle()
 	equip(sets.idle)
 end
- 
+
+-- Equips weaponskill gear
 function equip_ws(name)
 
 	if name == 'Knights of Round' or 'Death Blossom' then
@@ -163,7 +172,7 @@ function equip_ws(name)
 	end
 end 
 
--- Decide whether to use obi or not
+-- Check wether or not Obi should be equipped
 function obi_check(spell)
     local weak_to_element = {Dark="Light",Light="Dark",Ice="Fire",Wind="Ice",Earth="Wind",Lightning="Earth",Water="Lightning",Fire="Water",}
     local weakEle = weak_to_element[spell.element]
@@ -176,6 +185,7 @@ function obi_check(spell)
     end
 end
 
+--Equips Healing magic gear
 function equip_heal(spell)
 
 	-- Cures
@@ -196,6 +206,7 @@ function equip_heal(spell)
 	end
 end
 
+-- Equips Enfeebling magic gear
 function equip_enfeebling(spell)
 
 	-- INT-based enfeebles
@@ -221,6 +232,7 @@ function equip_enfeebling(spell)
 	end
 end
 
+--Equips Elemental magic gear
 function equip_nuke(spell)
 
 	-- Elemental debuffs
@@ -255,6 +267,26 @@ function equip_nuke(spell)
 	end
 end
 
+-- Equips Enhancing magic gear
+function equip_enhancing(spell) 
+
+	-- Stoneskin
+	if spell.name == 'Stoneskin' then
+		equip(sets.magic.enhancing.stoneskin)
+	
+	-- Barspells/enspells/phalanx
+	elseif spell.name:contains('Bar') or
+	         spell.name:startswith('En') or
+	         spell.name:contains('Phalanx') then
+		equip(sets.enhancing_magic)
+		
+	-- Other spells
+	else
+		equip(sets.fastcasthaste)
+	end
+end
+
+-- Equips Dark magic gear
 function equip_dark(spell)
 
 	-- Stun
@@ -277,10 +309,16 @@ function equip_dark(spell)
 	end
 end
 
+-- Equips Divine magic gear
 function equip_divine(spell)
 	equip(sets.fastcast)
 end
 
+---------------------------
+-- Main Action Functions --
+---------------------------
+
+-- Precast function for when you are about to cast a spell
 function precast(spell)
 	
 	-- Magic
@@ -328,6 +366,7 @@ function precast(spell)
 	end
 end
 
+-- Precast function for when you are casting a spell
 function midcast(spell)
  
 	if spell.skill == 'Healing Magic' then
@@ -349,6 +388,7 @@ end
 
 -- After casting or using an ability
 function aftercast(spell)
-    
+
 	choose_set()
 end
+
