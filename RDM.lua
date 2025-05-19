@@ -186,7 +186,7 @@ function equip_heal(spell)
 		-- Matching day
 		if obi_check(spell) then
 			if spell.element == world.day_element or spell.element == world.weather_element then
-				equip(sets.matching_dayweather) -- obi
+				equip(sets.matchingDay) -- obi
 			end
 		end
 		
@@ -219,4 +219,64 @@ function equip_enfeebling(spell)
 	     spell.name == 'Dispel' then
 		equip(sets.darkgrip)
 	end
+end
+
+function equip_nuke(spell)
+
+	-- Elemental debuffs
+	if spell.name == 'Burn'
+	or spell.name == 'Frost'
+	or spell.name == 'Choke'
+	or spell.name == 'Rasp'
+	or spell.name == 'Shock'
+	or spell.name == 'Drown' then
+		equip(sets.magic.element.debuffs)
+		
+	-- Nukes
+	else
+        
+        equip(sets.magic.elemental)
+		-- check obi for matching day/weather
+		if obi_check(spell) then
+			if spell.element == world.day_element then
+				equip(sets.matchingDay)
+            end
+		end
+		
+		-- check MP for ugg. pendant
+		if player.mp < math.floor(nakedMP * 0.5) + math.floor(spell.mp_cost * 0.75) then
+			equip({neck= "Uggalepih Pendant"})
+         end	
+	end
+	
+	-- Ice staff for ice spells
+	if spell.element == 'Ice' then
+		equip(sets.icestaff)
+	end
+end
+
+function equip_dark(spell)
+
+	-- Stun
+	if spell.name == 'Stun' then
+		equip(sets.magic.dark.stun)
+		
+	-- Other spells
+	else
+		equip(sets.dark_magic)
+		
+		-- Obi/legs/ring for Drain/Aspir
+		if spell.name == 'Aspir' or spell.name == 'Drain' then
+		
+			-- Matching day
+			if spell.element == world.day_element or spell.element == world.weather_element then
+				equip(sets.matching_dayweather) -- obi
+				equip({right_ring="Diabolos's Ring"}) -- ring
+			end
+		end
+	end
+end
+
+function equip_divine(spell)
+	equip(sets.fastcasthaste)
 end
