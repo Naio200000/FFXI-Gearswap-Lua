@@ -388,7 +388,7 @@ function equip_heal(spell)
 		end
         -- Medi ring
         if player.hp < math.floor(nakedHP * 0.76) or buffactive['Weakness'] then
-			equip({ring2 = "Medicine Ring"})
+			equip({right_ring = "Medicine Ring"})
         end	
 		
 	-- Other spells
@@ -406,11 +406,11 @@ function equip_enfeebling(spell)
 	or spell.name == 'Dispel' 
 	or spell.name == 'Bind'
 	or spell.name == 'Gravity' then
-		equip(sets.magic.enfeebling.int)
+		equip(set_combine(sets.magic.enfeebling, sets.magic.enfeebling.int))
 		
 	-- MND-based enfeebles
 	else
-		equip(sets.magic.enfeebling.mnd)
+		equip(set_combine(sets.magic.enfeebling, sets.magic.enfeebling.mnd))
 	end
 	
 	-- Dark grip for Sleep, Dispel and Blind
@@ -436,7 +436,10 @@ function equip_enhancing(spell)
 	
     -- Regen
     elseif spell.name:contains('Regen') then
-        equip({body="Cleric's Bliaut"})
+        equip(set_combine(sets.magic.enhancing,{
+            
+            body="Cleric's Bliaut"
+        }))
 	-- Other spells
 	else
 		equip(sets.fastcast)
