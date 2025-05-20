@@ -42,17 +42,78 @@ function get_sets()
     -- Idle sets
     -- Has EVA and Damage reduction and absorbtion
 
-    sets.idle = {}
+    sets.idle = {
+
+		main="Terra's Staff",
+		sub="Vivid Strap +1",
+		range="Aureole",
+		head="Dls. Chapeau +1",
+		body="Dalmatica +1",
+		hands="Hydra Gloves",
+		legs="Blood Cuisses",
+		feet="Hydra Gaiters",
+		neck="Evasion Torque",
+		waist="Scouter's Rope",
+		left_ear="Novia Earring",
+		right_ear="Triton Earring",
+		left_ring="Shadow Ring",
+		right_ring="Wivre Ring +1",
+		back="Shadow Mantle",
+	}
 
     sets.melee = {}
 
-    sets.melee.tp = {}
+    sets.melee.tp = {
 
-    sets.melee.acc = {}
+		head="Walahra Turban",
+		body="Antares Harness",
+		hands="Dusk Gloves +1",
+		legs="Hydra Brais",
+		feet="Dusk Ledelsens +1",
+		waist="Speed Belt",
+		left_ear="Suppanomimi",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Rajas Ring",
+		back="Cuchulain's Mantle",
+	}
 
-    sets.melee.eva = {}
+    sets.melee.acc = {
 
-    sets.melee.ranged = {}
+		head="Optical Hat",
+		body="Antares Harness",
+		hands="Hydra Gloves",
+		legs="Hydra Brais",
+		feet="Hydra Gaiters",
+		neck="Ancient Torque",
+		waist="Speed Belt",
+		left_ear="Suppanomimi",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Toreador's Ring",
+		back="Cuchulain's Mantle",
+	}
+
+    sets.melee.eva = combine(sets.idle, {
+
+		legs="Hydra Brais",
+	})
+
+    sets.melee.ranged = {
+
+		head="Optical Hat",
+		body="Akinji Peti",
+		hands="Blood Fng. Gnt.",
+		legs="Oily Trousers",
+		feet="Akinji Nails",
+		neck="Hope Torque",
+		waist="Warwolf Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Behemoth Ring +1",
+		right_ring="Behemoth Ring +1",
+		back="Amemet Mantle +1",
+	}
 
     sets.ws = {}
 
@@ -70,9 +131,11 @@ function get_sets()
 
     sets.magic.elemental.debuff = {}
 
-    sets.magic.enfeebles.int = {}
+    sets.magic.enfeebling = {}
+	
+	sets.magic.enfeebling.int = {}
 
-    sets.magic.enfeebles.mnd = {}
+    sets.magic.enfeebling.mnd = {}
 
     sets.magic.enhancing = {}
 
