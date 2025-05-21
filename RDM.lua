@@ -94,7 +94,7 @@ function get_sets()
 		back="Cuchulain's Mantle",
 	}
 
-    sets.melee.eva = combine(sets.idle, {
+    sets.melee.eva = set_combine(sets.idle, {
 
 		legs="Hydra Brais",
 	})
@@ -117,11 +117,53 @@ function get_sets()
 
     sets.ws = {}
 
-    sets.ws.str = {}
+    sets.ws.str = {
 
-    sets.ws.dex = {}
+		head="Gnadbhod's Helm",
+		body="Antares Harness",
+		hands="Alkyoneus's Brc.",
+		legs="Oily Trousers",
+		feet="Creek M Clomps",
+		neck="Fotia Gorget",
+		waist="Warwolf Belt",
+		left_ear="Harmonius Earring",
+		right_ear="Brutal Earring",
+		left_ring="Strigoi Ring",
+		right_ring="Rajas Ring",
+		back="Cerb. Mantle +1",
+	}
 
-    sets.ws.mnd = {}
+    sets.ws.dex = {
+
+		head="Gnadbhod's Helm",
+		body="Antares Harness",
+		hands="Creek M Mitts",
+		legs="Oily Trousers",
+    	feet="Goliard Clogs",
+		neck="Fotia Gorget",
+		waist="Warwolf Belt",
+		left_ear="Pixie Earring",
+		right_ear="Brutal Earring",
+		left_ring="Thunder Ring",
+		right_ring="Rajas Ring",
+		back="Cuchulain's Mantle",
+	}
+
+    sets.ws.mnd = {
+
+		head="Maat's Cap",
+		body="Antares Harness",
+		hands="Bricta's Cuffs",
+		legs="Oily Trousers",
+		feet="Goliard Clogs",
+		neck="Fotia Gorget",
+		waist="Witch Sash",
+		left_ear="Celestial Earring",
+		right_ear="Brutal Earring",
+		left_ring="Karka Ring",
+		right_ring="Rajas Ring",
+		back="Cerb. Mantle +1",
+	}
 
     sets.ws.racc = {}
 
