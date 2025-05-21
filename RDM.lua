@@ -175,6 +175,8 @@ function get_sets()
 
     sets.weapons.ranged = {}
 
+	currentWeapons = 'staff' -- default weapon set
+
     fightMode = M{'mage', 'melee'} 							-- fight modes
 	meleeMode = M{'tp','acc','eva'} 					-- melee modes
 
@@ -523,4 +525,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1;input /macro book 1;wait 2;input /lockstyleset 4; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1; gs equip weapons.staff;wait 2;input /lockstyleset 3; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
