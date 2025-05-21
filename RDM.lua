@@ -553,7 +553,7 @@ function equip_enfeebling(spell)
 
 	-- INT-based enfeebles
     if   spell.name:contains('Poison') or
-	     spell.name:contains('Dia') or
+	     spell.name:contains('Bio') or
 	     spell.name:contains('Sleep') or
 	     spell.name:contains('Blind') or
 	     spell.name == 'Dispel' or
@@ -782,4 +782,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1;input /macro book 1;wait 2;input /lockstyleset 4; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
+send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1;input /lockstyleset 3; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
