@@ -236,7 +236,7 @@ function get_sets()
             hands       = "Creek M Mitts",
             legs        = "Blood Cuisses",
             feet        = "Creek M Clomps",
-            neck        = "Tempered Chain",
+            neck        = "Bloodbead Gorget",
             waist       = "Steppe Belt",
             left_ear    = "Harmonius Earring",
             right_ear   = "Harmonius Earring",
