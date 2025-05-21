@@ -427,6 +427,7 @@ function get_sets()
 
 	currentWeapons = 'swsh' -- default weapons
 
+	ethereal = false -- set to true if you want to use ethereal earring
     fightMode = M{'mage', 'melee'} 							-- fight modes
 	meleeMode = M{'tp','acc','eva'} 					-- melee modes
 
@@ -483,9 +484,9 @@ function equip_engaged()
 			equip({neck="Fortitude Torque",})
 		else
 			equip({neck="Love Torque",})
-			if player.sub_job ~= 'NIN' then
-				equip({left_ear="Ethereal Earring",}) -- equip acc set if DNC
-			end
+		end
+		if ethereal then
+			equip({left_ear="Ethereal Earring",}) -- equip acc set if DNC
 		end
 	elseif temp == 'mage' then
 		-- RDM has no staff skill: when in mage mode, disengage or go to melee mode
@@ -768,6 +769,16 @@ function self_command(command)
 		meleeMode:cycle() -- go to next
 		choose_set()
 		windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+
+	-- Toggle ethereal earring
+	elseif command == "ethereal" then
+		if not ethereal then
+			ethereal = true
+			windower.add_to_chat(122,'Ethereal Earring: ON')
+		else
+			ethereal = false
+			windower.add_to_chat(122,'Ethereal Earring: OFF')
+		end
 		
 	-- Change weapons
 	elseif string.sub(command, 1, 3) == "wpn" then
