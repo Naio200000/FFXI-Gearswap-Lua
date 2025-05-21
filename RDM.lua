@@ -483,6 +483,9 @@ function equip_engaged()
 			equip({neck="Fortitude Torque",})
 		else
 			equip({neck="Love Torque",})
+			if player.sub_job ~= 'NIN' then
+				equip(right_ear="Ethereal Earring",) -- equip acc set if DNC
+			end
 		end
 	elseif temp == 'mage' then
 		-- RDM has no staff skill: when in mage mode, disengage or go to melee mode
