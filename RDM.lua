@@ -165,7 +165,9 @@ function get_sets()
 		back="Cerb. Mantle +1",
 	}
 
-    sets.ws.racc = {}
+    sets.ranged.racc = {}
+
+    sets.ranged.ws = {}
 
     sets.magic = {}
 
