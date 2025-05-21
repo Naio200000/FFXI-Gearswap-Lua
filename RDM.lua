@@ -559,7 +559,7 @@ function equip_enfeebling(spell)
 	     spell.name == 'Dispel' or
 	     spell.name == 'Bind' or
 	     spell.name == 'Gravity' then
-		equip(sets.magic.enfeebles.int)
+		equip(sets.magic.enfeebling.int)
 		
 	-- MND-based enfeebles
 	else
