@@ -477,10 +477,12 @@ function equip_engaged()
 	if temp == 'melee' then
 		-- equip a melee set when in melee mode
 		equip(sets.melee[meleeMode.value])
-		if currentWeapons == 'swsh' or currentWeapons == 'swdg' or currentWeapons == 'swkc' then
-			equip(neck="Fortitude Torque",)
+		if  currentWeapons == 'swsh' or 
+			currentWeapons == 'swdg' or 
+			currentWeapons == 'swkc' then
+			equip({neck="Fortitude Torque",})
 		else
-			equip(neck="Love Torque",)
+			equip({neck="Love Torque",})
 		end
 	elseif temp == 'mage' then
 		-- RDM has no staff skill: when in mage mode, disengage or go to melee mode
