@@ -387,36 +387,42 @@ function get_sets()
 
 		main="Excalibur",
 		sub={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		neck="Fortitude Torque",
 	}
 
     sets.weapons.dgsw = {
 
 		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 		sub="Excalibur",
+	    neck="Love Torque",
 	}
 	
     sets.weapons.swkc = {
 		
 		main="Excalibur",
 		sub="Kraken Club",
+	    neck="Fortitude Torque",
 	}
 	
     sets.weapons.dgkc = {
 		
 		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 		sub="Kraken Club",
+	    neck="Love Torque",
 	}
 	
     sets.weapons.swsh = {
 		
 		main="Excalibur",
 		sub="Avalon Shield",
+	    neck="Fortitude Torque",
 	}
 	
     sets.weapons.dgsh = {
 		
 		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 		sub="Avalon Shield",
+	    neck="Love Torque",
 	}
 
     sets.weapons.ranged = {
