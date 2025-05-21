@@ -383,13 +383,6 @@ function get_sets()
 
     sets.weapons = {}
 
-    sets.weapons.staff = {
-
-		main="Terra's Staff",
-		sub="Vivid Strap +1",
-		range="Aureole",
-	}
-
     sets.weapons.swdg = {
 
 		main="Excalibur",
@@ -432,7 +425,7 @@ function get_sets()
 		ammo="Kabura Arrow",
 	}
 
-	currentWeapons = 'staff' -- default weapons
+	currentWeapons = 'swsh' -- default weapons
 
     fightMode = M{'mage', 'melee'} 							-- fight modes
 	meleeMode = M{'tp','acc','eva'} 					-- melee modes
@@ -748,6 +741,9 @@ function self_command(command)
 		if temp == 'melee' then 
 			enable('main','sub','range','ammo')
 			equip(sets.weapons[currentWeapons])	-- when going to melee, equip the last known weapons
+			if player.sub_job == 'RNG' then
+				equip(sets.weapons.ranged) -- equip acc set if DNC
+			end
 			disable('main','sub','range','ammo')
 			windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
 			
