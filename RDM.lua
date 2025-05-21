@@ -387,42 +387,36 @@ function get_sets()
 
 		main="Excalibur",
 		sub={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
-		neck="Fortitude Torque",
 	}
 
     sets.weapons.dgsw = {
 
 		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 		sub="Excalibur",
-	    neck="Love Torque",
 	}
 	
     sets.weapons.swkc = {
 		
 		main="Excalibur",
 		sub="Kraken Club",
-	    neck="Fortitude Torque",
 	}
 	
     sets.weapons.dgkc = {
 		
 		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 		sub="Kraken Club",
-	    neck="Love Torque",
 	}
 	
     sets.weapons.swsh = {
 		
 		main="Excalibur",
 		sub="Avalon Shield",
-	    neck="Fortitude Torque",
 	}
 	
     sets.weapons.dgsh = {
 		
 		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 		sub="Avalon Shield",
-	    neck="Love Torque",
 	}
 
     sets.weapons.ranged = {
@@ -483,6 +477,11 @@ function equip_engaged()
 	if temp == 'melee' then
 		-- equip a melee set when in melee mode
 		equip(sets.melee[meleeMode.value])
+		if currentWeapons == 'swsh' or currentWeapons == 'swdg' or currentWeapons == 'swkc' then
+			equip(neck="Fortitude Torque",)
+		else
+			equip(neck="Love Torque",)
+		end
 	elseif temp == 'mage' then
 		-- RDM has no staff skill: when in mage mode, disengage or go to melee mode
 		equip_idle()
