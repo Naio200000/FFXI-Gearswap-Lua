@@ -165,59 +165,274 @@ function get_sets()
 		back="Cerb. Mantle +1",
 	}
 
-    sets.ranged.racc = {}
+	sets.ranged = {}
 
-    sets.ranged.ws = {}
+    sets.ranged.racc = {
+
+		head="Optical Hat",
+		body="Akinji Peti",
+		hands="Blood Fng. Gnt.",
+		legs="Oily Trousers",
+		feet="Akinji Nails",
+		neck="Hope Torque",
+		waist="Warwolf Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Behemoth Ring +1",
+		right_ring="Behemoth Ring +1",
+		back="Amemet Mantle +1",
+	}
+
+    sets.ranged.ws = {
+
+		head="Maat's Cap",
+		body="Akinji Peti",
+		hands="Blood Fng. Gnt.",
+		legs="Oily Trousers",
+		feet="Creek M Clomps",
+		neck="Hope Torque",
+		waist="Warwolf Belt",
+		left_ear="Altdorf's Earring",
+		right_ear="Wilhelm's Earring",
+		left_ring="Behemoth Ring +1",
+		right_ring="Strigoi Ring",
+		back="Amemet Mantle +1",
+	}
 
     sets.magic = {}
 
-    sets.magic.elemental = {}
+    sets.magic.elemental = {
 
-    sets.magic.elemental.debuff = {}
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Warlock's Chapeau",
+		body="Blood Scale Mail",
+		hands="Zenith Mitts +1",
+		legs="Valkyrie's Trews",
+		feet="Dls. Boots +1",
+		neck="Lmg. Medallion +1",
+		waist="Witch Sash",
+		left_ear="Moldavite Earring",
+		right_ear="Novio Earring",
+		left_ring="Galdr Ring",
+		right_ring="Omega Ring",
+		back="Merciful Cape",
+	}
 
-    sets.magic.enfeebling = {}
+    sets.magic.elemental.debuff = {
+
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Warlock's Chapeau",
+		body="Blood Scale Mail",
+		hands="Valkyrie's Cuffs",
+		legs="Mahatma Slops",
+		feet="Goliard Clogs",
+		neck="Lmg. Medallion +1",
+		waist="Witch Sash",
+		left_ear="Helenus's Earring",
+		right_ear="Cass. Earring",
+		left_ring="Galdr Ring",
+		right_ring="Omega Ring",
+		back="Merciful Cape",
+	}
+
+    sets.magic.enfeebling = {
+
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Dls. Chapeau +1",
+		body="Warlock's Tabard",
+		legs="Valkyrie's Trews",
+		neck="Enfeebling Torque",
+		waist="Witch Sash",
+		left_ear="Helenus's Earring",
+		right_ear="Cass. Earring",
+		right_ring="Omega Ring",
+		back="Prism Cape",
+	}
 	
-	sets.magic.enfeebling.int = {}
+	sets.magic.enfeebling.int = set_combine(sets.magic.enfeebling, {
 
-    sets.magic.enfeebling.mnd = {}
+		hands="Valkyrie's Cuffs",
+		feet="Goliard Clogs",
+		left_ring="Galdr Ring",
+	})
 
-    sets.magic.enhancing = {}
+    sets.magic.enfeebling.mnd = set_combine(sets.magic.enfeebling, {
 
-    sets.magic.enhancing.stoneskin = {}
+		hands="Bricta's Cuffs",
+		feet="Valkyrie's Clogs",
+		left_ring="Karka Ring",
+	})
 
-    sets.magic.healing = {}
+    sets.magic.enhancing = {
 
-    sets.magic.dark = {}
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Maat's Cap",
+		body="Blood Scale Mail",
+		hands="Dls. Gloves +1",
+		legs="Warlock's Tights",
+		feet="Valkyrie's Clogs",
+		neck="Enhancing Torque",
+		waist="Witch Sash",
+		left_ear="Augment. Earring",
+		right_ear="Celestial Earring",
+		left_ring="Karka Ring",
+		right_ring="Omega Ring",
+		back="Merciful Cape",
+	}
 
-    sets.magic.dark.stun = {}
+    sets.magic.enhancing.stoneskin = {
 
-    sets.fastcast = {}
+		main="Alkalurops",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Maat's Cap",
+		body="Blood Scale Mail",
+		hands="Dls. Gloves +1",
+		legs="Warlock's Tights",
+		feet="Valkyrie's Clogs",
+		neck="Faith Torque",
+		waist="Witch Sash",
+		left_ear="Celestial Earring",
+		right_ear="Celestial Earring",
+		left_ring="Karka Ring",
+		right_ring="Celestial Ring",
+		back="Dew Silk Cape +1",
+	}
 
-    sets.resting = {}
+    sets.magic.healing = {
 
-    sets.matchingDay = {}
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Maat's Cap",
+		body="Dls. Tabard +1",
+		hands="Bricta's Cuffs",
+		legs="Warlock's Tights",
+		feet="Valkyrie's Clogs",
+		neck="Fylgja Torque +1",
+		waist="Witch Sash",
+		left_ear="Roundel Earring",
+		right_ear="Healing Earring",
+		left_ring="Karka Ring",
+		right_ring="Celestial Ring",
+		back="Dew Silk Cape +1",
+	}
 
-    sets.icestaff = {}
+    sets.magic.dark = {
 
-    sets.darkgrip = {}
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		range="Aureole",
+		head="Nashira Turban",
+		body="Blood Scale Mail",
+		hands="Valkyrie's Cuffs",
+		legs="Valkyrie's Trews",
+		feet="Goliard Clogs",
+		neck="Dark Torque",
+		waist="Witch Sash",
+		left_ear="Dark Earring",
+		right_ear="Omn. Earring +1",
+		left_ring="Galdr Ring",
+		right_ring="Omega Ring",
+		back="Merciful Cape",
+	}
+
+    sets.magic.dark.stun = set_combine(sets.magic.dark, sets.fastcast)
+
+    sets.fastcast = {    
+		
+		sub="Vivid Strap +1",
+		head="Warlock's Chapeau",
+		body="Dls. Tabard +1",
+		hands="Dusk Gloves +1",
+		feet="Dusk Ledelsens +1",
+		waist="Speed Belt",
+		right_ear="Loquac. Earring",}
+
+    sets.resting = {
+
+		main="Imperial Wand",
+		sub="Legion Scutum",
+		head="Dls. Chapeau +1",
+		body="Mahatma Hpl.",
+		hands="Hydra Gloves",
+		legs="Hydra Brais",
+		feet="Goliard Clogs",
+		neck="Gnole Torque",
+		waist="Duelist's Belt",
+		left_ring="Celestial Ring",
+		right_ring="Celestial Ring",
+	}
+
+    sets.matchingDay = {
+
+		waist = "Hachirin-no-Obi"
+	}
+
+	sets.icestaff = {main = "Aquilo's Staff"}
+
+	sets.darkgrip = {sub = 'Dark Grip'}
 
     sets.weapons = {}
 
-    sets.weapons.staff = {}
+    sets.weapons.staff = {
 
-    sets.weapons.swdg = {}
+		main="Terra's Staff",
+		sub="Vivid Strap +1",
+		range="Aureole",
+	}
 
-    sets.weapons.dgsw = {}
+    sets.weapons.swdg = {
 
-    sets.weapons.swkc = {}
+		main="Excalibur",
+		sub={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+	}
 
-    sets.weapons.dgkc = {}
+    sets.weapons.dgsw = {
 
-    sets.weapons.swsh = {}
+		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		sub="Excalibur",
+	}
+	
+    sets.weapons.swkc = {
+		
+		main="Excalibur",
+		sub="Kraken Club",
+	}
+	
+    sets.weapons.dgkc = {
+		
+		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		sub="Kraken Club",
+	}
+	
+    sets.weapons.swsh = {
+		
+		main="Excalibur",
+		sub="Avalon Shield",
+	}
+	
+    sets.weapons.dgsh = {
+		
+		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		sub="Avalon Shield",
+	}
 
-    sets.weapons.dgsh = {}
+    sets.weapons.ranged = {
 
-    sets.weapons.ranged = {}
+		range="Lamian Kaman +1",
+		ammo="Kabura Arrow",
+	}
+
+	currentWeapons = 'staff' -- default weapons
 
     fightMode = M{'mage', 'melee'} 							-- fight modes
 	meleeMode = M{'tp','acc','eva'} 					-- melee modes
@@ -232,17 +447,17 @@ end
 
 function initializeNakedHPMP() -- magic numbers because the HP/MP % checks for latents aren't coded properly on LSB. It uses naked HP/MP, no gear, no food, no max HP/MP boost traits, but it does include HP and MP merits. Others will have to figure out these values for themselves for their own character.
     if player.sub_job == 'BLM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 951
+        nakedMP = 854
     elseif player.sub_job == 'WHM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 970
+        nakedMP = 835
     elseif player.sub_job == 'SCH' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 970
+        nakedMP = 826
     else
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 988
+        nakedMP = 757
     end
 end
 
