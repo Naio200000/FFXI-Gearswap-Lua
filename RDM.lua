@@ -484,6 +484,9 @@ function equip_engaged()
 			equip({neck="Fortitude Torque",})
 		else
 			equip({neck="Love Torque",})
+			if player.sub_job ~= 'NIN' then
+				equip({left_ear="Ethereal Earring",}) -- equip acc set if DNC
+			end
 		end
 		if ethereal then
 			equip({left_ear="Ethereal Earring",}) -- equip acc set if DNC
@@ -774,9 +777,11 @@ function self_command(command)
 	elseif command == "ethereal" then
 		if not ethereal then
 			ethereal = true
+			equip({left_ear="Ethereal Earring",}) 
 			windower.add_to_chat(122,'Ethereal Earring: ON')
 		else
 			ethereal = false
+			choose_set()
 			windower.add_to_chat(122,'Ethereal Earring: OFF')
 		end
 		
