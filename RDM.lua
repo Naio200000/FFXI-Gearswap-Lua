@@ -484,7 +484,7 @@ function equip_engaged()
 		else
 			equip({neck="Love Torque",})
 			if player.sub_job ~= 'NIN' then
-				equip(right_ear="Ethereal Earring",) -- equip acc set if DNC
+				equip({right_ear="Ethereal Earring",}) -- equip acc set if DNC
 			end
 		end
 	elseif temp == 'mage' then
