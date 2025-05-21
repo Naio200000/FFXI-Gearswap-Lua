@@ -620,7 +620,7 @@ function equip_enhancing(spell)
 	elseif spell.name:contains('Bar') or
 	         spell.name:startswith('En') or
 	         spell.name:contains('Phalanx') then
-		equip(sets.enhancing_magic)
+		equip(sets.magic.enhancing)
 		
 	-- Other spells
 	else
