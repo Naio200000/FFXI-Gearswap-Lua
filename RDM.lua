@@ -335,12 +335,12 @@ end
 function equip_enfeebling(spell)
 
 	-- INT-based enfeebles
-    if   spell.name:contains('Poison')    or
+    if   spell.name:contains('Poison') or
 	     spell.name:contains('Dia') or
-	     spell.name:contains('Sleep')   or
-	     spell.name:contains('Blind')   or
-	     spell.name == 'Dispel'     or
-	     spell.name == 'Bind'   or
+	     spell.name:contains('Sleep') or
+	     spell.name:contains('Blind') or
+	     spell.name == 'Dispel' or
+	     spell.name == 'Bind' or
 	     spell.name == 'Gravity' then
 		equip(sets.magic.enfeebles.int)
 		
@@ -375,7 +375,7 @@ function equip_nuke(spell)
         equip(sets.magic.elemental)
 		-- check obi for matching day/weather
 		if obi_check(spell) then
-			if spell.element == world.day_element then
+			if spell.element == world.day_element or spell.element == world.weather_element then
 				equip(sets.matchingDay)
             end
 		end
@@ -407,7 +407,7 @@ function equip_enhancing(spell)
 		
 	-- Other spells
 	else
-		equip(sets.fastcasthaste)
+		equip(sets.fastcast)
 	end
 end
 
