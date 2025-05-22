@@ -54,7 +54,7 @@ function get_sets()
         right_ear   = "Novia Earring",
         left_ring   = "Shadow Ring",
         right_ring  = "Wivre Ring +1",
-        back        = "Boxer's Mantle",
+		back="Shadow Mantle",
     }
 
     -- melee sets

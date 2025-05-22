@@ -56,7 +56,7 @@ function get_sets()
         right_ear="Triton Earring",
         left_ring="Shadow Ring",
         right_ring="Wivre Ring +1",
-        back="Boxer's Mantle",
+		back="Shadow Mantle",
     }
 
     sets.melee = {}
