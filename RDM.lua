@@ -44,332 +44,332 @@ function get_sets()
 
     sets.idle = {
 
-		main="Terra's Staff",
-		sub="Vivid Strap +1",
-		range="Aureole",
-		head="Dls. Chapeau +1",
-		body="Dalmatica +1",
-		hands="Hydra Gloves",
-		legs="Blood Cuisses",
-		feet="Hydra Gaiters",
-		neck="Evasion Torque",
-		waist="Scouter's Rope",
-		left_ear="Novia Earring",
-		right_ear="Triton Earring",
-		left_ring="Shadow Ring",
-		right_ring="Wivre Ring +1",
-		back="Shadow Mantle",
+		main		= "Terra's Staff",
+		sub			= "Vivid Strap +1",
+		range		= "Aureole",
+		head		= "Dls. Chapeau +1",
+		body		= "Dalmatica +1",
+		hands		= "Hydra Gloves",
+		legs		= "Blood Cuisses",
+		feet		= "Hydra Gaiters",
+		neck		= "Evasion Torque",
+		waist		= "Scouter's Rope",
+		left_ear	= "Novia Earring",
+		right_ear	= "Triton Earring",
+		left_ring	= "Shadow Ring",
+		right_ring	= "Wivre Ring +1",
+		back		= "Shadow Mantle",
 	}
 
     sets.melee = {}
 
     sets.melee.tp = {
 
-		head="Walahra Turban",
-		body="Antares Harness",
-		hands="Dusk Gloves +1",
-		legs="Hydra Brais",
-		feet="Dusk Ledelsens +1",
-		waist="Speed Belt",
-		left_ear="Suppanomimi",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
+		head		= "Walahra Turban",
+		body		= "Antares Harness",
+		hands		= "Dusk Gloves +1",
+		legs		= "Hydra Brais",
+		feet		= "Dusk Ledelsens +1",
+		waist		= "Speed Belt",
+		left_ear	= "Suppanomimi",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
     sets.melee.acc = {
 
-		head="Optical Hat",
-		body="Antares Harness",
-		hands="Hydra Gloves",
-		legs="Hydra Brais",
-		feet="Hydra Gaiters",
-		neck="Ancient Torque",
-		waist="Speed Belt",
-		left_ear="Suppanomimi",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Toreador's Ring",
-		back="Cuchulain's Mantle",
+		head		= "Optical Hat",
+		body		= "Antares Harness",
+		hands		= "Hydra Gloves",
+		legs		= "Hydra Brais",
+		feet		= "Hydra Gaiters",
+		neck		= "Ancient Torque",
+		waist		= "Speed Belt",
+		left_ear	= "Suppanomimi",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Toreador's Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
     sets.melee.eva = set_combine(sets.idle, {
 
-		legs="Hydra Brais",
+		legs		= "Hydra Brais",
 	})
 
     sets.melee.ranged = {
 
-		head="Optical Hat",
-		body="Akinji Peti",
-		hands="Blood Fng. Gnt.",
-		legs="Oily Trousers",
-		feet="Akinji Nails",
-		neck="Hope Torque",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Behemoth Ring +1",
-		back="Amemet Mantle +1",
+		head		= "Optical Hat",
+		body		= "Akinji Peti",
+		hands		= "Blood Fng. Gnt.",
+		legs		= "Oily Trousers",
+		feet		= "Akinji Nails",
+		neck		= "Hope Torque",
+		waist		= "Warwolf Belt",
+		left_ear	= "Altdorf's Earring",
+		right_ear	= "Wilhelm's Earring",
+		left_ring	= "Behemoth Ring +1",
+		right_ring	= "Behemoth Ring +1",
+		back		= "Amemet Mantle +1",
 	}
 
     sets.ws = {}
 
     sets.ws.str = {
 
-		head="Gnadbhod's Helm",
-		body="Antares Harness",
-		hands="Alkyoneus's Brc.",
-		legs="Oily Trousers",
-		feet="Creek M Clomps",
-		neck="Fotia Gorget",
-		waist="Warwolf Belt",
-		left_ear="Harmonius Earring",
-		right_ear="Brutal Earring",
-		left_ring="Strigoi Ring",
-		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+		head		= "Gnadbhod's Helm",
+		body		= "Antares Harness",
+		hands		= "Alkyoneus's Brc.",
+		legs		= "Oily Trousers",
+		feet		= "Creek M Clomps",
+		neck		= "Fotia Gorget",
+		waist		= "Warwolf Belt",
+		left_ear	= "Harmonius Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Strigoi Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cerb. Mantle +1",
 	}
 
     sets.ws.dex = {
 
-		head="Gnadbhod's Helm",
-		body="Antares Harness",
-		hands="Creek M Mitts",
-		legs="Oily Trousers",
-    	feet="Goliard Clogs",
-		neck="Fotia Gorget",
-		waist="Warwolf Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Thunder Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
+		head		= "Gnadbhod's Helm",
+		body		= "Antares Harness",
+		hands		= "Creek M Mitts",
+		legs		= "Oily Trousers",
+    	feet		= "Goliard Clogs",
+		neck		= "Fotia Gorget",
+		waist		= "Warwolf Belt",
+		left_ear	= "Pixie Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Thunder Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
     sets.ws.mnd = {
 
-		head="Maat's Cap",
-		body="Antares Harness",
-		hands="Bricta's Cuffs",
-		legs="Oily Trousers",
-		feet="Goliard Clogs",
-		neck="Fotia Gorget",
-		waist="Witch Sash",
-		left_ear="Celestial Earring",
-		right_ear="Brutal Earring",
-		left_ring="Karka Ring",
-		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+		head		= "Maat's Cap",
+		body		= "Antares Harness",
+		hands		= "Bricta's Cuffs",
+		legs		= "Oily Trousers",
+		feet		= "Goliard Clogs",
+		neck		= "Fotia Gorget",
+		waist		= "Witch Sash",
+		left_ear	= "Celestial Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cerb. Mantle +1",
 	}
 
 	sets.ranged = {}
 
     sets.ranged.racc = {
 
-		head="Optical Hat",
-		body="Akinji Peti",
-		hands="Blood Fng. Gnt.",
-		legs="Oily Trousers",
-		feet="Akinji Nails",
-		neck="Hope Torque",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Behemoth Ring +1",
-		back="Amemet Mantle +1",
+		head		= "Optical Hat",
+		body		= "Akinji Peti",
+		hands		= "Blood Fng. Gnt.",
+		legs		= "Oily Trousers",
+		feet		= "Akinji Nails",
+		neck		= "Hope Torque",
+		waist		= "Warwolf Belt",
+		left_ear	= "Altdorf's Earring",
+		right_ear	= "Wilhelm's Earring",
+		left_ring	= "Behemoth Ring +1",
+		right_ring	= "Behemoth Ring +1",
+		back		= "Amemet Mantle +1",
 	}
 
     sets.ranged.ws = {
 
-		head="Maat's Cap",
-		body="Akinji Peti",
-		hands="Blood Fng. Gnt.",
-		legs="Oily Trousers",
-		feet="Creek M Clomps",
-		neck="Hope Torque",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Strigoi Ring",
-		back="Amemet Mantle +1",
+		head		= "Maat's Cap",
+		body		= "Akinji Peti",
+		hands		= "Blood Fng. Gnt.",
+		legs		= "Oily Trousers",
+		feet		= "Creek M Clomps",
+		neck		= "Hope Torque",
+		waist		= "Warwolf Belt",
+		left_ear	= "Altdorf's Earring",
+		right_ear	= "Wilhelm's Earring",
+		left_ring	= "Behemoth Ring +1",
+		right_ring	= "Strigoi Ring",
+		back		= "Amemet Mantle +1",
 	}
 
     sets.magic = {}
 
     sets.magic.elemental = {
 
-		main="Chatoyant Staff",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Warlock's Chapeau",
-		body="Blood Scale Mail",
-		hands="Zenith Mitts +1",
-		legs="Valkyrie's Trews",
-		feet="Dls. Boots +1",
-		neck="Lmg. Medallion +1",
-		waist="Witch Sash",
-		left_ear="Moldavite Earring",
-		right_ear="Novio Earring",
-		left_ring="Galdr Ring",
-		right_ring="Omega Ring",
-		back="Merciful Cape",
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Warlock's Chapeau",
+		body		= "Blood Scale Mail",
+		hands		= "Zenith Mitts +1",
+		legs		= "Valkyrie's Trews",
+		feet		= "Dls. Boots +1",
+		neck		= "Lmg. Medallion +1",
+		waist		= "Witch Sash",
+		left_ear	= "Moldavite Earring",
+		right_ear	= "Novio Earring",
+		left_ring	= "Galdr Ring",
+		right_ring	= "Omega Ring",
+		back		= "Merciful Cape",
 	}
 
     sets.magic.elemental.debuff = {
 
-		main="Chatoyant Staff",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Warlock's Chapeau",
-		body="Blood Scale Mail",
-		hands="Valkyrie's Cuffs",
-		legs="Mahatma Slops",
-		feet="Goliard Clogs",
-		neck="Lmg. Medallion +1",
-		waist="Witch Sash",
-		left_ear="Helenus's Earring",
-		right_ear="Cass. Earring",
-		left_ring="Galdr Ring",
-		right_ring="Omega Ring",
-		back="Merciful Cape",
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Warlock's Chapeau",
+		body		= "Blood Scale Mail",
+		hands		= "Valkyrie's Cuffs",
+		legs		= "Mahatma Slops",
+		feet		= "Goliard Clogs",
+		neck		= "Lmg. Medallion +1",
+		waist		= "Witch Sash",
+		left_ear	= "Helenus's Earring",
+		right_ear	= "Cass. Earring",
+		left_ring	= "Galdr Ring",
+		right_ring	= "Omega Ring",
+		back		= "Merciful Cape",
 	}
 
     sets.magic.enfeebling = {
 
-		main="Chatoyant Staff",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Dls. Chapeau +1",
-		body="Warlock's Tabard",
-		legs="Valkyrie's Trews",
-		neck="Enfeebling Torque",
-		waist="Witch Sash",
-		left_ear="Helenus's Earring",
-		right_ear="Cass. Earring",
-		right_ring="Omega Ring",
-		back="Prism Cape",
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Dls. Chapeau +1",
+		body		= "Warlock's Tabard",
+		legs		= "Valkyrie's Trews",
+		neck		= "Enfeebling Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Helenus's Earring",
+		right_ear	= "Cass. Earring",
+		right_ring	= "Omega Ring",
+		back		= "Prism Cape",
 	}
 	
 	sets.magic.enfeebling.int = set_combine(sets.magic.enfeebling, {
 
-		hands="Valkyrie's Cuffs",
-		feet="Goliard Clogs",
-		left_ring="Galdr Ring",
+		hands		= "Valkyrie's Cuffs",
+		feet		= "Goliard Clogs",
+		left_ring	= "Galdr Ring",
 	})
 
     sets.magic.enfeebling.mnd = set_combine(sets.magic.enfeebling, {
 
-		hands="Bricta's Cuffs",
-		feet="Valkyrie's Clogs",
-		left_ring="Karka Ring",
+		hands		= "Bricta's Cuffs",
+		feet		= "Valkyrie's Clogs",
+		left_ring	= "Karka Ring",
 	})
 
     sets.magic.enhancing = {
 
-		main="Chatoyant Staff",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Maat's Cap",
-		body="Blood Scale Mail",
-		hands="Dls. Gloves +1",
-		legs="Warlock's Tights",
-		feet="Valkyrie's Clogs",
-		neck="Enhancing Torque",
-		waist="Witch Sash",
-		left_ear="Augment. Earring",
-		right_ear="Celestial Earring",
-		left_ring="Karka Ring",
-		right_ring="Omega Ring",
-		back="Merciful Cape",
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Maat's Cap",
+		body		= "Blood Scale Mail",
+		hands		= "Dls. Gloves +1",
+		legs		= "Warlock's Tights",
+		feet		= "Valkyrie's Clogs",
+		neck		= "Enhancing Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Augment. Earring",
+		right_ear	= "Celestial Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Omega Ring",
+		back		= "Merciful Cape",
 	}
 
     sets.magic.enhancing.stoneskin = {
 
-		main="Alkalurops",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Maat's Cap",
-		body="Blood Scale Mail",
-		hands="Dls. Gloves +1",
-		legs="Warlock's Tights",
-		feet="Valkyrie's Clogs",
-		neck="Faith Torque",
-		waist="Witch Sash",
-		left_ear="Celestial Earring",
-		right_ear="Celestial Earring",
-		left_ring="Karka Ring",
-		right_ring="Celestial Ring",
-		back="Dew Silk Cape +1",
+		main		= "Alkalurops",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Maat's Cap",
+		body		= "Blood Scale Mail",
+		hands		= "Dls. Gloves +1",
+		legs		= "Warlock's Tights",
+		feet		= "Valkyrie's Clogs",
+		neck		= "Faith Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Celestial Earring",
+		right_ear	= "Celestial Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Celestial Ring",
+		back		= "Dew Silk Cape +1",
 	}
 
     sets.magic.healing = {
 
-		main="Chatoyant Staff",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Maat's Cap",
-		body="Dls. Tabard +1",
-		hands="Bricta's Cuffs",
-		legs="Warlock's Tights",
-		feet="Valkyrie's Clogs",
-		neck="Fylgja Torque +1",
-		waist="Witch Sash",
-		left_ear="Roundel Earring",
-		right_ear="Healing Earring",
-		left_ring="Karka Ring",
-		right_ring="Celestial Ring",
-		back="Dew Silk Cape +1",
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Maat's Cap",
+		body		= "Dls. Tabard +1",
+		hands		= "Bricta's Cuffs",
+		legs		= "Warlock's Tights",
+		feet		= "Valkyrie's Clogs",
+		neck		= "Fylgja Torque +1",
+		waist		= "Witch Sash",
+		left_ear	= "Roundel Earring",
+		right_ear	= "Healing Earring",
+		left_ring	= "Karka Ring",
+		right_ring	= "Celestial Ring",
+		back		= "Dew Silk Cape +1",
 	}
 
     sets.magic.dark = {
 
-		main="Chatoyant Staff",
-		sub="Bugard Strap +1",
-		range="Aureole",
-		head="Nashira Turban",
-		body="Blood Scale Mail",
-		hands="Valkyrie's Cuffs",
-		legs="Valkyrie's Trews",
-		feet="Goliard Clogs",
-		neck="Dark Torque",
-		waist="Witch Sash",
-		left_ear="Dark Earring",
-		right_ear="Omn. Earring +1",
-		left_ring="Galdr Ring",
-		right_ring="Omega Ring",
-		back="Merciful Cape",
+		main		= "Chatoyant Staff",
+		sub			= "Bugard Strap +1",
+		range		= "Aureole",
+		head		= "Nashira Turban",
+		body		= "Blood Scale Mail",
+		hands		= "Valkyrie's Cuffs",
+		legs		= "Valkyrie's Trews",
+		feet		= "Goliard Clogs",
+		neck		= "Dark Torque",
+		waist		= "Witch Sash",
+		left_ear	= "Dark Earring",
+		right_ear	= "Omn. Earring +1",
+		left_ring	= "Galdr Ring",
+		right_ring	= "Omega Ring",
+		back		= "Merciful Cape",
 	}
 
     sets.magic.dark.stun = set_combine(sets.magic.dark, sets.fastcast)
 
     sets.fastcast = {    
 		
-		sub="Vivid Strap +1",
-		head="Warlock's Chapeau",
-		body="Dls. Tabard +1",
-		hands="Dusk Gloves +1",
-		feet="Dusk Ledelsens +1",
-		waist="Speed Belt",
-		right_ear="Loquac. Earring",}
+		sub			= "Vivid Strap +1",
+		head		= "Warlock's Chapeau",
+		body		= "Dls. Tabard +1",
+		hands		= "Dusk Gloves +1",
+		feet		= "Dusk Ledelsens +1",
+		waist		= "Speed Belt",
+		right_ear	= "Loquac. Earring",}
 
     sets.resting = {
 
-		main="Imperial Wand",
-		sub="Legion Scutum",
-		head="Dls. Chapeau +1",
-		body="Mahatma Hpl.",
-		hands="Hydra Gloves",
-		legs="Hydra Brais",
-		feet="Goliard Clogs",
-		neck="Gnole Torque",
-		waist="Duelist's Belt",
-		left_ring="Celestial Ring",
-		right_ring="Celestial Ring",
+		main		= "Imperial Wand",
+		sub			= "Legion Scutum",
+		head		= "Dls. Chapeau +1",
+		body		= "Mahatma Hpl.",
+		hands		= "Hydra Gloves",
+		legs		= "Hydra Brais",
+		feet		= "Goliard Clogs",
+		neck		= "Gnole Torque",
+		waist		= "Duelist's Belt",
+		left_ring	= "Celestial Ring",
+		right_ring	= "Celestial Ring",
 	}
 
     sets.matchingDay = {
@@ -385,44 +385,44 @@ function get_sets()
 
     sets.weapons.swdg = {
 
-		main="Excalibur",
-		sub={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		main		= "Excalibur",
+		sub			= { name	= "Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
 	}
 
     sets.weapons.dgsw = {
 
-		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
-		sub="Excalibur",
+		main		= { name= "Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		sub			= "Excalibur",
 	}
 	
     sets.weapons.swkc = {
 		
-		main="Excalibur",
-		sub="Kraken Club",
+		main		= "Excalibur",
+		sub			= "Kraken Club",
 	}
 	
     sets.weapons.dgkc = {
 		
-		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
-		sub="Kraken Club",
+		main		={ name	= "Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		sub			= "Kraken Club",
 	}
 	
     sets.weapons.swsh = {
 		
-		main="Excalibur",
-		sub="Avalon Shield",
+		main		= "Excalibur",
+		sub			= "Avalon Shield",
 	}
 	
     sets.weapons.dgsh = {
 		
-		main={ name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
-		sub="Avalon Shield",
+		main		= { name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
+		sub			= "Avalon Shield",
 	}
 
     sets.weapons.ranged = {
 
-		range="Lamian Kaman +1",
-		ammo="Kabura Arrow",
+		range		= "Lamian Kaman +1",
+		ammo		= "Kabura Arrow",
 	}
 
 	currentWeapons = 'swsh' -- default weapons

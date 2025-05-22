@@ -44,19 +44,19 @@ function get_sets()
 
 	sets.idle = {
 
-		ammo="Bibiki Seashell",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Seiryu's Kote",
-		legs="Hachiryu Haidate",
-		feet="Askar Gambieras",
-		neck="Evasion Torque",
-		waist="Scouter's Rope",
-		left_ear="Triton Earring",
-		right_ear="Novia Earring",
-		left_ring="Shadow Ring",
-		right_ring="Wivre Ring +1",
-		back="Shadow Mantle",
+		ammo		= "Bibiki Seashell",
+		head		= "Nocturnus Helm",
+		body		= "Nocturnus Mail",
+		hands		= "Seiryu's Kote",
+		legs		= "Hachiryu Haidate",
+		feet		= "Askar Gambieras",
+		neck		= "Evasion Torque",
+		waist		= "Scouter's Rope",
+		left_ear	= "Triton Earring",
+		right_ear	= "Novia Earring",
+		left_ring	= "Shadow Ring",
+		right_ring	= "Wivre Ring +1",
+		back		= "Shadow Mantle",
 	}
 
     -- melee sets
@@ -67,19 +67,19 @@ function get_sets()
 
 	sets.melee.tp = {
 
-		ammo="White Tathlum",
-		head="Ace's Helm",
-		body="Hachiryu Haramaki",
-		hands="Dusk Gloves +1",
-		legs="Byakko's Haidate",
-		feet="Dusk Ledelsens +1",
-		neck="Ancient Torque",
-		waist="Speed Belt",
-		left_ear="Ethereal Earring",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+		ammo		= "White Tathlum",
+		head		= "Ace's Helm",
+		body		= "Hachiryu Haramaki",
+		hands		= "Dusk Gloves +1",
+		legs		= "Byakko's Haidate",
+		feet		= "Dusk Ledelsens +1",
+		neck		= "Ancient Torque",
+		waist		= "Speed Belt",
+		left_ear	= "Ethereal Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cerb. Mantle +1",
 	}
 
 	-- Acc sets
@@ -87,25 +87,28 @@ function get_sets()
 	
 	sets.melee.acc = {
 
-		ammo="Black Tathlum",
-		head="Ace's Helm",
-		body="Hachiryu Haramaki",
-		hands="Hachiryu Kote",
-		legs="Byakko's Haidate",
-		feet="Enkidu's Leggings",
-		neck="Ancient Torque",
-		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Toreador's Ring",
-		back="Cuchulain's Mantle",
+		ammo		= "Black Tathlum",
+		head		= "Ace's Helm",
+		body		= "Hachiryu Haramaki",
+		hands		= "Hachiryu Kote",
+		legs		= "Byakko's Haidate",
+		feet		= "Enkidu's Leggings",
+		neck		= "Ancient Torque",
+		waist		= "Cuchulain's Belt",
+		left_ear	= "Pixie Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Toreador's Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
 	-- EVA sets
     -- Priority: EVA and Damage reduction
 
-	sets.melee.eva = sets.idle
+	sets.melee.eva = set_combine(sets.idle, {
+
+		back		= "Boxer's Mantle",
+	})
 
     -- WS sets
 
@@ -116,19 +119,19 @@ function get_sets()
 
 	sets.ws.str = {
 
-		ammo="Black Tathlum",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Alkyoneus's Brc.",
-		legs="Hachiryu Haidate",
-		feet="Creek M Clomps",
-		neck="Fotia Gorget",
-		waist="Warwolf Belt",
-		left_ear="Harmonius Earring",
-		right_ear="Brutal Earring",
-		left_ring="Strigoi Ring",
-		right_ring="Rajas Ring",
-		back="Cerb. Mantle +1",
+		ammo		= "Black Tathlum",
+		head		= "Nocturnus Helm",
+		body		= "Nocturnus Mail",
+		hands		= "Alkyoneus's Brc.",
+		legs		= "Hachiryu Haidate",
+		feet		= "Creek M Clomps",
+		neck		= "Fotia Gorget",
+		waist		= "Warwolf Belt",
+		left_ear	= "Harmonius Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Strigoi Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cerb. Mantle +1",
 	}
 
 	-- WS.DEX sets
@@ -136,19 +139,19 @@ function get_sets()
 
 	sets.ws.dex = {
 
-		ammo="Black Tathlum",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Hachiryu Kote",
-		legs="Byakko's Haidate",
-		feet="Enkidu's Leggings",
-		neck="Fotia Gorget",
-		waist="Cuchulain's Belt",
-		left_ear="Adroit Earring",
-		right_ear="Brutal Earring",
-		left_ring="Thunder Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
+		ammo		= "Black Tathlum",
+		head		= "Nocturnus Helm",
+		body		= "Nocturnus Mail",
+		hands		= "Hachiryu Kote",
+		legs		= "Byakko's Haidate",
+		feet		= "Enkidu's Leggings",
+		neck		= "Fotia Gorget",
+		waist		= "Cuchulain's Belt",
+		left_ear	= "Adroit Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Thunder Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
 	-- WS.BAL sets
@@ -156,19 +159,19 @@ function get_sets()
 
 	sets.ws.bal = {
 
-		ammo="Black Tathlum",
-		head="Nocturnus Helm",
-		body="Nocturnus Mail",
-		hands="Alkyoneus's Brc.",
-		legs="Byakko's Haidate",
-		feet="Creek M Clomps",
-		neck="Fotia Gorget",
-		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Strigoi Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
+		ammo		= "Black Tathlum",
+		head		= "Nocturnus Helm",
+		body		= "Nocturnus Mail",
+		hands		= "Alkyoneus's Brc.",
+		legs		= "Byakko's Haidate",
+		feet		= "Creek M Clomps",
+		neck		= "Fotia Gorget",
+		waist		= "Cuchulain's Belt",
+		left_ear	= "Pixie Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Strigoi Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
 	-- fastcast sets
@@ -176,12 +179,12 @@ function get_sets()
 
 	sets.fastcast = {
 
-		head="Walahra Turban",
-		hands="Dusk Gloves +1",
-		legs="Byakko's Haidate",
-		feet="Dusk Ledelsens +1",
-		waist="Speed Belt",
-		right_ear="Loquac. Earring",
+		head		= "Walahra Turban",
+		hands		= "Dusk Gloves +1",
+		legs		= "Byakko's Haidate",
+		feet		= "Dusk Ledelsens +1",
+		waist		= "Speed Belt",
+		right_ear	= "Loquac. Earring",
 	}
 
 	-- Resting sets
@@ -199,15 +202,15 @@ function get_sets()
 
 	sets.skills.meditate = {
 
-		head="Myochin Kabuto",
-		hands="Saotome Kote",
+		head		= "Myochin Kabuto",
+		hands		= "Saotome Kote",
 	}
 
 	-- Third Eye sets
 	--Equip Saotome Haidate
 
 	sets.skills.thirdeye = {
-		legs="Saotome Haidate",
+		legs		= "Saotome Haidate",
 	}
 
 	-- Jump sets
@@ -215,19 +218,19 @@ function get_sets()
 
 	sets.skills.jump = {
 
-		ammo="White Tathlum",
-		head="Ace's Helm",
-		body="Hachiryu Haramaki",
-		hands="Hachiryu Kote",
-		legs="Hachiryu Haidate",
-		feet="Enkidu's Leggings",
-		neck="Chivalrous Chain",
-		waist="Cuchulain's Belt",
-		left_ear="Pixie Earring",
-		right_ear="Brutal Earring",
-		left_ring="Mars's Ring",
-		right_ring="Rajas Ring",
-		back="Cuchulain's Mantle",
+		ammo		= "White Tathlum",
+		head		= "Ace's Helm",
+		body		= "Hachiryu Haramaki",
+		hands		= "Hachiryu Kote",
+		legs		= "Hachiryu Haidate",
+		feet		= "Enkidu's Leggings",
+		neck		= "Chivalrous Chain",
+		waist		= "Cuchulain's Belt",
+		left_ear	= "Pixie Earring",
+		right_ear	= "Brutal Earring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Rajas Ring",
+		back		= "Cuchulain's Mantle",
 	}
 
 	-- Range sets
@@ -239,18 +242,18 @@ function get_sets()
 
 	sets.range.tp  = {
 
-		head="Zha'Go's Barbut",
-		body="Kyudogi +1",
-		hands="Seiryu's Kote",
-		legs="Oily Trousers",
-		feet="Enkidu's Leggings",
-		neck="Hope Torque",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Behemoth Ring +1",
-		back="Amemet Mantle +1",
+		head		= "Zha'Go's Barbut",
+		body		= "Kyudogi +1",
+		hands		= "Seiryu's Kote",
+		legs		= "Oily Trousers",
+		feet		= "Enkidu's Leggings",
+		neck		= "Hope Torque",
+		waist		= "Warwolf Belt",
+		left_ear	= "Altdorf's Earring",
+		right_ear	= "Wilhelm's Earring",
+		left_ring	= "Behemoth Ring +1",
+		right_ring	= "Behemoth Ring +1",
+		back		= "Amemet Mantle +1",
 	}
 
 	-- Range WS sets
@@ -258,18 +261,18 @@ function get_sets()
 
 	sets.range.ws = {
 
-		head="Zha'Go's Barbut",
-		body="Kyudogi +1",
-		hands="Seiryu's Kote",
-		legs="Oily Trousers",
-		feet="Enkidu's Leggings",
-		neck="Fotia Gorget",
-		waist="Warwolf Belt",
-		left_ear="Altdorf's Earring",
-		right_ear="Wilhelm's Earring",
-		left_ring="Behemoth Ring +1",
-		right_ring="Rajas Ring",
-		back="Amemet Mantle +1",
+		head		= "Zha'Go's Barbut",
+		body		= "Kyudogi +1",
+		hands		= "Seiryu's Kote",
+		legs		= "Oily Trousers",
+		feet		= "Enkidu's Leggings",
+		neck		= "Fotia Gorget",
+		waist		= "Warwolf Belt",
+		left_ear	= "Altdorf's Earring",
+		right_ear	= "Wilhelm's Earring",
+		left_ring	= "Behemoth Ring +1",
+		right_ring	= "Rajas Ring",
+		back		= "Amemet Mantle +1",
 	}
 
 	-- Weapons sets

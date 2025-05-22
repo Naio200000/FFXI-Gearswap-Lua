@@ -41,19 +41,19 @@ function get_sets()
 
 	sets.idle = {
 
-        ammo="Bibiki Seashell",
-        head="Optical Hat",
-        body="Antares Harness",
-        hands="Seiryu's Kote",
-        legs="Raven Hose",
-		feet="Herald's Gaiters",
-        neck="Guarding Torque",
-        waist="Scouter's Rope",
-        left_ear="Triton Earring",
-        right_ear="Novia Earring",
-        left_ring="Shadow Ring",
-        right_ring="Wivre Ring +1",
-		back="Shadow Mantle",
+		ammo			= "Bibiki Seashell",
+		head			= "Optical Hat",
+		body			= "Antares Harness",
+		hands			= "Seiryu's Kote",
+		legs			= "Raven Hose",
+		feet			= "Herald's Gaiters",
+		neck			= "Guarding Torque",
+		waist			= "Scouter's Rope",
+		left_ear		= "Triton Earring",
+		right_ear		= "Novia Earring",
+		left_ring		= "Shadow Ring",
+		right_ring		= "Wivre Ring +1",
+		back			= "Shadow Mantle",
 	}
 
     -- melee sets
@@ -64,19 +64,19 @@ function get_sets()
 
 	sets.melee.tp = {
 
-        ammo="White Tathlum",
-        head="Walahra Turban",
-        body="Hachiryu Haramaki",
-		hands="Mel. Gloves +1",
-        legs="Byakko's Haidate",
-        feet="Setanta's Led.",
-        neck="Faith Torque",
-        waist="Black Belt",
-        left_ear="Ethereal Earring",
-        right_ear="Brutal Earring",
-        left_ring="Mars's Ring",
-        right_ring="Rajas Ring",
-        back="Cerb. Mantle +1",
+		ammo			= "White Tathlum",
+		head			= "Walahra Turban",
+		body			= "Hachiryu Haramaki",
+		hands			= "Mel. Gloves +1",
+		legs			= "Byakko's Haidate",
+		feet			= "Setanta's Led.",
+		neck			= "Faith Torque",
+		waist			= "Black Belt",
+		left_ear		= "Ethereal Earring",
+		right_ear		= "Brutal Earring",
+		left_ring		= "Mars's Ring",
+		right_ring		= "Rajas Ring",
+		back			= "Cerb. Mantle +1",
 	}
 
 	-- Acc sets
@@ -84,19 +84,19 @@ function get_sets()
 	
 	sets.melee.acc = {
 
-        ammo="Black Tathlum",
-        head="Optical Hat",
-        body="Hachiryu Haramaki",
-        hands="Hachiryu Kote",
-        legs="Byakko's Haidate",
-        feet="Setanta's Led.",
-        neck="Ancient Torque",
-        waist="Black Belt",
-        left_ear="Adroit Earring",
-        right_ear="Brutal Earring",
-        left_ring="Mars's Ring",
-        right_ring="Toreador's Ring",
-        back="Cuchulain's Mantle",
+		ammo			= "Black Tathlum",
+		head			= "Optical Hat",
+		body			= "Hachiryu Haramaki",
+		hands			= "Hachiryu Kote",
+		legs			= "Byakko's Haidate",
+		feet			= "Setanta's Led.",
+		neck			= "Ancient Torque",
+		waist			= "Black Belt",
+		left_ear		= "Adroit Earring",
+		right_ear		= "Brutal Earring",
+		left_ring		= "Mars's Ring",
+		right_ring		= "Toreador's Ring",
+		back			= "Cuchulain's Mantle",
 	}
 
 	-- EVA sets
@@ -104,7 +104,8 @@ function get_sets()
 
 	sets.melee.eva = set_combine(sets.idle,{
 
-        	feet="Setanta's Led.",
+		feet			= "Setanta's Led.",
+		back			= "Boxer's Mantle",
 		})
 
     -- WS sets
@@ -116,19 +117,19 @@ function get_sets()
 
 	sets.ws.str = {
 
-        ammo="Black Tathlum",
-        head="Gnadbhod's Helm",
-        body="Kirin's Osode",
-        hands="Alkyoneus's Brc.",
-        legs="Hachiryu Haidate",
-        feet="Setanta's Led.",
-        neck="Fotia Gorget",
-        waist="Black Belt",
-        left_ear="Harmonius Earring",
-        right_ear="Brutal Earring",
-        left_ring="Mars's Ring",
-        right_ring="Rajas Ring",
-        back="Cerb. Mantle +1",
+		ammo			= "Black Tathlum",
+		head			= "Gnadbhod's Helm",
+		body			= "Kirin's Osode",
+		hands			= "Alkyoneus's Brc.",
+		legs			= "Hachiryu Haidate",
+		feet			= "Setanta's Led.",
+		neck			= "Fotia Gorget",
+		waist			= "Black Belt",
+		left_ear		= "Harmonius Earring",
+		right_ear		= "Brutal Earring",
+		left_ring		= "Mars's Ring",
+		right_ring		= "Rajas Ring",
+		back			= "Cerb. Mantle +1",
 	}
 
 	-- WS.DEX sets
@@ -136,19 +137,19 @@ function get_sets()
 
 	sets.ws.acc = {
 
-        ammo="Black Tathlum",
-        head="Optical Hat",
-        body="Hachiryu Haramaki",
-        hands="Hachiryu Kote",
-        legs="Byakko's Haidate",
-        feet="Setanta's Led.",
-        neck="Fotia Gorget",
-        waist="Black Belt",
-        left_ear="Adroit Earring",
-        right_ear="Brutal Earring",
-        left_ring="Mars's Ring",
-        right_ring="Toreador's Ring",
-        back="Cuchulain's Mantle",
+		ammo			= "Black Tathlum",
+		head			= "Optical Hat",
+		body			= "Hachiryu Haramaki",
+		hands			= "Hachiryu Kote",
+		legs			= "Byakko's Haidate",
+		feet			= "Setanta's Led.",
+		neck			= "Fotia Gorget",
+		waist			= "Black Belt",
+		left_ear		= "Adroit Earring",
+		right_ear		= "Brutal Earring",
+		left_ring		= "Mars's Ring",
+		right_ring		= "Toreador's Ring",
+		back			= "Cuchulain's Mantle",
 	}
 
 	-- fastcast sets
@@ -156,18 +157,18 @@ function get_sets()
 
 	sets.fastcast = {
 
-        head="Acubens Helm",
-        legs="Byakko's Haidate",
-        feet="Setanta's Led.",
-        waist="Black Belt",
-        right_ear="Loquac. Earring",
+		head			= "Acubens Helm",
+		legs			= "Byakko's Haidate",
+		feet			= "Setanta's Led.",
+		waist			= "Black Belt",
+		right_ear		= "Loquac. Earring",
 	}
 
 	-- Resting sets
 	-- Priority: hHP+
 	sets.rest = {
 
-		back="Melee Cape",
+		back			= "Melee Cape",
 	}
 
 	-- Skill sets
@@ -179,44 +180,35 @@ function get_sets()
 
 	sets.skills.chakra = {
 
-		ammo="Bibiki Seashell",
-		head="Genbu's Kabuto",
-		body="Temple Cyclas",
-		hands="Mel. Gloves +1",
-		legs="Kensei Sitabaki",
-		feet="Creek M Clomps",
-		neck="Fortitude Torque",
-		waist="Warwolf Belt",
-		left_ear="Robust Earring +1",
-		right_ear="Robust Earring +1",
-		left_ring="Soil Ring",
-		right_ring="Soil Ring",
-		back="Melee Cape",
+		ammo			= "Bibiki Seashell",
+		head			= "Genbu's Kabuto",
+		body			= "Temple Cyclas",
+		hands			= "Mel. Gloves +1",
+		legs			= "Kensei Sitabaki",
+		feet			= "Creek M Clomps",
+		neck			= "Fortitude Torque",
+		waist			= "Warwolf Belt",
+		left_ear		= "Robust Earring +1",
+		right_ear		= "Robust Earring +1",
+		left_ring		= "Soil Ring",
+		right_ring		= "Soil Ring",
+		back			= "Melee Cape",
 	}
 
 	-- Focus sets
 	--Equip Temple Crown
 
-	sets.skills.focus = {
-
-		head="Temple Crown",
-	}
+	sets.skills.focus = {head = "Temple Crown",}
 	
 	-- Dodge sets
 	-- Equip Temple Gloves
 
-	sets.skills.boost = {
-
-		hands="Temple Gloves",
-	}
+	sets.skills.boost = {hands = "Temple Gloves",}
 
 	-- Footwork sets
 	-- Equip Wulong Shoes +1
 
-	sets.skills.footwork = {
-
-		feet="Wulong Shoes +1",
-	}
+	sets.skills.footwork = {feet = "Wulong Shoes +1",}
 
 	sets.skills.chiblast = {
 		--TODO
@@ -228,24 +220,15 @@ function get_sets()
 
 	-- Spharai sets
 
-	sets.weapons.spharai = {
-
-		main		= "Spharai",
-	}
+	sets.weapons.spharai = {main = "Spharai",}
 
 	-- Shenlong sets
 
-	sets.weapons.shenlong = {
-
-		main="Shlng. Baghnakhs",
-	}
+	sets.weapons.shenlong = {main = "Shlng. Baghnakhs",}
 
 	-- Cross-Counters sets
 
-	sets.weapons.cross = {
-
-		main="Cross-Counters",
-	}
+	sets.weapons.cross = {main = "Cross-Counters",}
 
 
 	---------------
@@ -364,5 +347,5 @@ function self_command(command)
 end
 
 
-enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
-send_command('wait 1; input /cm u;  wait 1; gs equip idle; wait 1; gs equip weapons.spharai; wait 1; input /lockstyleset 6; wait 1; input /echo Gearswap loaded.')
+enable('main','sub','range','ammo','head','neck','left_ear',right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
+send_command('wait 1; input /cm u;  wait 1; gs equip idle; wit 1; gs equip weapons.spharai; wait 1; input /lockstyleset 6; wait 1; input /echo Gearswap loaded.')

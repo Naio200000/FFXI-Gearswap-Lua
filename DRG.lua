@@ -105,7 +105,8 @@ function get_sets()
 
 	sets.melee.eva = set_combine(sets.idle, {
         
-        legs="Oily Trousers",
+        legs        = "Oily Trousers",
+        back		= "Boxer's Mantle",
     }) 
 
     -- WS sets

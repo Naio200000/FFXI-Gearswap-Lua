@@ -45,91 +45,91 @@ function get_sets()
 
     sets.idle = {
 
-        head="Optical Hat",
-        body="Antares Harness",
-        hands="War Gloves +1",
-        legs="Raven Hose",
-        feet="Trotter Boots",
-        neck="Evasion Torque",
-        waist="Scouter's Rope",
-        left_ear="Novia Earring",
-        right_ear="Triton Earring",
-        left_ring="Shadow Ring",
-        right_ring="Wivre Ring +1",
-		back="Shadow Mantle",
+        head        = "Optical Hat",
+        body        = "Antares Harness",
+        hands       = "War Gloves +1",
+        legs        = "Raven Hose",
+        feet        = "Trotter Boots",
+        neck        = "Evasion Torque",
+        waist       = "Scouter's Rope",
+        left_ear    = "Novia Earring",
+        right_ear   = "Triton Earring",
+        left_ring   = "Shadow Ring",
+        right_ring  = "Wivre Ring +1",
+		back        = "Shadow Mantle",
     }
 
     sets.melee = {}
 
     sets.melee.tp = {
 
-        head="Walahra Turban",
-        body="Rapparee Harness",
-        hands="Dusk Gloves +1",
-        legs="Homam Cosciales",
-        feet="Enkidu's Leggings",
-        neck="Love Torque",
-        waist="Speed Belt",
-        left_ear="Suppanomimi",
-        right_ear="Brutal Earring",
-        left_ring="Mars's Ring",
-        right_ring="Rajas Ring",
-        back="Cerb. Mantle +1",
+        head        = "Walahra Turban",
+        body        = "Rapparee Harness",
+        hands       = "Dusk Gloves +1",
+        legs        = "Homam Cosciales",
+        feet        = "Enkidu's Leggings",
+        neck        = "Love Torque",
+        waist       = "Speed Belt",
+        left_ear    = "Suppanomimi",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Mars's Ring",
+        right_ring  = "Rajas Ring",
+        back        = "Cerb. Mantle +1",
     }
 
     sets.melee.acc = {
 
-        head="Optical Hat",
-        body="Homam Corazza",
-        hands="Homam Manopolas",
-        legs="Oily Trousers",
-        feet="Homam Gambieras",
-        neck="Ancient Torque",
-        waist="Speed Belt",
-        left_ear="Suppanomimi",
-        right_ear="Brutal Earring",
-        left_ring="Mars's Ring",
-        right_ring="Toreador's Ring",
-        back="Cuchulain's Mantle",
+        head        = "Optical Hat",
+        body        = "Homam Corazza",
+        hands       = "Homam Manopolas",
+        legs        = "Oily Trousers",
+        feet        = "Homam Gambieras",
+        neck        = "Ancient Torque",
+        waist       = "Speed Belt",
+        left_ear    = "Suppanomimi",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Mars's Ring",
+        right_ring  = "Toreador's Ring",
+        back        = "Cuchulain's Mantle",
     }
 
 	sets.melee.eva = set_combine(sets.idle,{
 
-        feet="Setanta's Led.",
+        feet        = "Setanta's Led.",
     })
 
     sets.ws = {}
     
     sets.ws.str = {
 
-        head="Hecatomb Cap +1",
-        body="Hct. Harness +1",
-        hands="Hct. Mittens +1",
-        legs="Hct. Subligar +1",
-        feet="Hct. Leggings +1",
-        neck="Fotia Gorget",
-        waist="Warwolf Belt",
-        left_ear="Harmonius Earring",
-        right_ear="Brutal Earring",
-        left_ring="Strigoi Ring",
-        right_ring="Rajas Ring",
-        back="Cerb. Mantle +1",
+        head        = "Hecatomb Cap +1",
+        body        = "Hct. Harness +1",
+        hands       = "Hct. Mittens +1",
+        legs        = "Hct. Subligar +1",
+        feet        = "Hct. Leggings +1",
+        neck        = "Fotia Gorget",
+        waist       = "Warwolf Belt",
+        left_ear    = "Harmonius Earring",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Strigoi Ring",
+        right_ring  = "Rajas Ring",
+        back        = "Cerb. Mantle +1",
     }
 
     sets.ws.dex = {
 
-        head="Hecatomb Cap +1",
-        body="Antares Harness",
-        hands="Hct. Mittens +1",
-        legs="Hct. Subligar +1",
-        feet="Hct. Leggings +1",
-        neck="Fotia Gorget",
-        waist="Cuchulain's Belt",
-        left_ear="Pixie Earring",
-        right_ear="Brutal Earring",
-        left_ring="Thunder Ring",
-        right_ring="Rajas Ring",
-        back="Cuchulain's Mantle",
+        head        = "Hecatomb Cap +1",
+        body        = "Antares Harness",
+        hands       = "Hct. Mittens +1",
+        legs        = "Hct. Subligar +1",
+        feet        = "Hct. Leggings +1",
+        neck        = "Fotia Gorget",
+        waist       = "Cuchulain's Belt",
+        left_ear    = "Pixie Earring",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Thunder Ring",
+        right_ring  = "Rajas Ring",
+        back        = "Cuchulain's Mantle",
     }
 
     sets.ws.mab = {
@@ -140,34 +140,34 @@ function get_sets()
 
     sets.skills.sa = {
 
-        head="Maat's Cap",
-        body="Antares Harness",
-        hands="Hct. Mittens +1",
-        legs="Hct. Subligar +1",
-        feet="Setanta's Led.",
-        neck="Love Torque",
-        waist="Cuchulain's Belt",
-        left_ear="Pixie Earring",
-        right_ear="Brutal Earring",
-        left_ring="Thunder Ring",
-        right_ring="Rajas Ring",
-        back="Cuchulain's Mantle",
+        head        = "Maat's Cap",
+        body        = "Antares Harness",
+        hands       = "Hct. Mittens +1",
+        legs        = "Hct. Subligar +1",
+        feet        = "Setanta's Led.",
+        neck        = "Love Torque",
+        waist       = "Cuchulain's Belt",
+        left_ear    = "Pixie Earring",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Thunder Ring",
+        right_ring  = "Rajas Ring",
+        back        = "Cuchulain's Mantle",
     }
 
     sets.skills.ta = {
 
-        head="Maat's Cap",
-        body="Antares Harness",
-        hands="Rog. Armlets +1",
-        legs="Oily Trousers",
-        feet="Enkidu's Leggings",
-        neck="Hope Torque",
-        waist="Scouter's Rope",
-        left_ear="Suppanomimi",
-        right_ear="Brutal Earring",
-        left_ring="Breeze Ring",
-        right_ring="Breeze Ring",
-        back="Fowler's Mantle +1",
+        head        = "Maat's Cap",
+        body        = "Antares Harness",
+        hands       = "Rog. Armlets +1",
+        legs        = "Oily Trousers",
+        feet        = "Enkidu's Leggings",
+        neck        = "Hope Torque",
+        waist       = "Scouter's Rope",
+        left_ear    = "Suppanomimi",
+        right_ear   = "Brutal Earring",
+        left_ring   = "Breeze Ring",
+        right_ring  = "Breeze Ring",
+        back        = "Fowler's Mantle +1",
     }
 
     sets.skills.steal = {
@@ -176,18 +176,18 @@ function get_sets()
 
     sets.skills.flee = {
 
-        feet="Rog. Poulaines +1",
+        feet        = "Rog. Poulaines +1",
     }
 
     sets.fastcast = {
 
-        head="Acubens Helm",
-        body="Rapparee Harness",
-        hands="Dusk Gloves +1",
-        legs="Homam Cosciales",
-        feet="Homam Gambieras",
-        waist="Speed Belt",
-        right_ear="Loquac. Earring",
+        head        = "Acubens Helm",
+        body        = "Rapparee Harness",
+        hands       = "Dusk Gloves +1",
+        legs        = "Homam Cosciales",
+        feet        = "Homam Gambieras",
+        waist       = "Speed Belt",
+        right_ear   = "Loquac. Earring",
     }
 
     sets.resting = {
@@ -196,36 +196,36 @@ function get_sets()
 
     sets.th = {
 
-        sub="Thief's Knife",
-        hands="Asn. Armlets +1",
+        sub         = "Thief's Knife",
+        hands       = "Asn. Armlets +1",
     }
 
     sets.range = {
 
-        head="Optical Hat",
-        body="Akinji Peti",
-        hands="Akinji Bazubands",
-        legs="Akinji Salvars",
-        feet="Enkidu's Leggings",
-        neck="Peacock Charm",
-        waist="R.K. Belt +2",
-        left_ear="Altdorf's Earring",
-        right_ear="Wilhelm's Earring",
-        left_ring="Behemoth Ring +1",
-        right_ring="Behemoth Ring +1",
-        back="Amemet Mantle +1",
+        head        = "Optical Hat",
+        body        = "Akinji Peti",
+        hands       = "Akinji Bazubands",
+        legs        = "Akinji Salvars",
+        feet        = "Enkidu's Leggings",
+        neck        = "Peacock Charm",
+        waist       = "R.K. Belt +2",
+        left_ear    = "Altdorf's Earring",
+        right_ear   = "Wilhelm's Earring",
+        left_ring   = "Behemoth Ring +1",
+        right_ring  = "Behemoth Ring +1",
+        back        = "Amemet Mantle +1",
     }
 
     sets.range.wpn = {}
 
     sets.range.wpn.xbow = {
 
-        range="Ziska's Crossbow",
+        range       = "Ziska's Crossbow",
     }
 
     sets.range.wpn.bow = {
 
-        range="Failnaught",
+        range       = "Failnaught",
     }
 
     sets.range.wpn.darts = {
@@ -236,34 +236,34 @@ function get_sets()
 
     sets.weapons.dgdg = {
 
-        main="Mandau",
-        sub="Blau Dolch",
+        main        = "Mandau",
+        sub         = "Blau Dolch",
     }
 
     sets.weapons.dgkc = {
 
-        main="Mandau",
-        sub="Kraken Club",
+        main        = "Mandau",
+        sub         = "Kraken Club",
     }
 
     sets.weapons.dgsw = {
 
-        main="Mandau",
-        sub="Ridill",
+        main        = "Mandau",
+        sub         = "Ridill",
     }
 
     sets.weapons.thsh = {
 
-        main="Thief's Knife",
-        sub="Airy Buckler",
-        hands="Asn. Armlets +1",
+        main        = "Thief's Knife",
+        sub         = "Airy Buckler",
+        hands       = "Asn. Armlets +1",
     }
 
     sets.weapons.dgth = {
 
-        main="Mandau",
-        sub="Thief's Knife",
-        hands="Asn. Armlets +1",
+        main        = "Mandau",
+        sub          "Thief's Knife",
+        hands       = "Asn. Armlets +1",
     }
   	
     ---------------
