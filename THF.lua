@@ -133,7 +133,20 @@ function get_sets()
     }
 
     sets.ws.mab = {
-        --TODO
+
+        head        = "Ree's Headgear",
+        body        = "Antares Harness",
+        hands       = "Hct. Mittens +1",
+        legs        = "Denali Kecks",
+        feet        = "Hct. Leggings +1",
+        neck        = "Fotia Gorget",
+        waist       = "Cuchulain's Belt",
+   		left_ear	= "Moldavite Earring",
+		right_ear	= "Novio Earring",
+  		left_ring	= "Galdr Ring",
+    	right_ring	= "Omega Ring",
+        right_ring  = "Rajas Ring",
+        back        = "Cuchulain's Mantle",
     }
 
     sets.skills = {}
