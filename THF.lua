@@ -275,7 +275,7 @@ function get_sets()
     sets.weapons.dgth = {
 
         main        = "Mandau",
-        sub          "Thief's Knife",
+        sub         = "Thief's Knife",
         hands       = "Asn. Armlets +1",
     }
   	

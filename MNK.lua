@@ -347,5 +347,5 @@ function self_command(command)
 end
 
 
-enable('main','sub','range','ammo','head','neck','left_ear',right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
+enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
 send_command('wait 1; input /cm u;  wait 1; gs equip idle; wit 1; gs equip weapons.spharai; wait 1; input /lockstyleset 6; wait 1; input /echo Gearswap loaded.')
