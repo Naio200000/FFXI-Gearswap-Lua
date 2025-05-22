@@ -427,12 +427,7 @@ function get_sets()
 
 	currentWeapons = 'swsh' -- default weapons
 
-<<<<<<< HEAD
-	currentWeapons = 'staff' -- default weapon set
-
-=======
 	ethereal = false -- set to true if you want to use ethereal earring
->>>>>>> c55025704e78d31326d5ea75c0c81007a6aca130
     fightMode = M{'mage', 'melee'} 							-- fight modes
 	meleeMode = M{'tp','acc','eva'} 					-- melee modes
 
