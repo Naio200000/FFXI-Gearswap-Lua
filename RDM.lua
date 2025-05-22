@@ -97,6 +97,7 @@ function get_sets()
     sets.melee.eva = set_combine(sets.idle, {
 
 		legs		= "Hydra Brais",
+		back		= "Boxer's Mantle",
 	})
 
     sets.melee.ranged = {
@@ -186,7 +187,7 @@ function get_sets()
     sets.ranged.ws = {
 
 		head		= "Maat's Cap",
-		body		= "Akinji Peti",
+		body		= "Antares Harness",
 		hands		= "Blood Fng. Gnt.",
 		legs		= "Oily Trousers",
 		feet		= "Creek M Clomps",
