@@ -73,7 +73,7 @@ function get_sets()
 		hands		= "Dusk Gloves +1",
 		legs		= "Byakko's Haidate",
 		feet		= "Dusk Ledelsens +1",
-		neck		= "Ancient Torque",
+		neck		= "Justice Torque",
 		waist		= "Speed Belt",
 		left_ear	= "Ethereal Earring",
 		right_ear	= "Brutal Earring",
