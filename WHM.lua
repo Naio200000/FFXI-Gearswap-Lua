@@ -113,7 +113,7 @@ function get_sets()
         waist       = "Witch Sash",
         right_ear   = "Enfeebling Earring",
         right_ring  = "Omega Ring",
-        back        = "Ixion Cape",
+        back        = "Altruistic Cape",
     }
 
     sets.magic.enfeebling.int = {
@@ -219,7 +219,7 @@ function get_sets()
 		right_ear	= "Novio Earring",
         left_ring   = "Karka Ring",
         right_ring  = "Omega Ring",
-        back        = "Dew Silk Cape +1",
+        back        = "Altruistic Cape",
     }
 
     sets.fastcast = {

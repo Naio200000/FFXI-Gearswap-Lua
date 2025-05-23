@@ -150,7 +150,7 @@ function get_sets()
 		left_ear	= "Helenus's Earring",
 		right_ear	= "Cass. Earring",
 		right_ring	= "Omega Ring",
-		back		= "Ixion Cape",
+		back		= "Altruistic Cape",
 	}
 
     sets.magic.enfeebling.int = set_combine(sets.magic.enfeebling, {
