@@ -376,14 +376,22 @@ function precast(spell, spellMap, action)
 	elseif spell.action_type == 'Ranged Attack' then
 		equip(sets.range) 
 		
-	-- SA/TA
-	elseif spell.name == 'Sneak Attack' then
-		equip(sets.skills.sa)
-		sa_gear = true
-	elseif spell.name == 'Trick Attack' then
-		equip(sets.skills.ta)
-		ta_gear = true
-		
+	-- SA/TA with check for recast time
+	elseif spell.name == 'Sneak Attack' or spell.name == 'Trick Attack' then
+
+        local spell_recasts = windower.ffxi.get_spell_recasts()
+        if spell_recasts[spell.recast_id] > 60 then
+            add_to_chat(167,'SA/TA is on cooldown, unable to use.')
+            cancel_spell()
+        else
+            if spell.name == 'Sneak Attack' then
+                equip(sets.skills.sa)
+		        sa_gear = true
+	        else
+		        equip(sets.skills.ta)
+		        ta_gear = true
+            end
+        end
 	-- Weaponskills
 	elseif spell.type == 'WeaponSkill' then
 	
