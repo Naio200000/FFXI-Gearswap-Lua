@@ -21,6 +21,7 @@
     v2 - Added TH gear and functions.
     v3 - Added SA/TA gear and functions.
     v3.5 - Added check if SA or TA runs out and remove gear.
+    v4 - Add Cancel SA/TA if still in cooldown.
 
 -- Credits --
 
