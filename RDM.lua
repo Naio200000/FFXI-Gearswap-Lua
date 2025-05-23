@@ -253,7 +253,7 @@ function get_sets()
 		left_ear	= "Helenus's Earring",
 		right_ear	= "Cass. Earring",
 		right_ring	= "Omega Ring",
-		back		= "Prism Cape",
+		back		= "Altruistic Cape",
 	}
 	
 	sets.magic.enfeebling.int = set_combine(sets.magic.enfeebling, {
@@ -805,8 +805,4 @@ end
 ---------------
 
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-<<<<<<< HEAD
-send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1; gs equip weapons.staff;wait 2;input /lockstyleset 3; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
-=======
 send_command('wait 1; input /cm u;wait 1;gs equip idle;wait 1;input /lockstyleset 3; wait 1; input !myth; wait 1; input /echo Gearswap loaded.')
->>>>>>> c55025704e78d31326d5ea75c0c81007a6aca130
