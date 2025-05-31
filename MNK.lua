@@ -17,6 +17,7 @@
     v0 - Base sets and functions.
 	v1 - Added movement speed and EVA sets.
 	v2 - Added footwork sets and functions.
+	v2.1 - Added footwork to buff_change functions.
 
 -- Credits --
 
