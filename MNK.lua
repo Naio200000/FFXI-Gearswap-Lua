@@ -289,6 +289,10 @@ function buff_change(name,gain)
 			windower.add_to_chat(122, 'Footwork wore, removing Wulong Shoes +1, back to normal.')
 			choose_set()
 		else 
+			footwork = true
+			equip(sets.skills.footwork)
+			windower.add_to_chat(122, 'Footwork active, equipping Wulong Shoes +1.')
+			disable('feet')
 			choose_set()
 		end
 	end
@@ -301,11 +305,7 @@ end
 -- Before casting/using ability
 function precast(spell, spellMap, action)
 
-	if spell.name == 'Footwork' then
-		equip(sets.skills.footwork)
-		disable('feet')
-		footwork = true
-	elseif spell.name == 'Chakra' then equip(sets.skills.chakra)
+	if spell.name == 'Chakra' then equip(sets.skills.chakra)
 	elseif spell.name == 'Focus' then equip(sets.skills.focus)
 	elseif spell.name == 'Boost' then equip(sets.skills.boost)
 	elseif spell.name:contains('Utsusemi') then	equip(sets.melee.eva,sets.fastcast)
