@@ -33,15 +33,74 @@ function get_sets()
 
     include('Modes.lua')
 
-    sets.idle = {}
+    sets.idle = {
+        main="Terra's Staff",
+        sub="Vivid Strap +1",
+        range="Gjallarhorn",
+        head="Optical Hat",
+        body="Dalmatica +1",
+        hands="Hydra Gloves",
+        legs="Hydra Brais",
+        feet="Hydra Gaiters",
+        neck="Evasion Torque",
+        waist="Scouter's Rope",
+        left_ear="Triton Earring",
+        right_ear="Novia Earring",
+        left_ring="Shadow Ring",
+        right_ring="Wivre Ring +1",
+        back="Shadow Mantle",
+    }
 
-    sets.melee = {}
+    sets.melee = {
+        head="Walahra Turban",
+        body="Antares Harness",
+        hands="Dusk Gloves +1",
+        legs="Byakko's Haidate",
+        feet="Dusk Ledelsens +1",
+        neck="Love Torque",
+        waist="Speed Belt",
+        left_ear="Suppanomimi",
+        right_ear="Brutal Earring",
+        left_ring="Mars's Ring",
+        right_ring="Rajas Ring",
+        back="Cuchulain's Mantle",
+    }
 
-    sets.ws = {}
+    sets.ws = {
+        head="Hecatomb Cap +1",
+        body="Kirin's Osode",
+        hands="Hct. Mittens +1",
+        legs="Hct. Subligar +1",
+        feet="Hct. Leggings +1",
+        neck="Fotia Gorget",
+        waist="Cuchulain's Belt",
+        left_ear="Pixie Earring",
+        right_ear="Brutal Earring",
+        left_ring="Thunder Ring",
+        right_ring="Rajas Ring",
+        back="Cuchulain's Mantle",
+    }
 
-    sets.songs = {}
+    sets.songs = {
+        main="Chatoyant Staff",
+        sub="Vivid Strap +1",
+        range="Gjallarhorn",
+        hands="Choral Cuffs",
+        legs="Choral Cannions",
+        feet="Oracle's Pigaches",
+        neck="Piper's Torque",
+        waist="Gleeman's Belt",
+        right_ear="Musical Earring",
+        right_ring="Nereid Ring",
+        back="Bard's Cape",
+    }
 
-    sets.songs.debuff = {}
+    sets.songs.debuff = set_combine(sets.songs,{
+        head="Bard's Roundlet",
+        body="Oracle's Robe",
+        left_ear="Singing Earring",
+        left_ring="Veela Ring",
+    })
 
     sets.songs.buffs = {}
 
