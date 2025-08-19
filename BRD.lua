@@ -289,6 +289,10 @@ function equip_heal(spell)
 	end
 end
 
+function equip_enfeebling(spell)
+	equip(sets.fastcast)
+end
+
 function equip_enhancing(spell) 
 	
 	-- Stoneskin
@@ -331,6 +335,78 @@ function equip_song(spell)
 	end
 	
 end
+
+-----------------------
+-- Pre/mid/aftercast --
+-----------------------
+
+-- Before casting/using ability
+function precast(spell, spellMap, action)
+	
+		-- Magic
+	if spell.action_type == 'Magic' then
+	
+		-- Cancel magic when it is not up yet
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		if spell_recasts[spell.recast_id] > 60 then  -- some margin to account for server lag
+			add_to_chat(167,spell.english .. ' is still on cooldown!')
+			cancel_spell()
+		else
+		
+			-- Check range 
+			if spell.name:contains('Requiem') and player.target.distance > 16.3 then
+				add_to_chat(122,'You are too far to sing Requiem.')
+				cancel_spell()
+			elseif spell.name:contains('Lullaby') and player.subtarget.distance > 16.3 then
+				add_to_chat(122,'You are too far to sing Lullaby.')
+				cancel_spell()
+			elseif (spell.name:contains('Threnody') or spell.name:contains('Finale') or spell.name:contains('Elegy')) and player.target.distance > 20.3 then
+				add_to_chat(122,'You are too far to sing ' .. spell.name)
+				cancel_spell()
+			end 
+
+			-- Fast cast for all spells	
+			if spell.type == "BardSong" then
+				equip(sets.precastfastcastsongs)
+			else
+				equip(sets.precastfastcast)
+			end
+		
+			-- Cancel status effects for spells that don't overwrite themselves
+			if spell.name == "Sneak" then send_command("cancel sneak") end
+			if spell.name == "Stoneskin" then send_command("wait 4;cancel stoneskin") end
+			if spell.name == "Reraise" then send_command("cancel reraise") end
+			if spell.name == "Blink" then send_command("wait 4;cancel blink") end
+			if spell.name == "Aquaveil" then send_command("wait 4;cancel aquaveil") end
+			if spell.name == "Ice Spikes" then send_command("cancel ice spikes") end
+			if spell.name == "Shock Spikes" then send_command("cancel shock spikes") end
+			if spell.name == "Phalanx" then send_command("cancel phalanx") end
+		end
+	end
+end
+
+-- During casting magic
+function midcast(spell)
+ 
+	if spell.skill == 'Healing Magic' then
+        equip_heal(spell)
+    elseif spell.skill == 'Enhancing Magic' then
+        equip_enhancing(spell)
+    elseif spell.name:contains('Utsusemi') then
+		equip(sets.fastcasthaste)
+	elseif spell.type == 'BardSong' then
+		equip_song(spell)
+	elseif spell.type == 'WeaponSkill' then
+		equip(sets.ws)
+	end
+
+end
+	
+-- After casting or using an ability
+function aftercast(spell)
+	choose_set()
+end
+
 
 ---------------
 -- Init code --
