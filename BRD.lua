@@ -81,7 +81,9 @@ function get_sets()
         back="Cuchulain's Mantle",
     }
 
-    sets.songs = {
+    sets.songs = {}
+
+    sets.songs.debuff = {
         main="Chatoyant Staff",
         sub="Vivid Strap +1",
         range="Gjallarhorn",
@@ -93,23 +95,51 @@ function get_sets()
         right_ear="Musical Earring",
         right_ring="Nereid Ring",
         back="Bard's Cape",
-    }
-
-    sets.songs.debuff = set_combine(sets.songs,{
         head="Bard's Roundlet",
         body="Oracle's Robe",
         left_ear="Singing Earring",
         left_ring="Veela Ring",
-    })
+    }
 
-    sets.songs.buffs = set_combine(sets.songs,{
+    sets.songs.buff = {
+        main="Chatoyant Staff",
+        sub="Vivid Strap +1",
+        range="Gjallarhorn",
+        hands="Choral Cuffs",
+        legs="Choral Cannions",
+        feet="Oracle's Pigaches",
+        neck="Piper's Torque",
+        waist="Gleeman's Belt",
+        right_ear="Musical Earring",
+        right_ring="Nereid Ring",
+        back="Bard's Cape",
         head="Demon Helm +1",
         body="Choral Jstcorps",
         left_ear="Wind Earring",
         left_ring="Nereid Ring",
-    })
+    }
 
-    sets.songs.fastcast = sets.yellow
+    sets.songs.fastcast = {
+        main="Terra's Staff",
+        sub="Dark Grip",
+        range="Gjallarhorn",
+        body="Dalmatica +1",
+        body="Sheikh Manteel",
+        hands="Zenith Mitts +1",
+        neck="Morgana's Choker",
+        waist="Scouter's Rope",
+        left_ear="Astral Earring",
+        right_ear="Loquac. Earring",
+        left_ring="Minstrel's Ring",
+        right_ring="Serket Ring",
+        back="Ixion Cape",
+    }
+
+    sets.fastcast = {
+        sub			= "Vivid Strap +1",
+		right_ear   = "Loquac. Earring",
+		back		= "Veela Cape",
+    }
 
     sets.magic = {}
     
@@ -165,28 +195,6 @@ function get_sets()
         left_ring="Celestial Ring",
         right_ring="Karka Ring",
         back="Dew Silk Cape +1",
-    }
-
-    sets.yellow = {
-        main="Terra's Staff",
-        sub="Vivid Strap +1",
-        range="Gjallarhorn",
-        body="Dalmatica +1",
-        hands="Sheikh Gages",
-        feet="Zenith Pumps +1",
-        neck="Morgana's Choker",
-        waist="Scouter's Rope",
-        left_ear="Astral Earring",
-        right_ear="Loquac. Earring",
-        left_ring="Minstrel's Ring",
-        right_ring="Serket Ring",
-        back="Veela Cape",
-    }
-
-    sets.fastcast = {
-        sub			= "Vivid Strap +1",
-		right_ear   = "Loquac. Earring",
-		back		= "Veela Cape",
     }
 
     sets.matchingDay = {waist = "Hachirin-no-Obi",}
@@ -314,24 +322,17 @@ end
 
 function equip_song(spell)
 	
-	-- no potency/macc songs
-	if spell.name:contains('Mazurka') or
-	   spell.name:contains('Paeon') or
-	   spell.name:contains('Ballad') or
-	   spell.name:contains('Etude') then
-		equip(sets.songs.fastcast)
-		
-	-- debuffs	
-	elseif spell.name:contains('Requiem') or
+	if spell.name:contains('Requiem') or
            spell.name:contains('Elegy') or
            spell.name:contains('Threnody') or
            spell.name:contains('Finale') or
            spell.name:contains('Lullaby') then
 		equip(sets.songs.debuff)
-		
-	-- other spells are all buffs with potency
+		add_to_chat(122,'Debuff song: ' .. spell.name)
+        -- other spells are all buffs with potency
 	else
 		equip(sets.songs.buff)
+		add_to_chat(122,'Buff song: ' .. spell.name)
 	end
 	
 end
@@ -342,46 +343,13 @@ end
 
 -- Before casting/using ability
 function precast(spell, spellMap, action)
-	
-		-- Magic
-	if spell.action_type == 'Magic' then
-	
-		-- Cancel magic when it is not up yet
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		if spell_recasts[spell.recast_id] > 60 then  -- some margin to account for server lag
-			add_to_chat(167,spell.english .. ' is still on cooldown!')
-			cancel_spell()
-		else
-		
-			-- Check range 
-			if spell.name:contains('Requiem') and player.target.distance > 16.3 then
-				add_to_chat(122,'You are too far to sing Requiem.')
-				cancel_spell()
-			elseif spell.name:contains('Lullaby') and player.subtarget.distance > 16.3 then
-				add_to_chat(122,'You are too far to sing Lullaby.')
-				cancel_spell()
-			elseif (spell.name:contains('Threnody') or spell.name:contains('Finale') or spell.name:contains('Elegy')) and player.target.distance > 20.3 then
-				add_to_chat(122,'You are too far to sing ' .. spell.name)
-				cancel_spell()
-			end 
 
-			-- Fast cast for all spells	
-			if spell.type == "BardSong" then
-				equip(sets.precastfastcastsongs)
-			else
-				equip(sets.precastfastcast)
-			end
-		
-			-- Cancel status effects for spells that don't overwrite themselves
-			if spell.name == "Sneak" then send_command("cancel sneak") end
-			if spell.name == "Stoneskin" then send_command("wait 4;cancel stoneskin") end
-			if spell.name == "Reraise" then send_command("cancel reraise") end
-			if spell.name == "Blink" then send_command("wait 4;cancel blink") end
-			if spell.name == "Aquaveil" then send_command("wait 4;cancel aquaveil") end
-			if spell.name == "Ice Spikes" then send_command("cancel ice spikes") end
-			if spell.name == "Shock Spikes" then send_command("cancel shock spikes") end
-			if spell.name == "Phalanx" then send_command("cancel phalanx") end
-		end
+	if spell.action_type == 'Magic' then
+        if spell.type == "BardSong" then
+            equip(sets.songs.fastcast)
+        else
+            equip(sets.fastcast)
+        end
 	end
 end
 
@@ -393,7 +361,7 @@ function midcast(spell)
     elseif spell.skill == 'Enhancing Magic' then
         equip_enhancing(spell)
     elseif spell.name:contains('Utsusemi') then
-		equip(sets.fastcasthaste)
+		equip(sets.fastcast)
 	elseif spell.type == 'BardSong' then
 		equip_song(spell)
 	elseif spell.type == 'WeaponSkill' then
