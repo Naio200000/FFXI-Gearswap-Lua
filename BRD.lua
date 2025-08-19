@@ -53,7 +53,7 @@ function get_sets()
 
     sets.melee = {
         head="Walahra Turban",
-        body="Antares Harness",
+        body="Bard's Jstcorps",
         hands="Dusk Gloves +1",
         legs="Byakko's Haidate",
         feet="Dusk Ledelsens +1",
@@ -102,33 +102,120 @@ function get_sets()
         left_ring="Veela Ring",
     })
 
-    sets.songs.buffs = {}
-
-    sets.songs.fastcast = set_combine(sets.yellow, {
-
+    sets.songs.buffs = set_combine(sets.songs,{
+        head="Demon Helm +1",
+        body="Choral Jstcorps",
+        left_ear="Wind Earring",
+        left_ring="Nereid Ring",
     })
+
+    sets.songs.fastcast = sets.yellow
 
     sets.magic = {}
     
-    sets.magic.enhancing = {}   
+    sets.magic.enhancing = {
+        main="Terra's Staff",
+        sub="Vivid Strap +1",
+        range="Gjallarhorn",
+        head="Walahra Turban",
+        body="Goliard Saio",
+        hands="Dusk Gloves +1",
+        legs="Byakko's Haidate",
+        feet="Dusk Ledelsens +1",
+        neck="Enhancing Torque",
+        waist="Speed Belt",
+        left_ear="Augment. Earring",
+        right_ear="Loquac. Earring",
+        left_ring="Karka Ring",
+        right_ring="Galdr Ring",
+        back="Merciful Cape",
+    }   
 
-    sets.magic.enhancing.stoneskin = {}
+    sets.magic.enhancing.stoneskin = {
+        main="Alkalurops",
+        sub="Bugard Strap +1",
+        range="Gjallarhorn",
+        head="Maat's Cap",
+        body="Mahatma Hpl.",
+        hands="Bricta's Cuffs",
+        legs="Mahatma Slops",
+        feet="Suzaku's Sune-Ate",
+        neck="Faith Torque",
+        waist="Steppe Rope",
+        left_ear="Celestial Earring",
+        right_ear="Celestial Earring",
+        left_ring="Celestial Ring",
+        right_ring="Karka Ring",
+        back="Dew Silk Cape +1",
+    }
 
-    sets.magic.healing = {}
+    sets.magic.healing = {
+        main="Chatoyant Staff",
+        sub="Bugard Strap +1",
+        range="Gjallarhorn",
+        head="Maat's Cap",
+        body="Mahatma Hpl.",
+        hands="Bricta's Cuffs",
+        legs="Mahatma Slops",
+        feet="Suzaku's Sune-Ate",
+        neck="Fylgja Torque +1",
+        waist="Steppe Rope",
+        left_ear="Celestial Earring",
+        right_ear="Celestial Earring",
+        left_ring="Celestial Ring",
+        right_ring="Karka Ring",
+        back="Dew Silk Cape +1",
+    }
 
-    sets.yellow = {}
+    sets.yellow = {
+        main="Terra's Staff",
+        sub="Vivid Strap +1",
+        range="Gjallarhorn",
+        body="Dalmatica +1",
+        hands="Sheikh Gages",
+        feet="Zenith Pumps +1",
+        neck="Morgana's Choker",
+        waist="Scouter's Rope",
+        left_ear="Astral Earring",
+        right_ear="Loquac. Earring",
+        left_ring="Minstrel's Ring",
+        right_ring="Serket Ring",
+        back="Veela Cape",
+    }
 
-    sets.fastcast = {}
+    sets.fastcast = {
+        sub			= "Vivid Strap +1",
+		right_ear   = "Loquac. Earring",
+		back		= "Veela Cape",
+    }
 
-    sets.matchingDay = {}
+    sets.matchingDay = {waist = "Hachirin-no-Obi",}
 
-    sets.resting = {}
+    sets.resting = {
+        main="Terra's Staff",
+        sub="Vivid Strap +1",
+        range="Gjallarhorn",
+        head="Goliard Chapeau",
+        body="Mahatma Hpl.",
+        hands="Hydra Gloves",
+        legs="Oracle's Braconi",
+        feet="Goliard Clogs",
+        neck="Gnole Torque",
+        left_ring="Celestial Ring",
+        right_ring="Celestial Ring",
+    }
 
     sets.weapons = {}
 
-    sets.weapons.dgsh = {}
+    sets.weapons.dgsh = { 
+        main ="Mandau",
+        sub="Genbu's Shield",
+    }
 
-    sets.weapons.dgdg = {}
+    sets.weapons.dgdg = {
+        main ="Mandau",
+        sub="Blau Dolch",
+    }
 
     ---------------
 	-- Variables --
@@ -143,14 +230,14 @@ end
 function initializeNakedHPMP()
 
     if player.sub_job == 'WHM' then
-        nakedHP = 0
-        nakedMP = 0
-    elseif player.sub_job == 'RDM' then
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 970
+        nakedMP = 274
+    elseif player.sub_job == 'RDM' or player.sub_job == 'NIN' then
+        nakedHP = 988
+        nakedMP = 255
 	else
-        nakedHP = 0
-        nakedMP = 0
+        nakedHP = 988
+        nakedMP = 80
     end
 end
 
@@ -244,3 +331,10 @@ function equip_song(spell)
 	end
 	
 end
+
+---------------
+-- Init code --
+--------------- 
+ 
+enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet') 
+send_command('wait 1; input /cm u; wait 2; gs equip idle; wait 1; input /lockstyleset 12; wait 1; input /echo Gearswap loaded.')
