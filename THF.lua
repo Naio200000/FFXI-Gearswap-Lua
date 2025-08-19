@@ -239,7 +239,7 @@ function get_sets()
 
     sets.range.wpn.bow = {
 
-        range       = "Failnaught",
+        range       = "Lamian Kaman +1",
     }
 
     sets.range.wpn.darts = {
@@ -453,7 +453,7 @@ function self_command(command)
         local rng = string.sub(command, 4, -1)
         equip(sets.range.wpn[rng])
         currentRange = rng -- remember what your current range is
-		windower.add_to_chat(122,'Ranged mode: ' .. rangedMode.current)
+		windower.add_to_chat(122,'Ranged mode: ' .. currentRange)
 		
 	-- Treasure Hunter	
 	elseif command == 'th' then
