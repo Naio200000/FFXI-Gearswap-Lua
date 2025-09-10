@@ -59,7 +59,7 @@ function get_sets()
         left_ear    = "Triton Earring",
         right_ear   = "Novia Earring",
         left_ring   = "Shadow Ring",
-        right_ring  = "Wivre Ring +1",
+        right_ring  = "Alert Ring",
 		back        = "Shadow Mantle",
     }
 
@@ -72,7 +72,7 @@ function get_sets()
         legs        = "Bls. Trousers +1",
         feet        = "Blessed Pumps +1",
         neck        = "Ancient Torque",
-        waist       = "Headlong Belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Ethereal Earring",
         right_ear   = "Brutal Earring",
         left_ring   = "Mars's Ring",
@@ -176,7 +176,7 @@ function get_sets()
         legs        = "Cleric's Pantaln.",
         feet        = "Cleric's Duckbills",
         neck        = "Enhancing Torque",
-        waist       = "Cleric's belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Celestial Earring",
         right_ear   = "Augment. Earring",
         left_ring   = "Karka Ring",
@@ -230,7 +230,7 @@ function get_sets()
         hands       = "Blessed Mitts +1",
         legs        = "Bls. Trousers +1",
         feet        = "Blessed Pumps +1",
-        waist       = "Headlong Belt",
+        waist       = "Ninurta's Sash",
         right_ear   = "Loquac. Earring",
         back        = "Veela Cape",
     }

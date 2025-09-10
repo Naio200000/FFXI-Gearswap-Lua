@@ -47,7 +47,7 @@ function get_sets()
         left_ear="Triton Earring",
         right_ear="Novia Earring",
         left_ring="Shadow Ring",
-        right_ring="Wivre Ring +1",
+        right_ring="Alert Ring",
         back="Shadow Mantle",
     }
 
@@ -58,7 +58,7 @@ function get_sets()
         legs="Byakko's Haidate",
         feet="Dusk Ledelsens +1",
         neck="Love Torque",
-        waist="Speed Belt",
+        waist="Ninurta's Sash",
         left_ear="Suppanomimi",
         right_ear="Brutal Earring",
         left_ring="Mars's Ring",
@@ -153,7 +153,7 @@ function get_sets()
         legs="Byakko's Haidate",
         feet="Dusk Ledelsens +1",
         neck="Enhancing Torque",
-        waist="Speed Belt",
+        waist="Ninurta's Sash",
         left_ear="Augment. Earring",
         right_ear="Loquac. Earring",
         left_ring="Karka Ring",

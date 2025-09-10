@@ -56,7 +56,7 @@ function get_sets()
         left_ear    = "Novia Earring",
         right_ear   = "Triton Earring",
         left_ring   = "Shadow Ring",
-        right_ring  = "Wivre Ring +1",
+        right_ring  = "Alert Ring",
 		back        = "Shadow Mantle",
     }
 
@@ -70,7 +70,7 @@ function get_sets()
         legs        = "Homam Cosciales",
         feet        = "Enkidu's Leggings",
         neck        = "Love Torque",
-        waist       = "Speed Belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Suppanomimi",
         right_ear   = "Brutal Earring",
         left_ring   = "Mars's Ring",
@@ -86,7 +86,7 @@ function get_sets()
         legs        = "Oily Trousers",
         feet        = "Homam Gambieras",
         neck        = "Ancient Torque",
-        waist       = "Speed Belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Suppanomimi",
         right_ear   = "Brutal Earring",
         left_ring   = "Mars's Ring",
@@ -200,7 +200,7 @@ function get_sets()
         hands       = "Dusk Gloves +1",
         legs        = "Homam Cosciales",
         feet        = "Homam Gambieras",
-        waist       = "Speed Belt",
+        waist       = "Ninurta's Sash",
         right_ear   = "Loquac. Earring",
     }
 

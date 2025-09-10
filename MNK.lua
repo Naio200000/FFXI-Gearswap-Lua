@@ -53,7 +53,7 @@ function get_sets()
 		left_ear		= "Triton Earring",
 		right_ear		= "Novia Earring",
 		left_ring		= "Shadow Ring",
-		right_ring		= "Wivre Ring +1",
+		right_ring		= "Alert Ring",
 		back			= "Shadow Mantle",
 	}
 

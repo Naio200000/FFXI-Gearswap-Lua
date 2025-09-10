@@ -57,7 +57,7 @@ function get_sets()
 		left_ear	= "Novia Earring",
 		right_ear	= "Triton Earring",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Wivre Ring +1",
+   		right_ring	= "Alert Ring",
 		back		= "Shadow Mantle",
 	}
 
@@ -70,7 +70,7 @@ function get_sets()
 		hands		= "Dusk Gloves +1",
 		legs		= "Hydra Brais",
 		feet		= "Dusk Ledelsens +1",
-		waist		= "Speed Belt",
+		waist		= "Ninurta's Sash",
 		left_ear	= "Suppanomimi",
 		right_ear	= "Brutal Earring",
 		left_ring	= "Mars's Ring",
@@ -86,7 +86,7 @@ function get_sets()
 		legs		= "Hydra Brais",
 		feet		= "Hydra Gaiters",
 		neck		= "Ancient Torque",
-		waist		= "Speed Belt",
+		waist		= "Ninurta's Sash",
 		left_ear	= "Suppanomimi",
 		right_ear	= "Brutal Earring",
 		left_ring	= "Mars's Ring",
@@ -281,7 +281,7 @@ function get_sets()
 		legs		= "Warlock's Tights",
 		feet		= "Valkyrie's Clogs",
 		neck		= "Enhancing Torque",
-		waist		= "Witch Sash",
+		waist		= "Ninurta's Sash",
 		left_ear	= "Augment. Earring",
 		right_ear	= "Celestial Earring",
 		left_ring	= "Karka Ring",
@@ -355,7 +355,7 @@ function get_sets()
 		body		= "Dls. Tabard +1",
 		hands		= "Dusk Gloves +1",
 		feet		= "Dusk Ledelsens +1",
-		waist		= "Speed Belt",
+		waist		= "Ninurta's Sash",
 		right_ear	= "Loquac. Earring",}
 
     sets.resting = {
@@ -411,13 +411,13 @@ function get_sets()
     sets.weapons.swsh = {
 		
 		main		= "Excalibur",
-		sub			= "Avalon Shield",
+		sub			= "Genbu's Shield",
 	}
 	
     sets.weapons.dgsh = {
 		
 		main		= { name="Mandau", augments={'Accuracy+15','Attack+15','"Triple Atk."+3',}},
-		sub			= "Avalon Shield",
+		sub			= "Genbu's Shield",
 	}
 
     sets.weapons.ranged = {

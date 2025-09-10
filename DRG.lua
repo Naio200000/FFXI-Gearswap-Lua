@@ -53,8 +53,8 @@ function get_sets()
         left_ear    = "Ethereal Earring",
         right_ear   = "Novia Earring",
         left_ring   = "Shadow Ring",
-        right_ring  = "Wivre Ring +1",
-		back="Shadow Mantle",
+        right_ring="Alert Ring",
+		back        = "Shadow Mantle",
     }
 
     -- melee sets
@@ -72,7 +72,7 @@ function get_sets()
         legs        = "Homam Cosciales",
         feet        = "Homam Gambieras",
         neck        = "Love Torque",
-        waist       = "Speed Belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Ethereal Earring",
         right_ear   = "Brutal Earring",
         left_ring   = "Mars's Ring",
@@ -92,7 +92,7 @@ function get_sets()
         legs        = "Homam Cosciales",
         feet        = "Homam Gambieras",
         neck        = "Ancient Torque",
-        waist       = "Speed Belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Pixie Earring",
         right_ear   = "Brutal Earring",
         left_ring   = "Mars's Ring",
@@ -284,7 +284,7 @@ function get_sets()
         hands       = "Dusk Gloves +1",
         legs        = "Homam Cosciales",
         feet        = "Homam Gambieras",
-        waist       = "Speed Belt",
+        waist       = "Ninurta's Sash",
         left_ear    = "Loquac. Earring",
         right_ear   = "Novia Earring",
         back        = "Warlock's Mantle",

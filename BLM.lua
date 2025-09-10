@@ -61,8 +61,8 @@ function get_sets()
 		left_ear	= "Ethereal Earring",
 		right_ear	= "Novia Earring",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Wivre Ring +1",
-		back="Shadow Mantle",
+		right_ring	= "Alert Ring",
+		back		= "Shadow Mantle",
 	}
 
     sets.melee = {
@@ -73,7 +73,7 @@ function get_sets()
 		legs		= "Hydra Brais",
 		feet		= "Nashira Crackows",
 		neck		= "Ancient Torque",
-		waist		= "Headlong Belt",
+		waist		= "Ninurta's Sash",
 		left_ear	= "Ethereal Earring",
 		right_ear	= "Brutal Earring",
 		left_ring	= "Mars's Ring",
@@ -226,7 +226,7 @@ function get_sets()
 		legs		= "Mahatma Slops",
 		feet		= "Genie Huaraches",
 		neck		= "Enhancing Torque",
-		waist		= "Sorcerer's Belt",
+		waist		= "Ninurta's Sash",
 		left_ear	= "Augment. Earring",
 		right_ear	= "Celestial Earring",
 		left_ring	= "Karka Ring",
@@ -261,6 +261,7 @@ function get_sets()
 		body		= "Goliard Saio",
 		hands		= "Nashira Gages",
 		right_ear	= "Loquac. Earring",
+		waist		= "Ninurta's Sash",
 		back		= "Veela Cape",
 	}
 
