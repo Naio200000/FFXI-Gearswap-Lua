@@ -94,21 +94,21 @@ function get_sets()
 	-- Idle sets
 
 	sets.idle = { -- Movement, PDT, MDT, Refresh, HP, MP
-	    main		= "Claustrum", -- BLM augment has Refresh
-		sub			= "Reign Grip",
-		range		= "Aureole",
-		head		= "Zenith Crown +1",
-		body		= "Dalmatica +1",
-		hands		= "River Gauntlets",
-		legs		= "Goliard Trews",
-		feet		= "Herald's Gaiters",
-		neck		= "Orochi Nodowa +1",
-		waist		= "Hierarch Belt",
-		left_ear	= "Novia Earring",
-		right_ear	= "Ethereal Earring",
-		left_ring	= "Shadow Ring",
-		right_ring	= "Defending Ring",
-		back		= "Umbra Cape",
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Vivid Strap +1",
+		range="Aureole",
+		head="Optical Hat",
+		body="Yinyang Robe",
+		hands="Hydra Gloves",
+		legs="Hydra Brais",
+		feet="Herald's Gaiters",
+		neck="Evasion Torque",
+		waist="Hierarch Belt",
+		left_ear="Ethereal Earring",
+		right_ear="Novia Earring",
+		left_ring="Shadow Ring",
+		right_ring="Succor Ring",
+		back="Umbra Cape",
 	}
 	
 	sets.idlesync = { -- MP and HP gear syncs fairly well, so use this for sync parties
@@ -116,7 +116,7 @@ function get_sets()
 		head		= "Smn. Horn +1",
 		body		= "Goliard Saio",
 		hands		= "Carbuncle Mitts",
-		legs		= "Goliard Trews",
+    	legs		= "Oracle's Braconi",
 		feet		= "Rostrum Pumps",
 		neck		= "Uggalepih Pendant",
 		waist		= "Hierarch Belt",
@@ -142,33 +142,34 @@ function get_sets()
 	]]--
 
 	sets.perp = { -- Perp cost-
-	-- the base perp set
-		main		= "Claustrum",
-		sub			= "Reign Grip",
-		range		= "Aureole",
-		head		= "Zenith Crown +1",
-		body		= "Penance Robe",
-		hands		= "Nashira Gages",
-		legs		= "Goliard Trews",
-		feet		= "Evk. Pigaches +1",
-		neck		= "Orochi Nodowa +1",
-		waist		= "Hierarch Belt",
-		left_ear	= "Merman's Earring",
-		right_ear	= "Merman's Earring",
-		left_ring	= "Evoker's Ring",
-		right_ring	= "Defending Ring",
-		back		= "Umbra Cape",
+		-- the base perp set
+		main={ name="Claustrum", augments={'"Mag.Atk.Bns."+5','"Refresh"+1','MP recovered while healing +7',}},
+		sub="Vivid Strap +1",
+		range="Aureole",
+		head="Goliard Chapeau",
+		body="Penance Robe",
+		hands="Valkyrie's Cuffs",
+		legs="Oracle's Braconi",
+		feet="Evoker's Pigaches",
+		neck="Uggalepih Pendant",
+		waist="Hierarch Belt",
+		left_ear="Ethereal Earring",
+		right_ear="Loquac. Earring",
+		left_ring="Evoker's Ring",
+		right_ring="Succor Ring",
+		back="Umbra Cape",
 	}
 	sets.perp.melee = set_combine(sets.perp,{ -- Perp cost- + acc for yourself
-	-- a combination of the base perp set and your melee gear
-		head		= "Optical Hat",
-		legs		= "Hydra Brais",
-		feet		= "Evk. Pigaches +1",
-		neck		= "Ancient Torque",
-		waist		= "Virtuoso Belt",
-		left_ear	= "Pixie Earring",
-		right_ear	= "Brutal Earring",
-		right_ring	= "Toreador's Ring",
+		-- a combination of the base perp set and your melee gear
+		head="Optical Hat",
+		legs="Hydra Brais",
+		feet="Evoker's Pigaches",
+		neck="Ancient Torque",
+		waist="Ninurta's Sash",
+		left_ear="Ethereal Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mars's Ring",
+		right_ring="Toreador's Ring",
 	})
 	
 	sets.perp.carbuncle = { -- Carbuncle-specific items (Mitts and Claustrum/Chatoyant is enough to get free carby, so fill up other perp slots with useful gear)
@@ -178,8 +179,8 @@ function get_sets()
 	}
 	sets.perp.spirit = {body = "Yinyang Robe"} -- Spirit-specific items
 	sets.perp.garuda = {head = "Karura Hachigane"} -- Garuda-specific items
-	sets.perp.day = {body = "Smn. Doublet +1"} -- Perp cost- on day
-	sets.perp.weather = {head = "Smn. Horn +1"} -- Perp cost- in weather
+	sets.perp.day = {body="Summoner's Dblt."} -- Perp cost- on day
+	sets.perp.weather = {head="Summoner's Horn"} -- Perp cost- in weather
 	
 	sets.perp.engaged = { -- Avatar acc/atk/haste
 	-- after sets.perp, this one is equipped when your pet is engaged
@@ -189,7 +190,7 @@ function get_sets()
 		head		= "Spurrer Beret",
 		hands		= "Smn. Bracers +1",
 		legs		= "Evoker's Spats",
-		feet		= "Smn. Pigaches +1",
+		feet		= "Summoner's Pgch.",
 	}
 	sets.perp.endurance = { -- Perp cost- (only this, since it overwrites perp.engaged)
 	-- perp.engaged's relevant petacc/atk/haste slots will stay equipped even after equipping 
@@ -199,7 +200,7 @@ function get_sets()
 		range		= "Aureole",
 		body		= "Penance Robe",
 		hands		= "Nashira Gages",
-		feet		= "Evk. Pigaches +1",
+		feeT		= "Evoker's Pigaches",
 		left_ring	= "Evoker's Ring",
 	}
 	sets.perp.engaged.melee = { -- Acc for yourself (dont overwrite perp.engaged slots)
@@ -207,7 +208,7 @@ function get_sets()
 	-- here that won't overwrite relevant perp.engaged or perp.endurance slots
 		neck		= "Ancient Torque",
 		waist		= "Virtuoso Belt",
-		left_ear	= "Pixie Earring",
+		left_ear	= "Ethereal Earring",
 		right_ear	= "Brutal Earring",
 		right_ring	= "Toreador's Ring",
 		back		= "Umbra Cape",
@@ -216,32 +217,29 @@ function get_sets()
 	-- SMN potency sets
 
 	sets.bpdelay = {  -- BP delay
-		head		= "Smn. Horn +1",
+	    head		= "Summoner's Horn",
 		body		= "Yinyang Robe",
+		legs		= "Summoner's Spats",
+		feet		= "Summoner's Pgch.",
 		hands		= "Smn. Bracers +1",
-		legs		= "Smn. Spats +1",
-		feet		= "Smn. Pigaches +1",
 	}
 	
 	sets.siphon = { -- Summoning magic skill
-		main		= "Claustrum",
-		sub			= "Reign Grip",
-		head		= "Evoker's Horn",
-		hands		= "Smn. Bracers +1",
-		legs		= "Oracle's Braconi",
-		feet		= "Nashira Crackows",
-		neck		= "Smn. Torque",
-		waist		= "Summoning Belt",
-		left_ear	= "Smn. Earring",
-		left_ring	= "Evoker's Ring",
-		back		= "Astute Cape",
+		head="Evoker's Horn",
+		body="Yinyang Robe",
+		hands="Smn. Bracers +1",
+		legs="Oracle's Braconi",
+		feet="Nashira Crackows",
+		neck="Smn. Torque",
+		left_ear="Smn. Earring",
+		left_ring="Evoker's Ring",
 	}
 
 	sets.midcast = {}
 	sets.midcast.bpragephys = set_combine(sets.siphon,{  -- BP potency (Summoning magic skill + acc/atk)
-		body = "Smn. Doublet +1",
-		legs = "Evoker's Spats",
-		feet = "Smn. Pigaches +1",
+		body="Summoner's Dblt.",
+		legs="Evoker's Spats",
+		feet="Summoner's Pgch.",
 	})
 	sets.midcast.bpragemag = sets.siphon  -- BP potency (Summoning magic skill + macc/matk)
 	sets.midcast.bpwarddebuff = sets.siphon  -- BP potency (Summoning magic skill)
@@ -254,21 +252,21 @@ function get_sets()
 	-- Magic sets
 
 	sets.healing_magic = { -- Cure Potency > 1MND = 3VIT = 5skill
-		main		= "Chatoyant Staff",
-		sub			= "Reign Grip",
-		ammo		= "Hedgehog Bomb",
-		head		= "Maat's Cap",
-		body		= "Mahatma Hpl.",
-		hands		= "Dvt. Mitts +1",
-		legs		= "Mahatma Slops",
-		feet		= "Mahatma Pigaches",
-		neck		= "Fylgja Torque +1",
-		waist		= "Pythia Sash +1",
-		left_ear	= "Roundel Earring",
-		right_ear	= "Celestial Earring",
-		left_ring	= "Celestial Ring",
-		right_ring	= "Celestial Ring",
-		back		= "Dew Silk Cape +1",
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		ammo="Hedgehog Bomb",
+		head="Maat's Cap",
+		body="Mahatma Hpl.",
+		hands="Bricta's Cuffs",
+		legs="Mahatma Slops",
+		feet="Valkyrie's Clogs",
+		neck="Fylgja Torque +1",
+		waist="Steppe Rope",
+		left_ear="Roundel Earring",
+		right_ear="Celestial Earring",
+		left_ring="Celestial Ring",
+		right_ring="Celestial Ring",
+		back="Dew Silk Cape +1",
 	}
 
 	sets.enhancing_magic = { -- Skill (pot)
@@ -283,21 +281,21 @@ function get_sets()
 	
 	sets.enhancing_magic.stoneskin = { -- MND (pot)
 	 -- With 131 (/whm+16merits+10claustrum) skill and 450 being SN cap, you need 167 MND on SMN to get cap 
-	    main		= "Claustrum",
-		sub			= "Reign Grip",
-		ammo		= "Hedgehog Bomb",
-		head		= "Maat's Cap",
-		body		= "Mahatma Hpl.",
-		hands		= "Dvt. Mitts +1",
-		legs		= "Mahatma Slops",
-		feet		= "Mahatma Pigaches",
-		neck		= "Stone Gorget",
-		waist		= "Pythia Sash +1",
-		left_ear	= "Celestial Earring",
-		right_ear	= "Celestial Earring",
-		left_ring	= "Celestial Ring",
-		right_ring	= "Celestial Ring",
-		back		= "Dew Silk Cape +1",
+		main="Chatoyant Staff",
+		sub="Bugard Strap +1",
+		ammo="Hedgehog Bomb",
+		head="Maat's Cap",
+		body="Mahatma Hpl.",
+		hands="Bricta's Cuffs",
+		legs="Mahatma Slops",
+		feet="Valkyrie's Clogs",
+		neck="Faith Torque",
+		waist="Steppe Rope",
+		left_ear="Celestial Earring",
+		right_ear="Celestial Earring",
+		left_ring="Celestial Ring",
+		right_ring="Celestial Ring",
+		back="Dew Silk Cape +1",
 	}
 
 	-- Fast Cast and Haste sets
@@ -315,14 +313,14 @@ function get_sets()
 		head		= "Walahra Turban",
 		body		= "Goliard Saio",
 		hands		= "Zenith Mitts +1",
-		legs		= "Nashira Seraweels",
+		legs="Hydra Brais",
 		feet		= "Rostrum Pumps",
 		neck		= "Bloodbead Gorget",
 		waist		= "Ninurta's Sash",
-		left_ear	= "Merman's Earring",
+    	left_ear="Novia Earring",
 		right_ear	= "Loquac. Earring",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Defending Ring",
+    	right_ring="Succor Ring",
 		back		= "Veela Cape",
 	}
 
@@ -1306,4 +1304,4 @@ function setup_job()
 end
  
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; gs equip idle; wait 1; input /macro book 6; wait 1; input /macro set 1; wait 1; input /lockstyleset 12')
+-- send_command('wait 1; gs equip idle; wait 1; input /macro book 6; wait 1; input /macro set 1; wait 1; input /lockstyleset 12')
