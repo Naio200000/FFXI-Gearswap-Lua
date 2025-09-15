@@ -39,6 +39,20 @@ CREDITS
 ]]--
 
 ----------
+-- TODO --
+----------
+
+--[[    
+    Full Kaiser set
+    Parade Gorget from Goblin Wolfman
+    Valhalla HEad/Body from Odin
+    Buckler Earring from AH
+    Shield Torque from AH
+    D Ring from KB/KS99
+    Coral Hands/Legs from AH
+]]--
+
+----------
 -- Sets --
 ----------
 
@@ -52,7 +66,7 @@ function get_sets()
  
 	sets.idle = {
 		body		= "Royal Cloak",
-		hands		= "Kaiser Handschuhs",
+		hands		= "Kaiser Handschuhs", 
 		legs		= "Blood Cuisses",
 		feet		= "Askar Gambieras",
 		neck		= "Parade Gorget",
@@ -293,7 +307,6 @@ function get_sets()
 		left_ring	= "Celestial Ring",
 		right_ring	= "Celestial Ring",
 	}
-	sets.holycircle = {feet	= "Gallant Leggings"}
 	
 	sets.steps = {
 	    head        = "Optical Hat",
@@ -769,12 +782,6 @@ function self_command(command)
 	elseif command == "triggerBreath" then
 		equip(sets.trigger.breath)
 		windower.add_to_chat(200,'Triggering Breath set!')
-	
-	-- Clipping plane (requires Config plugin)
-	elseif command == "clippingPlane" then
-		clippingPlane:cycle()
-		send_command('input //config ClippingPlane ' .. clippingPlane.value)
-		windower.add_to_chat(122,"ClippingPlane: " .. clippingPlane.current)
 	end
 end
  
