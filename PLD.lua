@@ -44,12 +44,8 @@ CREDITS
 
 --[[    
     Full Kaiser set
-    Parade Gorget from Goblin Wolfman
     Valhalla HEad/Body from Odin
-    Buckler Earring from AH
-    Shield Torque from AH
     D Ring from KB/KS99
-    Coral Hands/Legs from AH
 ]]--
 
 ----------
@@ -74,7 +70,7 @@ function get_sets()
 		left_ear	= "Merman's Earring",
 		right_ear	= "Merman's Earring",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Defending Ring",
+		right_ring	= "Alert Ring",
 		back		= "Shadow Mantle",
 	}
 	
@@ -790,4 +786,4 @@ end
 ---------------
   
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
-send_command('wait 1; input /cm u;wait 1;gs equip kiting;wait 2;wait 2;input /lockstyle on;wait1;gs equip idle; wait 1;gs equip weapons.swsh; wait 1; input /macro book 8;')
+send_command('wait 1; input /cm u;wait 1;gs equip idle; wait 1;gs equip weapons.swsh; wait 1; input /lockstyleset 1')
