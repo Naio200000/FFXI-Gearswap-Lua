@@ -228,8 +228,9 @@ function get_sets()
     ---------------
 	-- Variables --
 	---------------
-
-	meleeMode = M{'melee','mage'}
+    currentWeapons = 'dgsh'  -- default weapons
+    fightMode = M{'mage', 'melee'} 							-- fight modes
+	meleeMode = M{'tp','acc','eva'} 					-- melee modes
     
     initializeNakedHPMP() 
 
@@ -263,7 +264,6 @@ function choose_set()
         equip(sets.idle)
     end
 end
-
 
 -- Decide whether to use obi or not
 function obi_check(spell)
@@ -375,6 +375,44 @@ function aftercast(spell)
 	choose_set()
 end
 
+---------------------
+-- Player commands --
+--------------------- 
+
+function self_command(command)
+    
+    
+	if command == "fightMode" then
+		fightMode:cycle() -- go to next
+		
+		local temp = fightMode.value
+		if temp == 'melee' then 
+			enable('main','sub','range','ammo')
+			equip(sets.weapons[currentWeapons])	-- when going to melee, equip the last known weapons
+			if player.sub_job == 'RNG' then
+				equip(sets.weapons.ranged) -- equip acc set if DNC
+			end
+			disable('main','sub','range','ammo')
+			windower.add_to_chat(122,'Meleeing in ' .. meleeMode.current)
+			
+		elseif temp == 'mage' then
+			enable('main','sub','range','ammo')
+			windower.add_to_chat(122,'Mage mode')
+		end	
+		choose_set()
+        
+	elseif string.sub(command, 1, 3) == "wpn" then
+		local wpn = string.sub(command, 4, -1)	
+		currentWeapons = wpn -- remember what your current weapons are
+		
+		-- equip weapons if you're in melee mode
+		if fightMode.value == 'melee' then
+			enable('main','sub','range','ammo')
+			equip(sets.weapons[wpn])	
+			disable('main','sub','range','ammo')
+		end
+	end
+end
 
 ---------------
 -- Init code --

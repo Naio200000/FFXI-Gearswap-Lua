@@ -281,7 +281,7 @@ function get_sets()
     sets.weapons.clubshield = {
 
         main        = "Brise-os +1",
-        sub         = "Avalon Shield",
+        sub         = "Genbu's Shield",
     }
 
     sets.weapons.clubkc = {
