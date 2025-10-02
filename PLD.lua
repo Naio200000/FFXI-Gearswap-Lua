@@ -94,8 +94,8 @@ function get_sets()
 		waist		= "Ninurta's Sash",
 		left_ear	= "Suppanomimi",
 		right_ear	= "Brutal Earring",
-		left_ring	= "Rajas Ring",
-		right_ring	= "Blitz Ring",
+		left_ring	= "Mars's Ring",
+		right_ring	= "Rajas Ring",
 		back		= "Cerb. Mantle +1",
 	}
 	sets.melee.ddMedium = set_combine(sets.melee.ddEasy,{
@@ -108,7 +108,7 @@ function get_sets()
 	})
 	sets.melee.tkAcc = set_combine(sets.melee.ddMedium,{
 	-- 395 acc, DT-10%, MDT-35%, 5% chance of absorbing magic damage
-		right_ring	= "Defending Ring",
+		right_ring	= "Succor Ring",
 	})
 	sets.melee.tkAccMag = set_combine(sets.melee.tkAcc,{
 	-- 388 acc, DT-10%, MDT-35%, 13% chance of annuling magic damage, 5% chance of absorbing magic damage
@@ -130,7 +130,7 @@ function get_sets()
 		left_ear	= "Buckler Earring",
 		right_ear	= "Merman's Earring",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Defending Ring",
+		right_ring	= "Soccur Ring",
 		back		= "Shadow Mantle",
 	}
 	sets.melee.tkMagic = {
@@ -146,7 +146,7 @@ function get_sets()
 		right_ear	= "Merman's Earring",
 		left_ring	= "Shadow Ring",
 		back		= "Lamia Mantle +1",
-		right_ring	= "Defending Ring",
+		right_ring	= "Succor Ring",
 	}
 	
 	-- Trigger sets
@@ -191,7 +191,7 @@ function get_sets()
 		left_ear	= "Hospitaler Earring",
 		right_ear	= "Knightly Earring",
 		left_ring	= "Hercules' Ring",
-		right_ring  = "Defending Ring",
+		right_ring  = "Succor Ring",
 		back		= "Cerb. Mantle +1",
 	}
 
@@ -234,7 +234,7 @@ function get_sets()
 		left_ear	= "Hades Earring +1",
 		right_ear   = "Loquac. Earring",
 		left_ring	= "Blitz Ring",
-		right_ring  = "Defending Ring",
+		right_ring  = "Succor Ring",
 		back		= "Gigant Mantle",
 	}
  
@@ -248,7 +248,7 @@ function get_sets()
 		waist       = "Ninurta's Sash",
 		back		= "Boxer's Mantle",
         left_ring   = "Blitz Ring",
-		right_ring  = "Defending Ring",
+		right_ring  = "Succor Ring",
 		left_ear    = "Buckler Earring",
         right_ear   = "Knightly Earring",
     }
@@ -262,7 +262,7 @@ function get_sets()
 		waist       = "Ninurta's Sash",
 		back		= "Boxer's Mantle",
 		left_ring   = "Blitz Ring",
-		right_ring  = "Defending Ring",
+		right_ring  = "Succor Ring",
         left_ear    = "Buckler Earring",
         right_ear   = "Knightly Earring",
     }
@@ -280,7 +280,7 @@ function get_sets()
         left_ear    = "Hades Earring +1",
         right_ear   = "Hades Earring +1",
         left_ring   = "Hercules' Ring",
-        right_ring  = "Defending Ring",
+        right_ring  = "Succor Ring",
         back        = "Cerb. Mantle +1",
     }
 
@@ -330,7 +330,7 @@ function get_sets()
 		left_ear	= "Robust Earring +1",
 		right_ear	= "Robust Earring +1",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Defending Ring",
+		right_ring	= "Succor Ring",
 		back		= "Shadow Mantle",
 	}
 	
@@ -350,7 +350,7 @@ function get_sets()
 		left_ear	= "Buckler Earring",
 		right_ear   = "Loquac. Earring",
 		left_ring	= "Blitz Ring",
-		right_ring	= "Defending Ring",
+		right_ring	= "Succor Ring",
 		back		= "Shadow Mantle",
 	}
 	
