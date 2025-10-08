@@ -112,7 +112,6 @@ function get_sets()
 	}
 	
 	sets.idlesync = { -- MP and HP gear syncs fairly well, so use this for sync parties
-	    ammo		= "Hedgehog Bomb",
 		head		= "Smn. Horn +1",
 		body		= "Goliard Saio",
 		hands		= "Carbuncle Mitts",
@@ -254,7 +253,7 @@ function get_sets()
 	sets.healing_magic = { -- Cure Potency > 1MND = 3VIT = 5skill
 		main="Chatoyant Staff",
 		sub="Bugard Strap +1",
-		ammo="Hedgehog Bomb",
+		range		= "Aureole",
 		head="Maat's Cap",
 		body="Mahatma Hpl.",
 		hands="Bricta's Cuffs",
@@ -283,7 +282,7 @@ function get_sets()
 	 -- With 131 (/whm+16merits+10claustrum) skill and 450 being SN cap, you need 167 MND on SMN to get cap 
 		main="Chatoyant Staff",
 		sub="Bugard Strap +1",
-		ammo="Hedgehog Bomb",
+		range		= "Aureole",
 		head="Maat's Cap",
 		body="Mahatma Hpl.",
 		hands="Bricta's Cuffs",
@@ -309,7 +308,7 @@ function get_sets()
 	sets.fastcasthaste = { -- Fast Caste = Haste (recast time)
 	    main		= "Claustrum",
 		sub			= "Vivid Strap +1",
-		ammo		= "Hedgehog Bomb",
+		range		= "Aureole",
 		head		= "Walahra Turban",
 		body		= "Goliard Saio",
 		hands		= "Zenith Mitts +1",
@@ -331,7 +330,7 @@ function get_sets()
 	sets.resting = { -- hMP
 		main		= "Claustrum",
 		sub			= "Reign Grip",
-		ammo		= "Hedgehog Bomb",
+		range		= "Aureole",
 		head		= "Mirror Tiara",
 		body		= "Mahatma Hpl.",
 		hands		= "Oracle's Gloves",
@@ -1040,14 +1039,6 @@ function precast(spell)
 				end
 			end
 		end
-		
-		-- Check whether you're not doing Assault in vain, as it triggers a gear change even if it doesn't complete because of distance
-		if spell.name == 'Assault' then
-			if player.subtarget.distance > 19 then -- subtarget for <stnpc> macro. if you wanna use <t>, use player.target.distance -- #CHANGETARGET
-				cancel_spell()
-				add_to_chat(122,'You are too far to use Assault.')
-			end
-		end
 	end
 end
 
@@ -1304,4 +1295,4 @@ function setup_job()
 end
  
 enable('main','sub','range','ammo','head','neck','left_ear','right_ear','body','hands','left_ring','right_ring','back','waist','legs','feet')
--- send_command('wait 1; gs equip idle; wait 1; input /macro book 6; wait 1; input /macro set 1; wait 1; input /lockstyleset 12')
+send_command('wait 1; gs equip idle; wait 1; input /lockstyleset 2')
