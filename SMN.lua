@@ -147,7 +147,7 @@ function get_sets()
 		range="Aureole",
 		head="Goliard Chapeau",
 		body="Penance Robe",
-		hands="Valkyrie's Cuffs",
+		hands="Nashira Gages",
 		legs="Oracle's Braconi",
 		feet="Evoker's Pigaches",
 		neck="Uggalepih Pendant",
