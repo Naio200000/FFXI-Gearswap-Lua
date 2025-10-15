@@ -62,7 +62,7 @@ function get_sets()
  
 	sets.idle = {
 		body		= "Royal Cloak",
-		hands		= "Kaiser Handschuhs", 
+    	hands="Blood Fng. Gnt.", -- TOTO: replace with kaiser
 		legs		= "Blood Cuisses",
 		feet		= "Askar Gambieras",
 		neck		= "Parade Gorget",
@@ -70,7 +70,7 @@ function get_sets()
 		left_ear	= "Merman's Earring",
 		right_ear	= "Merman's Earring",
 		left_ring	= "Shadow Ring",
-		right_ring	= "Alert Ring",
+		right_ring	= "Alert Ring", -- TODO replace with Dring
 		back		= "Shadow Mantle",
 	}
 	
@@ -457,7 +457,7 @@ function get_sets()
 
 	-- Default values, feel free to change
 	kiting = false																				-- true = VIT/def, false = Royal Cloak
-	use_parade = true																			-- use parade in engaged set or not
+	use_parade = false																			-- use parade in engaged set or not
 	ethereal = false																			-- true = use ethereal in engaged set
 	
 	-- Lists of options. Default value is the first one

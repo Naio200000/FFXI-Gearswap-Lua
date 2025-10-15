@@ -331,7 +331,7 @@ function get_sets()
 		main		= "Claustrum",
 		sub			= "Reign Grip",
 		range		= "Aureole",
-		head		= "Mirror Tiara",
+		head		= "Goliard Chapeau",
 		body		= "Mahatma Hpl.",
 		hands		= "Oracle's Gloves",
 		legs		= "Oracle's Braconi",
