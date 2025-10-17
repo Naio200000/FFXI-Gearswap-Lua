@@ -270,7 +270,7 @@ function get_sets()
 	-- Ability sets
  
     sets.enmity = { -- Base set for others
-        head        = "Hydra Salade",
+    	head		= "Aegishjalmr",
 		body        = "Hydra Haubert",
 		hands       = "Hydra Moufles",
 		legs        = "Hydra Brayettes",
@@ -287,6 +287,8 @@ function get_sets()
     sets.bash = {
         right_ear   = "Knightly Earring",
         hands       = "Vlr. Gauntlets +1",
+	    left_ring	= "Fenian Ring",
+
     }
     sets.sentinel = {feet = "Vlr. Leggings +1"}
     sets.rampart = {head = "Vlr. Coronet +1"}
